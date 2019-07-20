@@ -8,11 +8,13 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.22",
     "gatsby-mdx": "^0.3.5",
+    "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -34,6 +36,7 @@
     "react-helmet": "^5.2.0",
     "react-live": "^1.12.0",
     "react-typography": "^0.16.13",
+    "typeface-inconsolata": "^0.0.72",
     "typeface-libre-baskerville": "^0.0.72",
     "typeface-lora": "^0.0.72",
     "typeface-merriweather": "0.0.43",
