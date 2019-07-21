@@ -1,7 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import { css } from '@emotion/core'
 import theme from 'prism-react-renderer/themes/oceanicNext'
 const RE = /{([\d,-]+)}/
@@ -33,63 +31,55 @@ function calculateLinesToHighlight(meta) {
   }
 }
 export const Code = ({ codeString, language, metastring, ...props }) => {
-  if (props['react-live']) {
-    return (
-      <LiveProvider code={codeString} noInline={true}>
-        <LiveEditor />
-        <LiveError />
-        <LivePreview />
-      </LiveProvider>
-    )
-  } else {
-    const shouldHighlightLine = calculateLinesToHighlight(metastring)
-    return (
-      <Highlight
-        {...defaultProps}
-        code={codeString}
-        language={language}
-        theme={theme}
-      >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <div css={wrapperStyles}>
-            <pre className={className} style={style} css={preStyles}>
-              {tokens.map((line, i) => (
-                <div
+  const shouldHighlightLine = calculateLinesToHighlight(metastring)
+  return (
+    <Highlight
+      {...defaultProps}
+      code={codeString}
+      language={language}
+      theme={theme}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <div css={wrapperStyles}>
+          <pre className={className} style={style} css={preStyles}>
+            {tokens.map((line, i) => (
+              <div
                 css={css`
-                      line-height: 1.5rem;
-                      letter-spacing: 0.6px;
-                    `}
-                  key={i}
-                  {...getLineProps({
-                    line,
-                    key: i,
-                    className: shouldHighlightLine(i) ? 'highlight-line' : '',
-                  })}
+                  line-height: 1.5rem;
+                  letter-spacing: 0.6px;
+                `}
+                key={i}
+                {...getLineProps({
+                  line,
+                  key: i,
+                  className: shouldHighlightLine(i) ? 'highlight-line' : '',
+                })}
+              >
+                <span
+                  css={css`
+                    display: inline-block;
+                    width: 2em;
+                    user-select: none;
+                    opacity: 0.3;
+                  `}
                 >
+                  {i + 1}
+                </span>
+                {line.map((token, key) => (
                   <span
                     css={css`
-                      display: inline-block;
-                      width: 2em;
-                      user-select: none;
-                      opacity: 0.3;
+                      font-family: 'Inconsolata', monospace;
+                      font-size: 16px;
                     `}
-                  >
-                    {i + 1}
-                  </span>
-                  {line.map((token, key) => (
-                    <span css={
-                      css`
-                        font-family: 'Inconsolata', monospace;
-                        font-size: 16px;
-                      `
-                    } key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </pre>
-          </div>
-        )}
-      </Highlight>
-    )
-  }
+                    key={key}
+                    {...getTokenProps({ token, key })}
+                  />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
+      )}
+    </Highlight>
+  )
 }

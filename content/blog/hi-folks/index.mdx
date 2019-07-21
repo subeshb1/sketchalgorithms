@@ -111,20 +111,9 @@ for their projects again and again.
 
 ```jsx
 import React from 'react'
-import { render } from 'react-dom'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 
 export const Code = ({ codeString, language, ...props }) => {
-  if (props['react-live']) {
-    return (
-      <LiveProvider code={codeString} noInline={true}>
-        <LiveEditor />
-        <LiveError />
-        <LivePreview />
-      </LiveProvider>
-    )
-  } else {
     return (
       <Highlight {...defaultProps} code={codeString} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -143,11 +132,4 @@ export const Code = ({ codeString, language, ...props }) => {
   }
 }
 
-```
-
-#### A live code sample:
-
-```js react-live
-const onClick = () => { alert('clicked') }
-render(<button onClick={onClick}>Click Me!</button>)
 ```

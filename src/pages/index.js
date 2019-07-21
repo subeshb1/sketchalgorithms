@@ -1,7 +1,6 @@
 import React from 'react'
 import {  graphql } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -29,7 +28,7 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <AniLink  fade hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <AniLink  paintDrip hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </AniLink>
               </h3>
