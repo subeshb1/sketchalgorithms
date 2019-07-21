@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
+
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 import './index.css'
 import { rhythm, scale } from '../utils/typography'
 
@@ -18,16 +20,13 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
+          <AniLink
+            paintDrip
             to={`/`}
+            hex="#4b9bff3b"
           >
             {title}
-          </Link>
+          </AniLink>
         </h1>
       )
     } else {
@@ -35,19 +34,21 @@ class Layout extends React.Component {
         <h3
           style={{
             fontFamily: `Lora, sans-serif`,
-            marginTop: 0
+            marginTop: 0,
           }}
         >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
+          <AniLink
+            paintDrip
+            hex="#4b9bff3b"
+            // style={{
+            //   boxShadow: `none`,
+            //   textDecoration: `none`,
+            //   color: `inherit`,
+            // }}
             to={`/`}
           >
             {title}
-          </Link>
+          </AniLink>
         </h3>
       )
     }
@@ -56,6 +57,7 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
+          background: 'white',
           maxWidth: 900,
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}

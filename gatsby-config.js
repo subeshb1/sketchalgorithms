@@ -1,14 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
+    title: `Sketch Algorithms`,
+    author: `Subesh Bhandari`,
     description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    siteUrl: `https://sketchalgorithms.com/`,
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `sketchalgorithm`,
+      facebook: `sketchalgorithms`,
+      instagram: `sketchalgorithms`,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-transition-link`,
+      options: {
+        // layout: require.resolve(`./src/components/Layout.js`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -123,8 +140,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Sketch Algorithms`,
+        short_name: `SketchAlgorithms`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
