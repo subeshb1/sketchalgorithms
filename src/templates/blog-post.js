@@ -7,6 +7,9 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
 
 class BlogPostTemplate extends React.Component {
   render() {

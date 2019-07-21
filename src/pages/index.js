@@ -1,5 +1,5 @@
 import React from 'react'
-import {  graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <div key={node.fields.slug}>
-              <h3
+              <h1
                 style={{
                   marginBottom: rhythm(1 / 4),
                 }}
@@ -31,7 +31,8 @@ class BlogIndex extends React.Component {
                 <AniLink  paintDrip hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </AniLink>
-              </h3>
+
+              </h1>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>

@@ -43,7 +43,7 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve("./src/components/mdx/layout.js")
+          default: require.resolve('./src/components/mdx/layout.js'),
         },
         gatsbyRemarkPlugins: [
           {
@@ -64,6 +64,14 @@ module.exports = {
 
           {
             resolve: `gatsby-remark-smartypants`,
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '=>',
+              showLineNumbers: true,
+              
+            },
           },
         ],
       },
