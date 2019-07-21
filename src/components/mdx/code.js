@@ -73,7 +73,7 @@ export const Code = ({ codeString, language, metastring, ...props }) => {
                 {line.map((token, key) => (
                   <span
                     css={css`
-                      font-family: 'Inconsolata', monospace;
+                      font-family:consolos, 'Inconsolata', monospace;
                       font-size: 16px;
                     `}
                     key={key}
