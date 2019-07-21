@@ -40,11 +40,6 @@ class Layout extends React.Component {
           <AniLink
             paintDrip
             hex="#4b9bff3b"
-            // style={{
-            //   boxShadow: `none`,
-            //   textDecoration: `none`,
-            //   color: `inherit`,
-            // }}
             to={`/`}
           >
             {title}

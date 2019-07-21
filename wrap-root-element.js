@@ -1,6 +1,6 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/tag'
-import { Code } from './src/components/code'
+import { Code } from './src/components/mdx/code'
 import { preToCodeBlock } from 'mdx-utils'
 
 // components is its own object outside of render so that the references to

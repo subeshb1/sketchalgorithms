@@ -13,9 +13,6 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-transition-link`,
-      options: {
-        // layout: require.resolve(`./src/components/Layout.js`),
-      },
     },
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -45,6 +42,9 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          default: require.resolve("./src/components/mdx/layout.js")
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

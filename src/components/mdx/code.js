@@ -5,11 +5,12 @@ import theme from 'prism-react-renderer/themes/oceanicNext'
 const RE = /{([\d,-]+)}/
 const wrapperStyles = css`
   overflow: auto;
-  border-radius: 4px;
 `
 
 const preStyles = css`
   float: left;
+  padding: 10px;
+  border-radius: 4px;
   min-width: 100%;
   overflow: initial;
 `
@@ -60,7 +61,11 @@ export const Code = ({ codeString, language, metastring, ...props }) => {
                     display: inline-block;
                     width: 2em;
                     user-select: none;
-                    opacity: 0.3;
+                    font-size: 16px;
+                    opacity: 0.5;
+                    &:after {
+                      content: '.';
+                    }
                   `}
                 >
                   {i + 1}

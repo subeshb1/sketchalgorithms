@@ -6,23 +6,32 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
+import Disqus from 'disqus-react'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const disqusShortname = 'sketchalgorithm'
+    const disqusConfig = {
+      url: window.url,
+      identifier: window.url,
+      title: siteTitle,
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
+        <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
+          Comments
+        </Disqus.CommentCount>
         <p
           style={{
             ...scale(-1 / 5),
             display: `block`,
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
           }}
         >
           {post.frontmatter.date}
@@ -59,6 +68,11 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </Layout>
     )
   }
