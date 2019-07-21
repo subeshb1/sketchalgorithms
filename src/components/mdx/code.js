@@ -1,16 +1,18 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { css } from '@emotion/core'
-import theme from 'prism-react-renderer/themes/oceanicNext'
+import theme from './theme/github'
 const RE = /{([\d,-]+)}/
 const wrapperStyles = css`
-  overflow: auto;
+margin-bottom:1.5em;
+overflow: auto;
+  border-radius: 4px;
 `
 
 const preStyles = css`
   float: left;
   padding: 10px;
-  border-radius: 4px;
+  margin-bottom:0em;
   min-width: 100%;
   overflow: initial;
 `
@@ -73,7 +75,7 @@ export const Code = ({ codeString, language, metastring, ...props }) => {
                 {line.map((token, key) => (
                   <span
                     css={css`
-                      font-family:consolos, 'Inconsolata', monospace;
+                      font-family:consolas, 'Inconsolata', monospace;
                       font-size: 16px;
                     `}
                     key={key}

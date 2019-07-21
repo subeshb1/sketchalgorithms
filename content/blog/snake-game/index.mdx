@@ -90,12 +90,11 @@ function drawBackground(){
   ctx.fillRect(0,0,250,250);
 }
 ```
-<!-- 
-Snake Logic
+
+## Snake Logic
 Snake GridThe main challenge is to understand how the snake moves. We assume the canvas as a grid of 25x25 rectangles where each rectangle is of size 10x10px, so the size of canvas is 250x250px. The next main thing to know is, a snake part is always 10px away from it's next part that may be in the x-axis or y-axis. In the figure, the red rectangle is snake's head and blue ones are other parts. What we can see here is every part is following it's preceding part. Whereas, the head is the one that decides the path and the direction to move. Thus, for each snake part we can assign a direction it's moving along with it's x,y coordinates. Now, when the head moves it will get new direction and next coordinates, depending upon the users control, which we'll discuss later. The snake can only move 10px in any one four direction i.e. the rectangle size. Now let's define a part of snake as an object and the entire snake as an array of snake parts. We'll also make a function that adds snake part dynamically, so that whenever snake eats it can grow along the correct direction. Let's assume UP as -1, DOWN as 1, LEFT as -2, RIGHT as 2. The reason why we use this kind of numbering is because we need to prevent the snake from moving opposite direction. Example: If the snake is moving RIGHT it can't move LEFT and vice-versa. The same can be said for UP and LEFT.
 
-JS
-Copy
+```js
 // Remember to only set x,y to values that are multiple of 10 i.e. box size
 let head = {
   //   Starting coordinates
@@ -137,13 +136,14 @@ function addPart() {
   //   Adding the new Part to the snake
   snake.push({ x, y, direction });
 }
+```
+
 The mod function takes (x,y) parameters and returns modulus of y modulo x. Learn More
 
-Moving The Snake
+## Moving The Snake
 We now know how the snake functions. Next job is to move the snake according to the direction LEFT, RIGHT, UP and DOWN. The idea is to increment snake head's x or y coordinate according to the it's direction, then we simply change the parts value to the one that is ahead of it. This makes the part travel like a snake.
 
-JS
-Copy
+```js
 // This variable holds the snake moving direction.
 let direction = 2; // RIGHT
 // Moving the Snake
@@ -179,11 +179,12 @@ function moveSnake() {
   }
   snake = newSnake;
 }
-Generating Food
+```
+
+## Generating Food
 We will only add one food in the whole canvas in this tutorial. We will keep track of the food with a variable also named food. Then we will generate food randomly inside the canvas avoiding the snake parts.
 
-JS
-Copy
+```js
 // Current Food
 let food = {x:40, y: 50};
 // Generating Food
@@ -200,11 +201,12 @@ function generateFood() {
 //   Next Food
   food = { x, y };
 }
-Game State
+```
+
+## Game State
 Now, let's start combining all these pieces together and make the game. First let's make a game state that keeps track of everything going on the game. We'll first add the snake data, food data, direction and the game score. We'll also add a gameover flag to check of the game is running or over.
 
-JS
-Copy
+```js
 // Game State
 let state = {
 //   Initially game is not running
@@ -222,11 +224,12 @@ let state = {
 //   initial score
   score: 0
 };
-Game Loop
+```
+
+## Game Loop
 The entire game runs around a loop called Game loop. One iteration in a loop repaints the entire canvas and is called a frame. We decide the number of frames we want to display per second. Greater frame per second(fps) results in fast snake movement and vice-versa. We'll make a function called draw that handles all our drawing and computation. We'll call this function 10 times every second. There are two ways to do these, one is setInterval and the other is window.requestAnimationFrame(). In this tutorial we will use the later one. For more information about window.requestAnimationFrame click here.
 
-JS
-Copy
+```js
 // To compare time in the function
 var start = 0;
 // Draw Function
@@ -261,10 +264,11 @@ function draw(timestamp) {
 //   recursively calls itself until game over
   if (!state.gameover) window.requestAnimationFrame(draw);
 }
+```
+
 Now, lets define how the checkGameOver, drawSnake, eatFood and mod functions. functions
 
-JS
-Copy
+```js
 // mod function
 function mod(m, val) {
   while (val < 0) {
@@ -307,11 +311,11 @@ function checkGameOver() {
   );
   // Note: You can add blocks or check if it is colliding the boundary and make it game over
 }
-Event Handling
+```
+## Event Handling
 We now need to handle events fired by users to change the direction of snake
 
-JS
-Copy
+```js
 // Adding event Listener on the document for keydown
 document.addEventListener("keydown", event => {
 //   Checking if Arrow keys are pressed
@@ -352,11 +356,12 @@ document.addEventListener("keydown", event => {
     state.direction = direction;
   }
 });
-Wrapping Things
+```
+
+## Wrapping Things
 Finally, let's wrap up this game. We'll add an event handler to the play button that triggers the draw function, which starts the Game Loop. It will also re-initialize the game state whenever game is over.
 
-JS
-Copy
+```js
 // Event Handler
 play.onclick = function() {
   //   If game is not running
@@ -384,19 +389,21 @@ play.onclick = function() {
     window.requestAnimationFrame(draw);
   }
 };
+```
 Now, we're set to go. All you have to do now is click play and start playing!
 
-Conclusion
+## Conclusion
 You've now learned how to make a simple snake game. Try to make your own version of it, change the shape of snake, speed of the game, make an attractive ui, add different modes and difficulty. Use your new found Knowledge to make something beautiful and share among friends and with us too. The full source code will be down below an you can get the working example with code Here.
 
-Code
-HTML
-Copy
+Code:
+
+```html
 <canvas width="250"  height="250" id="draw-board"></canvas>
 <div id="score">Score: 0</div>
 <button id="play">Play</button>
-css
-Copy
+```
+
+```css
 * {
   margin: 0;
   box-sizing: border-box;
@@ -406,8 +413,8 @@ canvas {
   width: 80vmin;
   border: 10px solid cornflowerblue;
 }
-JS
-Copy
+```
+```js
 // Selecting Element Reference
 const button = document.getElementById("play");
 const score = document.getElementById("score");
@@ -430,4 +437,5 @@ var state = {
   ],
   //   initial food location
   food: { x: 0, y: 0 },
-  //   initial score -->
+  //   initial score
+  ```
