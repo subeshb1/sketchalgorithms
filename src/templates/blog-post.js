@@ -12,11 +12,12 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
+    console.log(post)
     const { previous, next } = this.props.pageContext
     const disqusShortname = 'sketchalgorithm'
     const disqusConfig = {
-      url: window.url,
-      identifier: window.url,
+      url: 'https://www.sketchalgorithms.com' + post.fields.slug,
+      identifier: siteTitle,
       title: siteTitle,
     }
 
@@ -94,6 +95,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+      fields {
+        slug
       }
       code {
         body
