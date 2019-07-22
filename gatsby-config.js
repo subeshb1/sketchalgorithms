@@ -68,7 +68,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              inlineCodeMarker: '=>',
+              // inlineCodeMarker: '=>',
               showLineNumbers: true,
               
             },
@@ -154,7 +154,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/logo.png`,
       },
     },
     // `gatsby-plugin-offline`,
