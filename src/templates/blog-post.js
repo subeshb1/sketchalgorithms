@@ -20,9 +20,11 @@ class BlogPostTemplate extends React.Component {
     const disqusShortname = 'sketchalgorithm'
     const disqusConfig = {
       url: 'https://www.sketchalgorithms.com' + post.fields.slug,
-      identifier: siteTitle,
+      identifier: post.fields.slug,
       title: siteTitle,
     }
+
+    console.log(disqusConfig);
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
