@@ -1,4 +1,6 @@
 import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
+
 import { graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -7,9 +9,9 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
-import "prismjs/themes/prism-okaidia.css";
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
-
+// import "prismjs/themes/prism-okaidia.css";
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import Header from '../components/mdx/Header'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -37,7 +39,9 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <MDXProvider components={{ h1: Header }}>
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </MDXProvider>
         <hr
           style={{
             marginBottom: rhythm(1),

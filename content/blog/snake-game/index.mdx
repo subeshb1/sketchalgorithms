@@ -1,7 +1,10 @@
 ---
 title:  Build a snake game using HTML canvas and javascript
 date: '2019-05-06T23:46:37.121Z'
+series: Snake Game
 ---
+
+<!-- toc -->
 
 Wow! I love blogging so much already.
 
@@ -32,7 +35,7 @@ We're going to use a canvas of height and `width` 250px and give it an id 'draw-
 
 
 ```js
-const button = document.getElementById("play"); // highlight-line
+const button = document.getElementById("play");
 const score = document.getElementById("score");
 const canvas = document.getElementById("draw-board");
 ```
@@ -70,7 +73,7 @@ function, but make sure it's height and width are 10px*/
 ```
 Similarly, we draw food for the snake as below:
 
-```js{1,4-6}
+```js
 //Drawing Food for snake to eat
 function drawFood(ctx,x,y) {
   //Starting Path

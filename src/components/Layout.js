@@ -20,11 +20,7 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <AniLink
-            paintDrip
-            to={`/`}
-            hex="#4b9bff3b"
-          >
+          <AniLink paintDrip to={`/`} hex="#4b9bff3b">
             {title}
           </AniLink>
         </h1>
@@ -37,28 +33,26 @@ class Layout extends React.Component {
             marginTop: 0,
           }}
         >
-          <AniLink
-            paintDrip
-            hex="#4b9bff3b"
-            to={`/`}
-          >
+          <AniLink paintDrip hex="#4b9bff3b" to={`/`}>
             {title}
           </AniLink>
         </h3>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          background: 'white',
-          maxWidth: 900,
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children}
+      <div>
+        <div
+          style={{
+            marginLeft: `auto`,
+            marginRight: `auto`,
+            background: 'white',
+            maxWidth: 900,
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+          {header}
+          {children}
+        </div>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
