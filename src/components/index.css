@@ -30,8 +30,6 @@ li {
 
 .gatsby-highlight pre[class*='language-'].line-numbers {
   padding-left: 2.8em; /* 3 */
-  font-family: 'Consolas', 'Inconsolata', 'Courier New', Courier,
-  monospace;
 }
 
 .gatsby-highlight pre[class*='language-'].line-numbers .line-numbers-rows {
@@ -51,14 +49,14 @@ li {
 code[class*='language-'],
 pre[class*='language-'] {
   color: #393a34;
- 
+
   direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  font-family: 'Consolas', 'Inconsolata', 'Courier New', Courier, monospace;
   font-size: 1rem;
-  line-height: 1.2em;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -82,13 +80,6 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
   background: #b3d4fc;
-}
-
-/* Code blocks */
-pre[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
 }
 
 :not(pre) > code[class*='language-'],
@@ -177,13 +168,16 @@ h6 {
 .anchor {
   position: absolute;
   right: 100%;
-  display: none;
 }
-
-h2:hover > .anchor,
-h3:hover > .anchor,
-h4:hover > .anchor,
-h5:hover > .anchor,
-h6:hover > .anchor {
-  display: block;
+.anchor > svg {
+  opacity: 0;
+}
+h1:hover > .anchor > svg,
+h2:hover > .anchor > svg,
+h3:hover > .anchor > svg,
+h4:hover > .anchor > svg,
+h5:hover > .anchor > svg,
+h6:hover > .anchor > svg, .anchor:hover > svg,
+.anchor:focus > svg {
+  opacity: 1;
 }
