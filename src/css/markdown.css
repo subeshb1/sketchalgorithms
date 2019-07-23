@@ -48,6 +48,9 @@ blockquote {
   padding: 1rem;
   position: relative;
   font-style: italic;
+  font-size: 1.1rem;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 blockquote blockquote {

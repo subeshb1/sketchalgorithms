@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
@@ -14,8 +14,12 @@ const fetchTheme = () => {
   return 'light'
 }
 const Layout = props => {
-  const [theme, setTheme] = useState(fetchTheme())
+  const [theme, setTheme] = useState('light')
 
+  useEffect(() => {
+    setTheme(fetchTheme())
+  },[]);
+  
   const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
   let header
