@@ -57,3 +57,7 @@ blockquote blockquote {
   margin-left: 1rem;
 }
 
+.theme-dark blockquote {
+  border-left: 4px solid white;
+  
+}
