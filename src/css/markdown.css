@@ -1,0 +1,56 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+.anchor {
+  position: absolute;
+  right: 100%;
+}
+.anchor > svg {
+  opacity: 0;
+}
+h1:hover > .anchor > svg,
+h2:hover > .anchor > svg,
+h3:hover > .anchor > svg,
+h4:hover > .anchor > svg,
+h5:hover > .anchor > svg,
+h6:hover > .anchor > svg,
+.anchor:hover > svg,
+.anchor:focus > svg {
+  opacity: 1;
+}
+
+p,
+li {
+  letter-spacing: -0.2px;
+}
+
+.theme-dark,
+.theme-dark a {
+  color: white;
+  background: #292c35;
+}
+
+.theme-dark p {
+  color: #dce4e8;
+}
+.theme-dark .anchor svg path {
+  fill: white;
+}
+
+blockquote {
+  border-left: 4px solid black;
+  margin-left: -1rem;
+  padding: 1rem;
+  position: relative;
+  font-style: italic;
+}
+
+blockquote blockquote {
+  margin-left: 1rem;
+}
+

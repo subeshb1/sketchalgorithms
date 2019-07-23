@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: '1.5em',
   headerFontFamily: ['Lora', 'Libre Baskerville', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],
-  headerMarginTop: '3rem',
+  headerMarginTop: '3.5rem',
   overrideThemeStyles: ({ rhythm }, options) => ({
     'h1,h2,h3': {
       marginTop: rhythm(2),

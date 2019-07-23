@@ -27,14 +27,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/src/content/blog`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/src/content/assets`,
         name: `assets`,
       },
     },
@@ -80,7 +80,6 @@ module.exports = {
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
-              // inlineCodeMarker: '=>',
               showLineNumbers: true,
               
             },
@@ -120,7 +119,7 @@ module.exports = {
                   data: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.code.boy }],
+                  custom_elements: [{ 'content:encoded': edge.node.code.body }],
                 })
               })
             },
@@ -167,7 +166,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/logo.png`,
+        icon: `src/content/assets/logo.png`,
       },
     },
     // `gatsby-plugin-offline`,

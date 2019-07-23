@@ -28,9 +28,9 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <AniLink  paintDrip hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link  paintDrip hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
-                </AniLink>
+                </Link>
 
               </h1>
               <small>{node.frontmatter.date}</small>
