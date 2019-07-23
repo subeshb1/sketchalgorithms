@@ -3,10 +3,14 @@ import Typography from 'typography'
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: '1.5em',
-  headerFontFamily: [
-    "Lora", "Libre Baskerville", "serif"
-  ],
+  headerFontFamily: ['Lora', 'Libre Baskerville', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],
+  headerMarginTop: '3rem',
+  overrideThemeStyles: ({ rhythm }, options) => ({
+    'h1,h2,h3': {
+      marginTop: rhythm(2),
+    },
+  }),
 })
 
 // Hot reload typography in development.

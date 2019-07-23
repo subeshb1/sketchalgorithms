@@ -11,13 +11,11 @@ import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
 // import "prismjs/themes/prism-okaidia.css";
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
-import Header from '../components/mdx/Header'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
-    console.log(post)
     const { previous, next } = this.props.pageContext
     const disqusShortname = 'sketchalgorithm'
     const disqusConfig = {
@@ -39,9 +37,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <MDXProvider components={{ h1: Header }}>
-          <MDXRenderer>{post.code.body}</MDXRenderer>
-        </MDXProvider>
+        <MDXRenderer>{post.code.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: rhythm(1),
