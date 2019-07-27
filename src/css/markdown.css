@@ -29,6 +29,10 @@ li {
   letter-spacing: -0.2px;
 }
 
+.theme-light {
+  background: white;
+}
+
 .theme-dark,
 .theme-dark a {
   color: white;
