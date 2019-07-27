@@ -1,5 +1,4 @@
 import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
 
 import { graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
@@ -12,7 +11,7 @@ import Disqus from 'disqus-react'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.mdx
+    const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const disqusShortname = 'sketchalgorithm'
@@ -35,7 +34,10 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -87,8 +89,9 @@ export const pageQuery = graphql`
         author
       }
     }
-    mdx(fields: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      html
       excerpt(pruneLength: 160)
       frontmatter {
         title
@@ -96,9 +99,6 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-      }
-      code {
-        body
       }
     }
   }

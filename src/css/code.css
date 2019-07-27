@@ -43,7 +43,7 @@
 
 .gatsby-highlight .line-numbers-rows > span:before {
   content: counter(linenumber) '.';
-  padding-left: 8px; /* 3 */
+  padding-left: 10px;
 }
 
 code[class*='language-'],
@@ -84,4 +84,12 @@ code[class*='language-'] ::selection {
   margin: 0 0.3em;
   border-radius: 0.3em;
   white-space: normal;
+}
+
+@media (max-width: 900px) {
+  .gatsby-highlight {
+    margin-left: -1.125em;
+    margin-right: -1.125em;
+    box-shadow: unset;
+  }
 }

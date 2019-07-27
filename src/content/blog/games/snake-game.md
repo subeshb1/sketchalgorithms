@@ -3,11 +3,7 @@ title:  Build a snake game using HTML canvas and javascript
 date: '2019-05-06T23:46:37.121Z'
 series: Snake Game
 ---
-import Snake from './components/snake'
 
-
-
-<Snake />
 
 ## Introduction
 Hello Guys, I'll be walking you through the step by step process to build a simple snake game. Before we move on, there are few prerequisites you need to cover:
