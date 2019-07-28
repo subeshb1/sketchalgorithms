@@ -1,0 +1,24 @@
+@import 'code';
+@import 'markdown';
+
+$background: white;
+$color: black;
+
+@mixin theme($background, $color) {
+  background: $background;
+  color: $color;
+}
+
+.theme-dark {
+  $color: white;
+  $background: #292c35;
+  @include theme($background, $color);
+}
+
+.theme-light {
+  @include theme($background, $color);
+}
+
+.theme-solarized {
+  @include theme($background, $color);
+}

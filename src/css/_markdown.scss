@@ -13,6 +13,8 @@ h6 {
 .anchor > svg {
   opacity: 0;
 }
+
+
 h1:hover > .anchor > svg,
 h2:hover > .anchor > svg,
 h3:hover > .anchor > svg,
@@ -29,21 +31,21 @@ li {
   letter-spacing: -0.2px;
 }
 
-.theme-light {
-  background: white;
-}
+.theme-dark {
+  a {
+    color: white;
+  }
+  p {
+    color: #dce4e8;
+  }
 
-.theme-dark,
-.theme-dark a {
-  color: white;
-  background: #292c35;
-}
+  .anchor svg path {
+    fill: white;
+  }
 
-.theme-dark p {
-  color: #dce4e8;
-}
-.theme-dark .anchor svg path {
-  fill: white;
+  blockquote {
+    border-left: 4px solid white;
+  }
 }
 
 blockquote {
@@ -61,10 +63,6 @@ blockquote blockquote {
   margin-left: 1rem;
 }
 
-.theme-dark blockquote {
-  border-left: 4px solid white;
-}
-
 @media (max-width: 900px) {
   .anchor {
     float: initial;
@@ -72,3 +70,8 @@ blockquote blockquote {
     margin-left: 0;
   }
 }
+
+ul ul {
+  list-style-type: disc;
+}
+

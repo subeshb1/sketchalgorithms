@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-
-import '../css/index.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import { css } from '@emotion/core'
+import '../css/index.scss'
 
 import { rhythm, scale } from '../utils/typography'
 
@@ -18,8 +17,8 @@ const Layout = props => {
 
   useEffect(() => {
     setTheme(fetchTheme())
-  },[]);
-  
+  }, [])
+
   const { location, title, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -54,6 +53,31 @@ const Layout = props => {
   }
   return (
     <div className={`theme-${theme}`}>
+      <nav
+        css={css`
+          display: flex;
+          background: black;
+          color: white;
+          position: sticky;
+          .item {
+            padding: 10px;
+            color: white;
+          }
+        `}
+      >
+        <a href="/" className="item">
+          Home
+        </a>
+        <a href="/" className="item">
+          Home
+        </a>
+        <a href="/" className="item">
+          Home
+        </a>
+        <a href="/" className="item">
+          Home
+        </a>
+      </nav>
       <div
         style={{
           marginLeft: `auto`,
@@ -65,9 +89,9 @@ const Layout = props => {
         {header}
         <button
           onClick={() => {
-            const nextTheme = theme === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme',nextTheme);
-            setTheme(nextTheme);
+            const nextTheme = theme === 'dark' ? 'light' : 'dark'
+            localStorage.setItem('theme', nextTheme)
+            setTheme(nextTheme)
           }}
         >
           Toggle Theme

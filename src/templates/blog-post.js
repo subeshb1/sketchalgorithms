@@ -36,6 +36,11 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div
           className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: post.tableOfContents}}
+        />
+        
+        <div
+          className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <hr
@@ -56,14 +61,14 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <AniLink paintDrip to={previous.fields.slug} rel="prev">
+              <AniLink  to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </AniLink>
             )}
           </li>
           <li>
             {next && (
-              <AniLink paintDrip to={next.fields.slug} rel="next">
+              <AniLink  to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </AniLink>
             )}
@@ -92,6 +97,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      tableOfContents
       excerpt(pruneLength: 160)
       frontmatter {
         title
