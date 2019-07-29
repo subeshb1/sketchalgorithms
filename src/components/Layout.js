@@ -53,7 +53,7 @@ const Layout = props => {
   }
   return (
     <div className={`theme-${theme}`}>
-      <nav
+      {/* <nav
         css={css`
           display: flex;
           background: black;
@@ -77,7 +77,7 @@ const Layout = props => {
         <a href="/" className="item">
           Home
         </a>
-      </nav>
+      </nav> */}
       <div
         style={{
           marginLeft: `auto`,

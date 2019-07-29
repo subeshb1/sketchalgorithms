@@ -34,11 +34,11 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <div
+        {/* <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.tableOfContents}}
         />
-        
+         */}
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
