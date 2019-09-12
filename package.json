@@ -50,6 +50,7 @@
     "react-helmet": "^5.2.0",
     "react-live": "^2.1.2",
     "react-typography": "^0.16.13",
+    "typeface-ibm-plex-mono": "^0.0.61",
     "typeface-inconsolata": "^0.0.72",
     "typeface-libre-baskerville": "^0.0.72",
     "typeface-lora": "^0.0.72",

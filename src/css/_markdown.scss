@@ -47,6 +47,13 @@ li {
   }
 }
 
+.theme-light {
+  a {
+    text-decoration: none;
+    color: #2b69bb;
+  }
+}
+
 blockquote {
   border-left: 4px solid black;
   margin-left: -1.125rem;
@@ -56,6 +63,7 @@ blockquote {
   font-size: 1.1rem;
   margin-right: -1.125em;
   padding-right: 0;
+  margin-right: -1rem;
 }
 
 blockquote blockquote {

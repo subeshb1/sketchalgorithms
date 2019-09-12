@@ -1,7 +1,7 @@
 // custom typefaces
 import 'typeface-lora'
 import 'typeface-libre-baskerville'
-import 'typeface-inconsolata'
+import 'typeface-ibm-plex-mono'
 
 // import { wrapRootElement as wrap } from './wrap-root-element'
 
