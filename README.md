@@ -58,6 +58,7 @@ Note: Gatsby comes preconfigured with hot reload. As long as you are running gat
     ```gatsby serve```
     
  3.  **Commit and Raise a Pull Request**
-
-    Commit your changes to your fork and then raise a pull request(pr) to the relavent branch of the main repository. 
-    Be sure to reference the issue you are resolving in your message. 
+    
+   Commit your changes to your fork and then raise a pull request(pr) to the relavent branch of the main repository. 
+   Be sure to reference the issue you are resolving in your message. 
+    
