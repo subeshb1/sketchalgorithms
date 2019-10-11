@@ -19,26 +19,45 @@
     or 
     
     ```yarn add```
+    
+    Make sure to you have the gatsby CLI globally installed. You can install it with the below command:
+    
+    ```npm install -g gatsby-cli```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Start the application by running the below command
 
-    ```sh
-    cd my-blog-starter/
-    gatsby develop
-    ```
+    ```gatsby develop```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+Note: Gatsby comes preconfigured with hot reload. As long as you are running gatsby develop and save changes, you will automatically see the changes populate on your local version of the site. 
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## 💫 Contribution guide
 
-## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
+1.  **Fork the Repository**
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+    Fork the repository and then follow the above instructions for running the code locally. 
+    
+    Create your own branch with the following command:
+    
+    ```git checkout -b yourBranchName```
+
+2.  **Build your changes.**
+
+    When you have completed your changes run the command below
+
+    ```gatsby build```
+    
+    Fix any potential build errors that may occur. Then serve the content to make sure the site is working as expected.
+    
+    ```gatsby serve```
+    
+ 3.  **Commit and Raise a Pull Request**
+
+    Commit your changes to your fork and then raise a pull request(pr) to the relavent branch of the main repository. 
+    Be sure to reference the issue you are resolving in your message. 
