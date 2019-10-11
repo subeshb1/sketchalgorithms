@@ -6,11 +6,11 @@
 
 ## 🚀 Quick start for Running
 
-1.  **Clone Repository.**
-
-    You have two options for cloning this repository to your local machine:
+1.  **Running on your local machine.**
     
-    Option 1: 
+    Option 1: Paste the command below into your terminal:
+    
+    ```git clone https://github.com/Rahat-ch/sketchalgorithms.git```
 
 1.  **Start developing.**
 
