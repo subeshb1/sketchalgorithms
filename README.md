@@ -8,9 +8,17 @@
 
 1.  **Running on your local machine.**
     
-    Option 1: Paste the command below into your terminal:
+    Paste the command below into your terminal:
     
     ```git clone https://github.com/Rahat-ch/sketchalgorithms.git```
+    
+    Run one of the following commands to install all dependencies:
+    
+    ```npm install```
+    
+    or 
+    
+    ```yarn add```
 
 1.  **Start developing.**
 
