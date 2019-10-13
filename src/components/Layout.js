@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { css } from '@emotion/core'
 import '../css/index.scss'
-
+import { NavBar } from '.'
 import { rhythm, scale } from '../utils/typography'
 
 const fetchTheme = () => {
@@ -53,31 +53,7 @@ const Layout = props => {
   }
   return (
     <div className={`theme-${theme}`}>
-      {/* <nav
-        css={css`
-          display: flex;
-          background: black;
-          color: white;
-          position: sticky;
-          .item {
-            padding: 10px;
-            color: white;
-          }
-        `}
-      >
-        <a href="/" className="item">
-          Home
-        </a>
-        <a href="/" className="item">
-          Home
-        </a>
-        <a href="/" className="item">
-          Home
-        </a>
-        <a href="/" className="item">
-          Home
-        </a>
-      </nav> */}
+     <NavBar />
       <div
         style={{
           marginLeft: `auto`,
