@@ -17,13 +17,20 @@ There are three ways to access and use AWS:
 
 ### 1. AWS Management Console{#aws-management-console}
 
-It provides Graphical Interface to access AWS services and features via web. You can access the console by clicking the link [AWS Management Console](https://aws.amazon.com/console/) after signing up on AWS.
+It provides Graphical Interface to access AWS services and features via web. You can access the console by clicking the link [AWS Management Console](https://aws.amazon.com/console/) after signing up on AWS. It provides the following benefits:
+
+- Easy navigation to all the AWS services and features.
+- Easy to use for both beginners and experts.
+- Convenient mobile app in IOS and android, for easy monitoring of services.
 
 ![AWS Management Console](../../assets/aws/aws_management_console.png)
 
 ### 2. Command Line Interface (CLI){#command-line-interface}
 
-Allows access to AWS services via discrete commands from the command line. In order to setup AWS CLI follow the instruction from [AWS Command Line Interface](https://aws.amazon.com/cli/).
+Allows access to AWS services via discrete commands from the command line. In order to setup AWS CLI follow the instruction from [AWS Command Line Interface](https://aws.amazon.com/cli/). It provides the following benefits:
+
+- Flexibility to create scripts and automate and repeat the deployment of AWS resources and services.
+- Programming language agnostic.
 
 ```sh
 $ aws ec2 describe-instances
@@ -36,7 +43,10 @@ The above command lists out EC2 instances in your account, which we will be disc
 
 ### 3. Software Development Kits (SDKs){#software-development-kits}
 
-It incorporates the connectivity and functionality of the wide range of AWS Cloud services into different programming languages which you can checkout from [Tools to Build on AWS](https://aws.amazon.com/tools/).
+It incorporates the connectivity and functionality of the wide range of AWS Cloud services into different programming languages which you can checkout from [Tools to Build on AWS](https://aws.amazon.com/tools/). It provides the following benefits:
+
+- Ability to use AWS in existing application
+- Flexibility to create application
 
 ```go
 package main
