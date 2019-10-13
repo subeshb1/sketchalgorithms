@@ -30,6 +30,7 @@ module.exports = {
             options: {
               maxWidth: 900,
               quality: 75,
+              wrapperStyle:  'margin: 1rem -1.125rem;',
             },
           },
           {
