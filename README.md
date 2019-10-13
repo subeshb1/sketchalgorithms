@@ -1,53 +1,64 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
+
 <h1 align="center">
-  Gatsby's blog starter now with 100% more MDX
+  Sketch Algorithms
 </h1>
 
-Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React, with support for an MDX blog.
 
-_Have another more specific idea? You may want to check out this awesome collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## 🚀 Quick start for Running
 
-What's MDX you ask? MDX let's you use JSX in your Markdown, making it even
-easier to write blog posts, document your React components, and much more. [Find
-out more about MDX](https://github.com/mdx-js/mdx), and [gatsby-mdx](https://github.com/ChristopherBiscardi/gatsby-mdx), the plugin that makes
-this blog possible!
+1.  **Running on your local machine.**
+    
+    Paste the command below into your terminal:
+    
+    ```git clone https://github.com/Rahat-ch/sketchalgorithms.git```
+    
+    Run one of the following commands to install all dependencies:
+    
+    ```npm install```
+    
+    or 
+    
+    ```yarn add```
+    
+    Make sure to you have the gatsby CLI globally installed. You can install it with the below command:
+    
+    ```npm install -g gatsby-cli```
 
-## 🚀 Quick start
+2.  **Start developing.**
 
-1.  **Create a Gatsby site.**
+    Start the application by running the below command
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+    ```gatsby develop```
 
-    ```sh
-    # create a new Gatsby site using the blog starter
-    npx gatsby new my-blog-starter
-    https://github.com/hagnerd/gatsby-starter-blog-mdx
-    ```
-
-1.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```sh
-    cd my-blog-starter/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+Note: Gatsby comes preconfigured with hot reload. As long as you are running gatsby develop and save changes, you will automatically see the changes populate on your local version of the site. 
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## 💫 Contribution guide
 
-## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
+1.  **Fork the Repository**
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+    Fork the repository and then follow the above instructions for running the code locally. 
+    
+    Create your own branch with the following command:
+    
+    ```git checkout -b yourBranchName```
+
+2.  **Build your changes.**
+
+    When you have completed your changes run the command below
+
+    ```gatsby build```
+    
+    Fix any potential build errors that may occur. Then serve the content to make sure the site is working as expected.
+    
+    ```gatsby serve```
+    
+ 3.  **Commit and Raise a Pull Request**
+    
+   Commit your changes to your fork and then raise a pull request(pr) to the relavent branch of the main repository. 
+   Be sure to reference the issue you are resolving in your message. 
+    
