@@ -10,7 +10,7 @@ series: 'AWS'
 
 **Amazon Elastic Compute Cloud (Amazon EC2)** is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
 
-> **Compute** refers to server resources that are being used. It can be used to make Application servers, Game servers, Database servers and so on. **Cloud** refers to the servers being hosted in the clouds and **Elastic** refers to the ability to increase or decrease the amount of service and resource required by the server automatically using the configured settings.
+ **Compute** refers to server resources that are being used. It can be used to make Application servers, Game servers, Database servers and so on. **Cloud** refers to the servers being hosted in the clouds and **Elastic** refers to the ability to increase or decrease the amount of service and resource required by the server automatically using the configured settings.
 
 Instead of servers, they are called **Amazon EC2 instances**. Some of the benefits of an EC2 instance over traditional servers can be listed as:
 
@@ -21,3 +21,6 @@ Instead of servers, they are called **Amazon EC2 instances**. Some of the benefi
 - **Extremely reliable and secure**.
 
 You can view all the EC2 features in [Amazon EC2 features](https://aws.amazon.com/ec2/features/). To create your first EC2 instance checkout [Creating and EC2 Instance](/aws/creating-an-ec2-instance).
+
+
+## 2. Amazon Simple Storage Service (S3) {#simple-storage-service-s3}

@@ -74,17 +74,22 @@ blockquote blockquote {
   margin-left: 1rem;
 }
 
-.blog-post-content figcaption {
+.blog-post-content {
+  figcaption {
     text-align: center;
     color: #757575;
     font-family: sans-serif;
     font-size: 0.8rem;
     margin-top: 0.8rem;
+  }
+  figure {
+    margin: 1rem -1.125rem;
+  }
+  strong {
+    font-size: 1.02rem;
+  }
+}
 
-}
-.blog-post-content figure {
-  margin: 1rem -1.125rem;
-}
 @media (max-width: 900px) {
   .anchor {
     float: initial;
