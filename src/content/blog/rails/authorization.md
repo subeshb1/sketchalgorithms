@@ -1,3 +1,8 @@
+---
+title:  Rails Authorization with cancancan
+date: '2019-10-23T22:40:32.169Z'
+author: RajibSah
+---
 # Rails Authorization with cancancan
 
 What if your friend could delete the photos that you have posted on Instagram, or even change your Instagram username and password? Well, that would be a problem. In this case, authorization comes to rescue us. Let’s start with why do we need authorization. Authorization is needed to prevent unauthorized access to the resources. All the users in a system might not need to view or change the resources in the system. For example, in a blogging website, a guest user has access to view the blog content, but cannot comment or edit the post. A blog writer may edit or delete the content they posted but may not edit or delete other user content.
