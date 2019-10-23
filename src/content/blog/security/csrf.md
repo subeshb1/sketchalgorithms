@@ -1,4 +1,9 @@
-# CSRF
+---
+title:  CSRF Attack
+date: '2019-10-23T22:40:32.169Z'
+author: RajivSah
+---
+# CSRF Attack
 A CSRF attack works because browser requests automatically include any credentials associated with the site, such as the user's session cookie, IP address, etc. Therefore, if the user is authenticated to the site, the site cannot distinguish between the forged or legitimate requests sent by the victim.
 
 ## Attack
