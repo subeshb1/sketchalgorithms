@@ -1,7 +1,7 @@
 ---
 title:  Rails Authorization with cancancan
 date: '2019-10-23T22:40:32.169Z'
-author: RajibSah
+author: RajivSah
 ---
 # Rails Authorization with cancancan
 
