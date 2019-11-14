@@ -32,7 +32,7 @@ const Layout = props => {
           marginTop: 0,
         }}
       >
-        <AniLink paintDrip to={`/`} hex="#4b9bff3b">
+        <AniLink swipe to={`/`} hex="#4b9bff3b">
           {title}
         </AniLink>
       </h1>
@@ -45,7 +45,7 @@ const Layout = props => {
           marginTop: 0,
         }}
       >
-        <AniLink paintDrip hex="#4b9bff3b" to={`/`}>
+        <AniLink swipe duration={0.5} hex="#4b9bff3b" to={`/`}>
           {title}
         </AniLink>
       </h3>
