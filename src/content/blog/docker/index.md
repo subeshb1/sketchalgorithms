@@ -42,7 +42,7 @@ $ docker run hello-world # hello-world is an image
 $ docker run --name container_name image_name # to name container
 ```
 
-### Status of a cotainer
+### Status of a container
 
 We can see the list of running containers or process status. It shows the basic information of a containers which are container id that is automatically assigned by docker, the image name from which it has been started, the command ran, when it was created, its status, exposed ports and the name given to the container.
 ```bash
