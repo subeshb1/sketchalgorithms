@@ -4,18 +4,13 @@ date: '2019-09-07T22:40:32.169Z'
 series: "Docker"
 ---
 
+Docker is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called containers that have everything the software needs to run including libraries, system tools, code, and runtime. Using Docker, you can quickly deploy and scale applications into any environment and know your code will run.
 
-
-## Image
-An image consists of all the binary files and codes.
-
-## Container
-Containers are running process.
+We will be exploring basic docker commands in this blog.
 
 ## Basic docker commands
 
-Before moving on, 
-Set up docker
+Before moving on we need to install [docker desktop](https://www.docker.com/products/docker-desktop).
 
 ### Check docker version
 
@@ -118,3 +113,5 @@ docker system prune
 docker system prune -a
 ```
 
+
+We will be looking into docker more in the future blogs, exploring it's commands and real life scenarios.

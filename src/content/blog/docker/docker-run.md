@@ -5,12 +5,9 @@ series: "Docker"
 ---
 
 
-## Docker Run
-
 The docker run command creates a container from the specified container. We will looking into some useful docker run commands.
 
-### Tag name
-
+## Tag name
 In the docker run command we can specify the version of the image that we want. If not version or tag is provided it always fetches the latest image available in the docker registry. If you need a specific version of an image you can always check docker hub if it has it.
 
 ```bash
