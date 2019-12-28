@@ -38,6 +38,8 @@ Server: Docker Engine - Community
 To run or start a new container, there must be an image. Docker first checks if specified image is in local machine and if it can't find it then checks the docker registry and then starts a new container from the image. If docker doesn't find the image it fails to start or run the container.
 ```bash
 $ docker run hello-world # hello-world is an image
+
+$ docker run --name container_name image_name # to name container
 ```
 
 ### Status of a cotainer
@@ -95,7 +97,7 @@ image_name
 
 ### Download or pull an image from the web
 
-When running `docker run image_name` it downloads an image if it is not present and runs a container. If we only want to download an image and not run it then,
+When running `docker run image_name` it downloads an image if it is present and then runs a container. If we only want to download an image and not run a container then,
 ```bash
 $ docker pull image_name
 
@@ -106,3 +108,13 @@ Digest: sha256:4fea21ccs2e8dc73s2278a2sdc660d833570ec2682f4e4194f4ee23e415e1064
 Status: Downloaded newer image for image_name:latest
 docker.io/library/image_name:latest
 ```
+
+### Remove all images and containers
+
+Docker provides a single command that will clean up any resources — images, containers, volumes, and networks — that are dangling (not associated with a container):
+```
+docker system prune
+
+docker system prune -a
+```
+
