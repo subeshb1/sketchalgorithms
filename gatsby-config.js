@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Sketch Algorithms`,
+    title: `Subesh Bhandari`,
     author: `Subesh Bhandari`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://sketchalgorithms.com/`,
+    description: `Personal blog and pet projects of Subesh Bhandari`,
+    siteUrl: `https://subeshbhandari.com/`,
     social: {
-      twitter: `sketchalgorithm`,
-      facebook: `sketchalgorithms`,
-      instagram: `sketchalgorithms`,
+      twitter: `subeshb1`,
+      facebook: `subesh`,
+      instagram: `subeshb1`,
     },
   },
   plugins: [
@@ -80,14 +80,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content/blog`,
+        path: `${__dirname}/src/markdown/remark`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content/assets`,
+        path: `${__dirname}/src/assets`,
         name: `assets`,
       },
     },
@@ -167,7 +167,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/content/assets/logo.png`,
+        icon: `src/assets/logo.png`,
       },
     },
     // `gatsby-plugin-offline`,
