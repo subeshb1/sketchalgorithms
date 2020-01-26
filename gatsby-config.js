@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Sketch Algorithms`,
+    title: `Subesh Bhandari`,
     author: `Subesh Bhandari`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://sketchalgorithms.com/`,
+    description: `Personal blog and pet projects of Subesh Bhandari`,
+    siteUrl: `https://subeshbhandari.com/`,
     social: {
-      twitter: `sketchalgorithm`,
-      facebook: `sketchalgorithms`,
-      instagram: `sketchalgorithms`,
+      twitter: `subeshb1`,
+      facebook: `subesh`,
+      instagram: `subeshb1`,
     },
   },
   plugins: [
