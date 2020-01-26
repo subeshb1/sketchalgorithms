@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Layout from '../../../components/Layout'
 import './snake.scss'
 const mod = (m, val) => {
   while (val < 0) {
@@ -120,7 +121,7 @@ export default class Snake extends Component {
 
   addPart() {
     this.setState(({ snake, score, highScore }) => {
-      const newScore = score + 1;
+      const newScore = score + 1
       let { x, y, direction } = snake[snake.length - 1]
       switch (direction) {
         case 1:
@@ -137,7 +138,11 @@ export default class Snake extends Component {
           break
         default:
       }
-      return { snake: [...snake, { x, y, direction }], score: newScore, highScore: newScore > highScore ? newScore : highScore  }
+      return {
+        snake: [...snake, { x, y, direction }],
+        score: newScore,
+        highScore: newScore > highScore ? newScore : highScore,
+      }
     })
   }
 
@@ -200,72 +205,77 @@ export default class Snake extends Component {
   render() {
     const { snake, food, score, gameover, highScore } = this.state
     return (
-      <div className="container">
-        <div className="drawboard" style={{ background: '#6a79af' }}>
-          <svg viewBox="-11 -11 270 270">
-            <rect
-              x={-5}
-              y={-5}
-              width="260"
-              height="260"
-              fill="tan"
-              stroke="cornflowerblue"
-              strokeWidth="10"
-            />
-            <text fontSize={10} x={0} y={-1}>
-              Score: {score}
-            </text>
-            <text fontSize={10} x={185} y={-1}>
-              HighScore: {highScore}
-            </text>
-            <Food {...food} />
-            {snake.reduceRight(
-              (acc, x, i) => [...acc, <Part {...x} pos={i} key={i} />],
-              []
-            )}
-            {gameover && (
-              <g onClick={this.init}>
-                <rect
-                  rx={10}
-                  x={100}
-                  y={100}
-                  width="50"
-                  height="50"
-                  fill="floralwhite"
-                />
-                <svg x={113} y={113}>
-                  <path d="M8 5v14l11-7z" x={100} y={100} />
-                </svg>
-              </g>
-            )}
-          </svg>
-        </div>
-        <div className="tool-bar" key={'#2'}>
-          <div className="snake-control">
-            <button className="up" onClick={() => this.setDirection('ArrowUp')}>
-              UP
-            </button>
-            <button
-              className="down"
-              onClick={() => this.setDirection('ArrowDown')}
-            >
-              DOWN
-            </button>
-            <button
-              className="left"
-              onClick={() => this.setDirection('ArrowLeft')}
-            >
-              LEFT
-            </button>
-            <button
-              className="right"
-              onClick={() => this.setDirection('ArrowRight')}
-            >
-              RIGHT
-            </button>
+      <Layout location={'/apps/snake-game'} title={'Snake Game'}>
+        <div className="container">
+          <div className="drawboard" style={{ background: '#6a79af' }}>
+            <svg viewBox="-11 -11 270 270">
+              <rect
+                x={-5}
+                y={-5}
+                width="260"
+                height="260"
+                fill="tan"
+                stroke="cornflowerblue"
+                strokeWidth="10"
+              />
+              <text fontSize={10} x={0} y={-1}>
+                Score: {score}
+              </text>
+              <text fontSize={10} x={185} y={-1}>
+                HighScore: {highScore}
+              </text>
+              <Food {...food} />
+              {snake.reduceRight(
+                (acc, x, i) => [...acc, <Part {...x} pos={i} key={i} />],
+                []
+              )}
+              {gameover && (
+                <g onClick={this.init}>
+                  <rect
+                    rx={10}
+                    x={100}
+                    y={100}
+                    width="50"
+                    height="50"
+                    fill="floralwhite"
+                  />
+                  <svg x={113} y={113}>
+                    <path d="M8 5v14l11-7z" x={100} y={100} />
+                  </svg>
+                </g>
+              )}
+            </svg>
+          </div>
+          <div className="tool-bar" key={'#2'}>
+            <div className="snake-control">
+              <button
+                className="up"
+                onClick={() => this.setDirection('ArrowUp')}
+              >
+                UP
+              </button>
+              <button
+                className="down"
+                onClick={() => this.setDirection('ArrowDown')}
+              >
+                DOWN
+              </button>
+              <button
+                className="left"
+                onClick={() => this.setDirection('ArrowLeft')}
+              >
+                LEFT
+              </button>
+              <button
+                className="right"
+                onClick={() => this.setDirection('ArrowRight')}
+              >
+                RIGHT
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
