@@ -34,34 +34,6 @@ h6 {
     line-height: 1.7;
   }
 
-  .theme-dark {
-    a {
-      color: white;
-    }
-    p {
-      color: #dce4e8;
-    }
-
-    .anchor svg path {
-      fill: white;
-    }
-
-    blockquote {
-      border-left: 4px solid white;
-    }
-
-    .blog-post-content figcaption {
-      color: #cecece;
-    }
-  }
-
-  .theme-light {
-    a {
-      text-decoration: none;
-      color: #2b69bb;
-    }
-  }
-
   blockquote {
     border-left: 4px solid black;
     margin-left: -1.125rem;
@@ -102,5 +74,33 @@ h6 {
 
   ul ul {
     list-style-type: disc;
+  }
+}
+
+.theme-light {
+  a {
+    text-decoration: none;
+    color: #2b69bb;
+  }
+}
+
+.theme-dark {
+  a {
+    color: white;
+  }
+  p {
+    color: #dce4e8;
+  }
+
+  .anchor svg path {
+    fill: white;
+  }
+
+  blockquote {
+    border-left: 4px solid white;
+  }
+
+  .blog-post-content figcaption {
+    color: #cecece;
   }
 }
