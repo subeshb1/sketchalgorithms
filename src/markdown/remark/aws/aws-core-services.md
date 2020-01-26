@@ -6,7 +6,7 @@ series: 'AWS'
 
 ## 1. Elastic Cloud Compute (EC2){#elastic-cloud-compute-ec2}
 
-![Amazon EC2](./images/aws/aws-ec2.png)
+![Amazon EC2](./images/aws-ec2.png)
 
 **Amazon Elastic Compute Cloud (Amazon EC2)** is a web service that provides secure, resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.
 

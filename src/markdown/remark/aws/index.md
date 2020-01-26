@@ -23,7 +23,7 @@ It provides Graphical Interface to access AWS services and features via web. You
 - Easy to use for both beginners and experts.
 - Convenient mobile app in IOS and android, for easy monitoring of services.
 
-![AWS Management Console](src./images/aws/aws_management_console.png)
+![AWS Management Console](./images/aws_management_console.png)
 
 ### 2. Command Line Interface (CLI){#command-line-interface}
 
