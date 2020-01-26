@@ -80,14 +80,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown/blog`,
+        path: `${__dirname}/src/markdown/remark`,
         name: `blog`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown/assets`,
+        path: `${__dirname}/src/assets`,
         name: `assets`,
       },
     },
@@ -167,7 +167,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/markdown/assets/logo.png`,
+        icon: `src/assets/logo.png`,
       },
     },
     // `gatsby-plugin-offline`,
