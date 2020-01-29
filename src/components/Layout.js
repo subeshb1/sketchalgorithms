@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { css } from '@emotion/core'
 import '../css/index.scss'
 import { NavBar } from '.'
 import { rhythm, scale } from '../utils/typography'
