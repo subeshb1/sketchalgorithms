@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7663895817745556",
+      enable_page_level_ads: true
+    });
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="copyrighted-site-verification" content="310976cd07770581" />
+  <title>Sketch Algorithms | Learn </title>
+  <meta name="description" content="A place to learn,visualize and implement Algorithms. Sketch Algorithms is a platform for every one to Learn adn Implement."
+    data-react-helmet="true">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <!-- Font -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125821232-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125821232-1');
+  </script>
+
+
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <header id="header"></header>
+  <main id="root">
+    <style>
+      body {
+        overflow: hidden;
+      }
+
+      .heartContent {
+        animation: beat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        margin-bottom: 20px;
+      }
+
+      .heart {
+        height: 40px;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        background: red;
+        transform: rotate(45deg);
+        display: inline-block;
+
+      }
+
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        border-radius: 100%;
+        transform: translate(-50%, 0px);
+      }
+
+      .heart::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        border-radius: 100%;
+        transform: translate(0px, -50%);
+      }
+
+      .heart:hover {
+        transform: rotate(45deg) scale(1.3);
+        background: grey;
+      }
+
+
+
+      @keyframes beat {
+        0% {
+          transform: scale(0.95);
+        }
+
+        5% {
+          transform: scale(1.1);
+        }
+
+        39% {
+          transform: scale(0.85);
+        }
+
+        45% {
+          transform: scale(1);
+        }
+
+        60% {
+          transform: scale(0.95);
+        }
+
+        100% {
+          transform: scale(0.9);
+        }
+      }
+
+      .text:after {
+        content: ".";
+        animation: dotdot 1.5s infinite ease
+      }
+
+      @keyframes dotdot {
+        0% {
+          content: ".";
+        }
+
+        33.33% {
+          content: "..";
+        }
+
+        66.66% {
+          content: "...";
+        }
+
+        100% {
+          content: "....";
+        }
+      }
+
+      .cover {
+        position: absolute;
+        display: flex;
+        z-index: 100;
+        background: white;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif
+      }
+    </style>
+
+    <div class="cover">
+      <div class="heartContent">
+        <div class="heart"></div>
+      </div>
+      <div class="text">
+        Sketch Algorithms Loading
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+</body>
+
+</html>

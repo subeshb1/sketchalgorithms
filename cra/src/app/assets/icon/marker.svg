@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" id="svg8" viewBox="0 0 100 100">
+    <defs id="defs2">
+        <marker id="marker4115" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path4113" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="marker4039" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path4037" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="marker3891" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path3889" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="marker3761" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path3759" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="marker3649" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path3647" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="Arrow1Mstart" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path827" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.4) translate(10,0)"/>
+        </marker>
+        <marker id="Arrow2Lstart" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path839" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(1.1) translate(1,0)"/>
+        </marker>
+        <marker id="marker2919" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path2917" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="Arrow1Lstart" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path821" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) translate(12.5,0)"/>
+        </marker>
+        <marker id="Arrow1Lend" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path824" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1" transform="scale(0.8) rotate(180) translate(12.5,0)"/>
+        </marker>
+    </defs>
+    <g id="layer1" transform="matrix(0.42007104,0,0,0.42007104,27.466625,-83.377744)">
+        <path id="path3585" d="m 25.937752,289.65161 63.27426,72.82468" style="fill:none;stroke:#000000;stroke-width:9.27625751px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Mstart)"/>
+    </g>
+</svg>

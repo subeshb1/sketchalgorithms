@@ -1,0 +1,100 @@
+.tool-bar {
+  display: grid;
+  padding: 10px;
+  background: rgb(248, 249, 250);
+  grid-column: -4/-1;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.tool-bar > label {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.tool-bar input,
+.tool-bar select {
+  position: relative;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgb(224, 224, 224);
+  width: 100%;
+  transition: box-shadow 0.2s ease;
+  background: white;
+}
+.tool-bar input:focus,
+.tool-bar select:focus {
+  z-index: 1;
+  border: 1px solid rgb(70, 70, 70);
+  box-shadow: 0 0 0 3px rgba(48, 48, 48, 0.562);
+}
+
+.tool-bar button {
+  --btn-color: 200;
+  position: relative;
+  padding: 10px 1.5rem;
+  color: white;
+  background: hsl(var(--btn-color), 64%, 49%);
+  border: 2px solid hsl(var(--btn-color), 80%, 50%);
+  cursor: pointer;
+  outline: none;
+  border-radius: 8%;
+  align-self: start;
+  justify-self: start;
+}
+
+.tool-bar button.green {
+  --btn-color: 220;
+}
+.tool-bar button.red {
+  --btn-color: 350;
+}
+.tool-bar button:focus {
+  z-index: 1;
+
+  box-shadow: 0 0 0 3px hsla(var(--btn-color), 70%, 80%, 90%);
+}
+
+.tool-bar button:disabled,
+input:disabled,
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input:read-only {
+  background: rgb(224, 224, 224);
+}
+
+div.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+div.group {
+  display: flex;
+}
+div.group > label {
+  width: 100%;
+}
+
+.checkbox {
+  display: flex;
+}
+
+.checkbox > input {
+  position: relative;
+  margin: 0.4em 0.2em;
+  align-self: flex-start;
+  width: auto;
+}
+@media (max-width: 700px) {
+  .tool-bar {
+    grid-row: 3/3;
+    grid-column: 1/-1;
+    max-height: unset;
+  }
+}

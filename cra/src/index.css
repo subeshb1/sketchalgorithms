@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Noto+Serif+JP|Open+Sans");
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bree Serif", serif;
+}
