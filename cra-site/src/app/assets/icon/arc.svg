@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" id="svg8" viewBox="-25 -25 150 150">
+    <defs id="defs2">
+        <marker id="Arrow1Lend" orient="auto" refX="0.0" refY="0.0" style="overflow:visible">
+            <path id="path824" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:rgb(0, 0, 0);stroke-width:1pt;fill:rgb(0, 0, 0)" transform="scale(0.8) rotate(180) translate(12.5,0)"/>
+        </marker>
+    </defs>
+    <g id="layer1" transform="translate(0,-270.54165)">
+        <path id="path819" d="m 1.1862389,271.2644 c 0,0 43.3625331,35.05474 23.4510531,61.09744 -26.9352205,35.22922 -13.256421,-71.13422 73.312643,36.07382" style="fill:none;stroke:rgb(0, 0, 0);stroke-width:1.09228px;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;marker-end:url(&quot;#Arrow1Lend&quot;)"/>
+    </g>
+</svg>

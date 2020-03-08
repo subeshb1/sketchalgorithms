@@ -1,0 +1,12 @@
+.draw-drawboard {
+  grid-column: 2/-4;
+  grid-row: 2/2;
+}
+
+@media (max-width: 700px) {
+  .draw-drawboard {
+    grid-column: 1/-1;
+    grid-row: 3;
+    min-height: 80vh;
+  }
+}
