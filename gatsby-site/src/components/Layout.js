@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import { graphql, Link } from "gatsby"
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import '../css/index.scss'
 import { NavBar } from '.'
@@ -44,9 +44,7 @@ const Layout = props => {
           marginTop: 0,
         }}
       >
-        <AniLink swipe duration={0.5} hex="#4b9bff3b" to={`/`}>
-          {title}
-        </AniLink>
+        <Link to="/">{title}</Link>
       </h3>
     )
   }
