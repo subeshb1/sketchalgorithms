@@ -1,8 +1,26 @@
 @import 'markdown';
 @import 'components/navbar';
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 $background: white;
 $color: black;
+* {
+  box-sizing: border-box;
+}
+
+// --theme-primary-bg: #af1d4c;
+//     --theme-primary-color: #000000;
+//     --theme-secondary-color: #ffffff;
+//     --theme-secondary-bg: #f4f4f4;
+//     --theme-primary-hover: #e4316a96;
+//     --theme-navbar-box-shadow: #838383ab;
+:root {
+  --theme-primary-bg: #1d5baf;
+  --theme-primary-color: #000000;
+  --theme-secondary-color: #ffffff;
+  --theme-secondary-bg: #000000;
+  --theme-primary-hover: #3068b7;
+  --theme-navbar-box-shadow: #484848ab;
+}
 
 @mixin theme($background, $color) {
   background: $background;
