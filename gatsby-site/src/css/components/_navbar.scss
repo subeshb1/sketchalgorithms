@@ -1,9 +1,43 @@
 .lg-navbar {
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   background: #1d5baf;
+  padding: 10px;
+  height: 56px;
+  align-items: center;
+  box-shadow: 1px 3px 5px 0px #484848ab;
+  position: fixed;
+  z-index: 900;
+  width: 100vw;
+  background: var(--theme-primary-bg);
+  box-shadow: 1px 3px 5px 0px var(--theme-navbar-box-shadow);
+
   .lg-navbar-item {
+    font-size: 14px;
     color: white;
-    padding: 10px;
+    padding: 2px 0.5em;
+    margin: 0 8px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--theme-secondary-color);
+    svg {
+      margin-left: 0.5em;
+    }
+  }
+  .lg-navbar-header {
+    font-size: 18px;
+  }
+
+  .lg-navbar-img {
+    width: 100%;
+    max-width: 35px;
+    height: auto;
+    margin: 0;
+  }
+
+  .lg-navbar-item:hover {
+    background: #3068b7;
+    background: var(--theme-primary-hover);
   }
 }
-
