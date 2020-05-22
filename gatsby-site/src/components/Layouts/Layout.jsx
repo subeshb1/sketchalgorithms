@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
-
 import '../../css/index.scss'
 import { NavBar } from '..'
 import { rhythm, scale } from '../../utils/typography'
