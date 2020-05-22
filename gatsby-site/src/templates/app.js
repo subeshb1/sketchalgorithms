@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { graphql } from 'gatsby'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     const disqusShortname = 'sketchalgorithm'
     const disqusConfig = {
-      url: 'https://www.sketchalgorithms.com' + post.fields.slug,
+      url: 'https://www.subeshbhandari.com' + post.fields.slug,
       identifier: post.fields.slug,
       title: siteTitle,
     }
@@ -60,16 +60,16 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <AniLink  to={previous.fields.slug} rel="prev">
+              <Link  to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
-              </AniLink>
+              </Link>
             )}
           </li>
           <li>
             {next && (
-              <AniLink  to={next.fields.slug} rel="next">
+              <Link  to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
-              </AniLink>
+              </Link>
             )}
           </li>
         </ul>

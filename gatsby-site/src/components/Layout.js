@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from "gatsby"
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 import '../css/index.scss'
 import { NavBar } from '.'
 import { rhythm, scale } from '../utils/typography'
@@ -31,9 +31,9 @@ const Layout = props => {
           marginTop: 0,
         }}
       >
-        <AniLink swipe to={`/`} hex="#4b9bff3b">
+        <Link swipe to={`/`} hex="#4b9bff3b">
           {title}
-        </AniLink>
+        </Link>
       </h1>
     )
   } else {
