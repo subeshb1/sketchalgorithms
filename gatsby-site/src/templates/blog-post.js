@@ -1,15 +1,15 @@
 import React from 'react'
 
 import { graphql, Link } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Bio from '../components/Bio'
-import Layout from '../components/Layout'
+import Layout from '../components/Layouts/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
+import BlogPostTemplate from '../components/Layouts/BlogLayout'
 
-class BlogPostTemplate extends React.Component {
+class BlogPost extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -20,9 +20,8 @@ class BlogPostTemplate extends React.Component {
       identifier: post.fields.slug,
       title: siteTitle,
     }
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <BlogPostTemplate>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -34,11 +33,6 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        {/* <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.tableOfContents}}
-        />
-         */}
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -74,17 +68,16 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-
         <Disqus.DiscussionEmbed
           shortname={disqusShortname}
           config={disqusConfig}
         />
-      </Layout>
+      </BlogPostTemplate>
     )
   }
 }
 
-export default BlogPostTemplate
+export default BlogPost
 
 export const pageQuery = graphql`
   query($slug: String!) {

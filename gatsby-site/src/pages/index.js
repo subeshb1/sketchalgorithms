@@ -2,18 +2,18 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
-import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+import BlogPostTemplate from '../components/Layouts/BlogLayout'
 
-class BlogIndex extends React.Component {
+class BlogHome extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <BlogPostTemplate>
         <SEO
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
@@ -28,22 +28,26 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link  paintDrip hex="#4b9bff3b" style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link
+                  paintDrip
+                  hex="#4b9bff3b"
+                  style={{ boxShadow: `none` }}
+                  to={node.fields.slug}
+                >
                   {title}
                 </Link>
-
               </h1>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
         })}
-      </Layout>
+      </BlogPostTemplate>
     )
   }
 }
 
-export default BlogIndex
+export default BlogHome
 
 export const pageQuery = graphql`
   query {
