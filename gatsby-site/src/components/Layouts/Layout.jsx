@@ -23,7 +23,7 @@ const Layout = props => {
   return (
     <div className={`theme-${theme}`}>
       <NavBar />
-      {/* <button
+      <button
         onClick={() => {
           const nextTheme = theme === 'dark' ? 'light' : 'dark'
           localStorage.setItem('theme', nextTheme)
@@ -31,7 +31,7 @@ const Layout = props => {
         }}
       >
         Toggle Theme
-      </button> */}
+      </button>
 
       {children}
       <footer>
