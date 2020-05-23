@@ -28,14 +28,7 @@ class BlogHome extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link
-                  paintDrip
-                  hex="#4b9bff3b"
-                  style={{ boxShadow: `none` }}
-                  to={node.fields.slug}
-                >
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </h1>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
