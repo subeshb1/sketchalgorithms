@@ -38,11 +38,12 @@ const Popover = React.memo(
     useClickAway(
       { current: popperElement },
       ({ target }) =>
-        referenceElement &&
         popoverState === OPEN &&
         setPopoverState(
-          referenceElement.current === target ||
-            referenceElement.current.contains(target)
+          (referenceElement && referenceElement.current === target) ||
+            (referenceElement &&
+              referenceElement.current &&
+              referenceElement.current.contains(target))
             ? OUT_CLOSE
             : CLOSE
         )
