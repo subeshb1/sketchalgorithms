@@ -6,17 +6,20 @@ import { If } from '../utils'
 const OPEN = 0
 const CLOSE = 1
 const OUT_CLOSE = 2
-const Popover = React.memo(
-  ({
-    children,
-    text,
-    closeOnClick = false,
-    className = '',
-    placement = 'bottom',
-    elementAs = 'div',
-    render,
-    ...otherProps
-  }) => {
+const Popover = React.forwardRef(
+  (
+    {
+      children,
+      text,
+      closeOnClick = false,
+      className = '',
+      placement = 'bottom',
+      elementAs = 'div',
+      render,
+      ...otherProps
+    },
+    forwardedRef
+  ) => {
     const referenceElement = useRef(null)
     const [popperElement, setPopperElement] = useState(null)
     const { styles, attributes } = usePopper(
@@ -49,7 +52,9 @@ const Popover = React.memo(
         )
     )
     const As = elementAs
-
+    if (forwardedRef && referenceElement && referenceElement.current) {
+      forwardedRef.current = referenceElement.current
+    }
     return (
       <>
         <As
