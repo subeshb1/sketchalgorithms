@@ -40,9 +40,9 @@ const Popover = React.memo(
       ({ target }) =>
         popoverState === OPEN &&
         setPopoverState(
-          (referenceElement && referenceElement.current === target) ||
-            (referenceElement &&
-              referenceElement.current &&
+          referenceElement &&
+            referenceElement.current &&
+            (referenceElement.current === target ||
               referenceElement.current.contains(target))
             ? OUT_CLOSE
             : CLOSE
