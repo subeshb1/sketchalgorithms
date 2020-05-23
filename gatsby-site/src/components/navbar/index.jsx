@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import { IoIosColorPalette } from 'react-icons/io'
 import Logo from '../../assets/logo.png'
-import Tooltip from '../ToolTip'
 import Popover from '../Popover'
-import { SketchPicker } from 'react-color'
 
 import { navDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
