@@ -5,7 +5,7 @@ import { IoIosColorPalette } from 'react-icons/io'
 import Logo from '../../assets/logo.png'
 import Tooltip from '../ToolTip'
 import Popover from '../Popover'
-
+import { SketchPicker } from 'react-color'
 const NavDropDownLink = React.forwardRef(
   ({ onChevronClick = () => {}, to, linkName, className, ...props }, ref) => {
     return (
@@ -42,14 +42,22 @@ export default function NavBar() {
         </div>
         {/* HELLO */}
       </Popover>
-
-      <Tooltip
-        placement="right"
-        text={'Change website theme'}
-        className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
+      <Popover
+        elementAs={React.forwardRef((props, ref) => (
+          <Tooltip
+            closeOnClick
+            ref={ref}
+            {...props}
+            placement="right"
+            text={'Change website theme'}
+            className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
+          >
+            <IoIosColorPalette size={'1.5em'} />
+          </Tooltip>
+        ))}
       >
-        <IoIosColorPalette size={'1.5em'} />
-      </Tooltip>
+        <SketchPicker />
+      </Popover>
     </nav>
   )
 }
