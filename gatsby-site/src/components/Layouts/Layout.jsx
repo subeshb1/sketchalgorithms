@@ -22,6 +22,7 @@ const Layout = props => {
   return (
     <div className={`theme-${theme}`}>
       <NavBar />
+      <div className="nav-breaker"></div>
       <button
         onClick={() => {
           const nextTheme = theme === 'dark' ? 'light' : 'dark'
