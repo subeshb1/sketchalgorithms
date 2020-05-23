@@ -1,30 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FaChevronDown } from 'react-icons/fa'
+
 import { IoIosColorPalette } from 'react-icons/io'
 import Logo from '../../assets/logo.png'
 import Tooltip from '../ToolTip'
 import Popover from '../Popover'
 import { SketchPicker } from 'react-color'
-const NavDropDownLink = React.forwardRef(
-  ({ onChevronClick = () => {}, to, linkName, className, ...props }, ref) => {
-    return (
-      <div className={`lg-navbar__item ${className}`} {...props} ref={ref}>
-        {linkName}
-        <FaChevronDown
-          size={'0.8em'}
-          onClick={onChevronClick}
-          className="lg-navbar__svg"
-        />
-      </div>
-    )
-  }
-)
 
-const navDropDownFactory = (to, linkName) =>
-  React.forwardRef((props, ref) => {
-    return <NavDropDownLink to={to} linkName={linkName} {...props} ref={ref} />
-  })
+import { navDropDownFactory } from './common'
+import ThemePicker from './ThemePicker'
 export default function NavBar() {
   return (
     <nav className="lg-navbar">
@@ -56,30 +40,7 @@ export default function NavBar() {
           <div>3</div>
         </div>
       </Popover>
-      <Popover
-        elementAs={React.forwardRef((props, ref) => (
-          <Tooltip
-            closeOnClick
-            ref={ref}
-            {...props}
-            placement="right"
-            text={'Change website theme'}
-            className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
-          >
-            <IoIosColorPalette size={'1.5em'} />
-          </Tooltip>
-        ))}
-      >
-        <SketchPicker />
-      </Popover>
-      <Tooltip
-        closeOnClick
-        placement="right"
-        text={'Change website theme'}
-        className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
-      >
-        <IoIosColorPalette size={'1.5em'} />
-      </Tooltip>
+      <ThemePicker />
     </nav>
   )
 }
