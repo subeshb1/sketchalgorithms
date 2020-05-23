@@ -3,14 +3,19 @@ import { FaChevronDown } from 'react-icons/fa'
 export const NavDropDownLink = React.forwardRef(
   ({ onChevronClick = () => {}, to, linkName, className, ...props }, ref) => {
     return (
-      <div className={`lg-navbar__item ${className}`} {...props} ref={ref}>
+      <button
+        className={`lg-navbar__item ${className}`}
+        {...props}
+        ref={ref}
+        tabIndex={0}
+      >
         {linkName}
         <FaChevronDown
           size={'0.8em'}
           onClick={onChevronClick}
           className="lg-navbar__svg"
         />
-      </div>
+      </button>
     )
   }
 )
