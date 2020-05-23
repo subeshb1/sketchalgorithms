@@ -48,7 +48,6 @@
     background-color: var(--theme-primary-bg);
     width: 500px;
     border-radius: 4px;
-    margin-top: 10px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
       rgba(9, 30, 66, 0.31) 0px 0px 1px;
   }
@@ -76,4 +75,8 @@
     background: #3068b7;
     background: var(--theme-primary-hover);
   }
+}
+
+.nav-breaker {
+  height: 56px;
 }
