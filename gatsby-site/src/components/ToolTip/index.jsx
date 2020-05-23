@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { usePopper } from 'react-popper'
 const ToolTip = React.forwardRef(
   (
@@ -13,14 +13,19 @@ const ToolTip = React.forwardRef(
     },
     forwardedRef
   ) => {
-    const [referenceElement, setReferenceElement] = useState(null)
+    const referenceElement = useRef(null)
     const [popperElement, setPopperElement] = useState(null)
     const [arrowElement, setArrowElement] = useState(null)
-    const { styles, attributes } = usePopper(referenceElement, popperElement, {
-      modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
-      placement: placement,
-    })
-    forwardedRef && forwardedRef(referenceElement)
+    const { styles, attributes } = usePopper(
+      referenceElement && referenceElement.current,
+      popperElement,
+      {
+        modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
+        placement: placement,
+      }
+    )
+    forwardedRef &&
+      (forwardedRef.current = referenceElement && referenceElement.current)
     const [isOpen, setOpen] = useState(false)
     const open = () => setOpen(true)
     const close = () => setOpen(false)
@@ -29,7 +34,7 @@ const ToolTip = React.forwardRef(
       <>
         <As
           className={className}
-          ref={setReferenceElement}
+          ref={referenceElement}
           onMouseEnter={open}
           onMouseDown={() => closeOnClick && close()}
           onMouseLeave={close}
