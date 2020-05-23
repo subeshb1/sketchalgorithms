@@ -16,6 +16,7 @@ const Popover = React.forwardRef(
       placement = 'bottom',
       elementAs = 'div',
       render,
+      offset = 10,
       ...otherProps
     },
     forwardedRef
@@ -27,6 +28,14 @@ const Popover = React.forwardRef(
       popperElement,
       {
         placement: placement,
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [0, offset],
+            },
+          },
+        ],
       }
     )
     const [popoverState, setPopoverState] = useState(CLOSE)
