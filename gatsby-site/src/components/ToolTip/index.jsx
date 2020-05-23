@@ -37,9 +37,10 @@ const ToolTip = React.forwardRef(
       forwardedRef.current = referenceElement.current
     }
     const [isOpen, setOpen] = useState(false)
-    const open = () => setOpen(true)
+    const open = () => !isOpen && setOpen(true)
     const close = () => setOpen(false)
     const As = elementAs
+
     return (
       <>
         <As
@@ -47,7 +48,7 @@ const ToolTip = React.forwardRef(
           ref={referenceElement}
           onMouseOver={open}
           onMouseDown={() => closeOnClick && close()}
-          onMouseOut={close}
+          onMouseLeave={close}
           {...otherProps}
         >
           {children}
