@@ -9,6 +9,7 @@ const ToolTip = React.forwardRef(
       className = '',
       placement = 'bottom',
       elementAs = 'div',
+      offset = 5,
       ...otherProps
     },
     forwardedRef
@@ -20,7 +21,15 @@ const ToolTip = React.forwardRef(
       referenceElement && referenceElement.current,
       popperElement,
       {
-        modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
+        modifiers: [
+          { name: 'arrow', options: { element: arrowElement } },
+          {
+            name: 'offset',
+            options: {
+              offset: [0, 5],
+            },
+          },
+        ],
         placement: placement,
       }
     )
@@ -36,9 +45,9 @@ const ToolTip = React.forwardRef(
         <As
           className={className}
           ref={referenceElement}
-          onMouseEnter={open}
+          onMouseOver={open}
           onMouseDown={() => closeOnClick && close()}
-          onMouseLeave={close}
+          onMouseOut={close}
           {...otherProps}
         >
           {children}
