@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { useClickAway } from 'react-use'
 import { usePopper } from 'react-popper'
@@ -9,6 +9,8 @@ const OUT_CLOSE = 2
 const Popover = React.forwardRef(
   (
     {
+      debug,
+      show,
       children,
       text,
       closeOnClick = false,
@@ -40,6 +42,7 @@ const Popover = React.forwardRef(
     )
     const [popoverState, setPopoverState] = useState(CLOSE)
     const toggle = () =>
+      show == null &&
       setPopoverState(
         popoverState === OUT_CLOSE
           ? CLOSE
@@ -50,6 +53,7 @@ const Popover = React.forwardRef(
     useClickAway(
       { current: popperElement },
       ({ target }) =>
+        show == null &&
         popoverState === OPEN &&
         setPopoverState(
           referenceElement &&
@@ -61,9 +65,11 @@ const Popover = React.forwardRef(
         )
     )
     const As = elementAs
-    if (forwardedRef && referenceElement && referenceElement.current) {
-      forwardedRef.current = referenceElement.current
-    }
+    useEffect(() => {
+      if (forwardedRef && referenceElement && referenceElement.current) {
+        forwardedRef.current = referenceElement.current
+      }
+    }, [referenceElement])
     return (
       <>
         <As
@@ -75,7 +81,7 @@ const Popover = React.forwardRef(
           {render}
         </As>
 
-        <If condition={popoverState === OPEN}>
+        <If condition={show != null ? show : popoverState === OPEN}>
           <div
             ref={setPopperElement}
             style={{

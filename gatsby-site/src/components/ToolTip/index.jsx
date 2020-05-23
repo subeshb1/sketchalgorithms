@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { usePopper } from 'react-popper'
 const ToolTip = React.forwardRef(
   (
@@ -33,9 +33,11 @@ const ToolTip = React.forwardRef(
         placement: placement,
       }
     )
-    if (forwardedRef && referenceElement && referenceElement.current) {
-      forwardedRef.current = referenceElement.current
-    }
+    useEffect(() => {
+      if (forwardedRef && referenceElement && referenceElement.current) {
+        forwardedRef.current = referenceElement.current
+      }
+    }, [referenceElement])
     const [isOpen, setOpen] = useState(false)
     const open = () => !isOpen && setOpen(true)
     const close = () => setOpen(false)

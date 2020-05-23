@@ -53,6 +53,28 @@ const themes = [
 ]
 
 function ThemeChanger() {
+  const [value, setValue, remove] = useLocalStorage('color-theme', {
+    '--theme-primary-bg': '#1d5baf',
+    '--theme-primary-color': '#000000',
+    '--theme-secondary-color': '#ffffff',
+    '--theme-secondary-bg': '#000000',
+    '--theme-primary-hover': '#3068b7',
+    '--theme-navbar-box-shadow': '#c9c9c9ab',
+  })
+  const [color, setColor] = useState('#4b3b9b')
+
+  const [change, setchange] = useState(0)
+  useEffect(() => {
+    Object.entries(value).map(([key, value]) => {
+      document.documentElement.style.setProperty(key, value)
+    })
+  }, [value])
+
+  useEffect(() => {
+    Object.entries(value).map(([key, value]) => {
+      document.documentElement.style.setProperty(key, value)
+    })
+  }, [value])
   return (
     <div className="theme-picker">
       <button
@@ -77,26 +99,10 @@ function ThemeChanger() {
   )
 }
 export default function ThemePicker() {
-  const [value, setValue, remove] = useLocalStorage('color-theme', {
-    '--theme-primary-bg': '#1d5baf',
-    '--theme-primary-color': '#000000',
-    '--theme-secondary-color': '#ffffff',
-    '--theme-secondary-bg': '#000000',
-    '--theme-primary-hover': '#3068b7',
-    '--theme-navbar-box-shadow': '#c9c9c9ab',
-  })
-  const [color, setColor] = useState('#4b3b9b')
-
-  useEffect(() => {
-    Object.entries(value).map(([key, value]) => {
-      document.documentElement.style.setProperty(key, value)
-    })
-  }, [value])
-
-  const [change, setchange] = useState(0)
-
   return (
     <Popover
+      show
+      debug={"EWHATT"}
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
           closeOnClick
@@ -109,6 +115,8 @@ export default function ThemePicker() {
           <IoIosColorPalette size={'1.5em'} />
         </Tooltip>
       ))}
-    ></Popover>
+    >
+      <ThemeChanger />
+    </Popover>
   )
 }
