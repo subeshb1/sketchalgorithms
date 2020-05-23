@@ -24,8 +24,9 @@ const ToolTip = React.forwardRef(
         placement: placement,
       }
     )
-    forwardedRef &&
-      (forwardedRef.current = referenceElement && referenceElement.current)
+    if (forwardedRef && referenceElement && referenceElement.current) {
+      forwardedRef.current = referenceElement.current
+    }
     const [isOpen, setOpen] = useState(false)
     const open = () => setOpen(true)
     const close = () => setOpen(false)
