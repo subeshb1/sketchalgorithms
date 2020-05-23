@@ -41,6 +41,21 @@
     margin: 0;
   }
 
+  .lg-navbar__drop-down {
+    display: flex;
+    flex-direction: column;
+    background-color: DodgerBlue;
+  }
+
+  .lg-navbar__drop-down > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
   .lg-navbar__item--right {
     margin: 0 0 0 auto;
   }
