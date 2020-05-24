@@ -66,6 +66,8 @@ module.exports = {
                 parentSelector: {
                   // Any CSS selector will work!
                   '.theme-dark': 'Dark+ (default dark)',
+                  '.theme-dark-blue': 'Tomorrow Night Blue',
+                  '.theme-dark-red': 'Red'
                 },
               },
               inlineCode: {
