@@ -10,7 +10,7 @@
     
     Paste the command below into your terminal:
     
-    ```git clone https://github.com/Rahat-ch/sketchalgorithms.git```
+    ```git clone https://github.com/Rahat-ch/subeshbhandari.git```
     
     Run one of the following commands to install all dependencies:
     
@@ -61,4 +61,3 @@ Note: Gatsby comes preconfigured with hot reload. As long as you are running gat
     
    Commit your changes to your fork and then raise a pull request(pr) to the relavent branch of the main repository. 
    Be sure to reference the issue you are resolving in your message. 
-    

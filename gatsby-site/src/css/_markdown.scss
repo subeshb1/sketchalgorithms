@@ -8,10 +8,6 @@ h6 {
 }
 
 .blog-post-content {
-  .anchor {
-    position: absolute;
-    right: 100%;
-  }
   .anchor > svg {
     opacity: 0;
   }
@@ -84,9 +80,12 @@ h6 {
   }
 }
 
-.theme-dark {
+.theme-dark,
+.theme-dark-blue,
+.theme-dark-red {
   a {
     color: white;
+    text-decoration: none;
   }
   p {
     color: #dce4e8;

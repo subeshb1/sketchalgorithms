@@ -59,7 +59,28 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: {
+                default: 'Light+ (default light)',
+                parentSelector: {
+                  // Any CSS selector will work!
+                  '.theme-dark': 'Dark+ (default dark)',
+                  '.theme-dark-blue': 'Tomorrow Night Blue',
+                  '.theme-dark-red': 'Red'
+                },
+              },
+              inlineCode: {
+                marker: '•',
+                theme: {
+                  default: 'Light+ (default light)',
+                  parentSelector: {
+                    // Any CSS selector will work!
+                    '.theme-dark': 'Dark+ (default dark)',
+                  },
+                },
+              },
+            },
           },
         ],
       },
