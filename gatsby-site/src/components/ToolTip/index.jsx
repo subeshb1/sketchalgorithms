@@ -10,6 +10,7 @@ const ToolTip = React.forwardRef(
       placement = 'bottom',
       elementAs = 'div',
       offset = 5,
+      strategy = 'absolute',
       ...otherProps
     },
     forwardedRef
@@ -21,6 +22,7 @@ const ToolTip = React.forwardRef(
       referenceElement && referenceElement.current,
       popperElement,
       {
+        strategy: strategy,
         modifiers: [
           { name: 'arrow', options: { element: arrowElement } },
           {
@@ -60,8 +62,6 @@ const ToolTip = React.forwardRef(
             ref={setPopperElement}
             style={{
               ...styles.popper,
-              background: 'black',
-              color: 'white',
               borderRadius: 4,
               padding: '0px 8px',
               fontSize: 14,
