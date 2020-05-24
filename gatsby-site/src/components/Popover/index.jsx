@@ -30,7 +30,7 @@ const Popover = React.forwardRef(
       popperElement,
       {
         placement: placement,
-        strategy: 'fixed',
+        // strategy: 'fixed',
         modifiers: [
           {
             name: 'offset',
