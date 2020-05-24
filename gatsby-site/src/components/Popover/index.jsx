@@ -18,6 +18,7 @@ const Popover = React.forwardRef(
       placement = 'bottom',
       elementAs = 'div',
       render,
+      strategy = 'absolute',
       offset = 10,
       ...otherProps
     },
@@ -30,7 +31,7 @@ const Popover = React.forwardRef(
       popperElement,
       {
         placement: placement,
-        // strategy: 'fixed',
+        strategy: strategy,
         modifiers: [
           {
             name: 'offset',
