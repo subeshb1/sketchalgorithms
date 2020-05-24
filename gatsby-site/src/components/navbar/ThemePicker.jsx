@@ -17,6 +17,8 @@ const darkRed = {
   'box-shadow': '#581019',
 }
 
+const excludeVariables = ['--theme-picker-box-shadow']
+
 const themes = [
   {
     name: 'Light',
@@ -57,6 +59,8 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#000000',
       '--theme-primary-hover': '#3068b7',
+      '--theme-picker-box-shadow':
+        'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px',
     },
   },
   {
@@ -67,6 +71,8 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#e4316a96',
+      '--theme-picker-box-shadow':
+        'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px',
     },
   },
   {
@@ -77,6 +83,8 @@ const primaryColors = [
       '--theme-secondary-color': '#000000',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#e0e0e096',
+      '--theme-picker-box-shadow':
+        'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.31) 0px 0px 1px',
     },
   },
   {
@@ -87,6 +95,8 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#424653',
+      '--theme-picker-box-shadow':
+        'rgb(0, 0, 0) 0px 4px 8px -2px,rgba(0, 0, 0, 0.31) 0px 0px 1px',
     },
   },
   {
@@ -97,6 +107,8 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#0b479c',
+      '--theme-picker-box-shadow':
+        'rgb(0, 0, 0) 0px 4px 8px -2px,rgba(0, 0, 0, 0.31) 0px 0px 1px',
     },
   },
   {
@@ -107,6 +119,8 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#a01a2c',
+      '--theme-picker-box-shadow':
+        'rgb(0, 0, 0) 0px 4px 8px -2px,rgba(0, 0, 0, 0.31) 0px 0px 1px',
     },
   },
 ]
@@ -154,26 +168,28 @@ function ThemeChanger({ setPrimaryColor, primaryColor, setThemeMode }) {
         {show &&
           Object.entries(primaryColor).map(([key, value], i) => {
             return (
-              <div className="theme-picker__input-group" key={i}>
-                <div className="theme-picker__header">{variableMap[key]}</div>
-                <Popover
-                  key={i}
-                  elementAs="input"
-                  value={value}
-                  readOnly
-                  placement="bottom"
-                >
-                  <ChromePicker
-                    color={value}
-                    onChange={color => {
-                      setPrimaryColor({
-                        ...primaryColor,
-                        [key]: color.hex,
-                      })
-                    }}
-                  />
-                </Popover>
-              </div>
+              !excludeVariables.includes(key) && (
+                <div className="theme-picker__input-group" key={i}>
+                  <div className="theme-picker__header">{variableMap[key]}</div>
+                  <Popover
+                    key={i}
+                    elementAs="input"
+                    value={value}
+                    readOnly
+                    placement="bottom"
+                  >
+                    <ChromePicker
+                      color={value}
+                      onChange={color => {
+                        setPrimaryColor({
+                          ...primaryColor,
+                          [key]: color.hex,
+                        })
+                      }}
+                    />
+                  </Popover>
+                </div>
+              )
             )
           })}
       </div>

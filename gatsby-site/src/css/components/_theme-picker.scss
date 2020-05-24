@@ -8,9 +8,11 @@
   border-radius: 4px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.31) 0px 0px 1px;
-  transition: 0.3s background;
-  flex-direction: column;
 
+  transition: 0.3s background;
+
+  flex-direction: column;
+  box-shadow: var(--theme-picker-box-shadow);
   .theme-picker__theme {
     flex-direction: column;
     display: flex;
