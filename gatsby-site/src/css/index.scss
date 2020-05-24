@@ -9,12 +9,6 @@ $color: black;
   box-sizing: border-box;
 }
 
-// --theme-primary-bg: #af1d4c;
-//     --theme-primary-color: #000000;
-//     --theme-secondary-color: #ffffff;
-//     --theme-secondary-bg: #f4f4f4;
-//     --theme-primary-hover: #e4316a96;
-//     --theme-navbar-box-shadow: #838383ab;
 :root {
   --theme-primary-bg: #1d5baf;
   --theme-primary-color: #000000;
@@ -52,6 +46,18 @@ $color: black;
     background-color: #ffe2e2;
     box-shadow: inset 4px 0 0 0 rgba(241, 16, 16, 0.5);
   }
+}
+
+.theme-dark-blue {
+  $color: white;
+  $background: #083575;
+  @include theme($background, $color);
+}
+
+.theme-dark-red {
+  $color: white;
+  $background: #7a1522;
+  @include theme($background, $color);
 }
 
 .theme-solarized {
@@ -93,4 +99,8 @@ pre {
   margin: 0 0.3em;
   border-radius: 0.3em;
   white-space: normal;
+}
+
+#project-main-container {
+min-height: 100vh;
 }

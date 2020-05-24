@@ -20,7 +20,7 @@ const Layout = props => {
   }, [])
 
   return (
-    <div className={`theme-${theme}`}>
+    <div className={`theme-${theme}`} id="project-main-container">
       <NavBar />
       <div className="nav-breaker"></div>
       <button
