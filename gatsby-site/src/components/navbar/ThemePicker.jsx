@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Popover from '../Popover'
 import Tooltip from '../ToolTip'
 import { IoIosColorPalette } from 'react-icons/io'
-import { SketchPicker } from 'react-color'
+import { ChromePicker } from 'react-color'
 import { useLocalStorage } from 'react-use'
 
 const darkBlue = {
@@ -29,12 +29,12 @@ const themes = [
     color: '#2a2c35',
   },
   {
-    name: 'Dark Blue',
+    name: 'DarkBlue',
     value: 'theme-dark-blue',
     color: '#083575',
   },
   {
-    name: 'Dark Red',
+    name: 'DarkRed',
     value: 'theme-dark-red',
     color: '#7a1522',
   },
@@ -46,7 +46,6 @@ const variableMap = {
   '--theme-secondary-color': 'Secondary Color',
   '--theme-secondary-bg': 'Secondary BG',
   '--theme-primary-hover': 'Primary Hover',
-  '--theme-navbar-box-shadow': 'Navbar Shadow',
 }
 
 const primaryColors = [
@@ -58,7 +57,6 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#000000',
       '--theme-primary-hover': '#3068b7',
-      '--theme-navbar-box-shadow': '#131313ab',
     },
   },
   {
@@ -69,7 +67,6 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#e4316a96',
-      '--theme-navbar-box-shadow': '#131313ab',
     },
   },
   {
@@ -80,7 +77,6 @@ const primaryColors = [
       '--theme-secondary-color': '#000000',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#e0e0e096',
-      '--theme-navbar-box-shadow': '#c9c9c9ab',
     },
   },
   {
@@ -91,29 +87,26 @@ const primaryColors = [
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
       '--theme-primary-hover': '#424653',
-      '--theme-navbar-box-shadow': '#131313ab',
     },
   },
   {
-    name: 'Dark Blue',
+    name: 'DarkBlue',
     variables: {
       '--theme-primary-bg': '#083575',
       '--theme-primary-color': '#000000',
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
-      '--theme-primary-hover': '#424653',
-      '--theme-navbar-box-shadow': '#131313ab',
+      '--theme-primary-hover': '#0b479c',
     },
   },
   {
-    name: 'Dark Red',
+    name: 'DarkRed',
     variables: {
       '--theme-primary-bg': '#7a1522',
       '--theme-primary-color': '#000000',
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#f4f4f4',
-      '--theme-primary-hover': '#424653',
-      '--theme-navbar-box-shadow': '#131313ab',
+      '--theme-primary-hover': '#a01a2c',
     },
   },
 ]
@@ -161,7 +154,7 @@ function ThemeChanger({ setPrimaryColor, primaryColor, setThemeMode }) {
         {show &&
           Object.entries(primaryColor).map(([key, value], i) => {
             return (
-              <div className="theme-picker__input-group">
+              <div className="theme-picker__input-group" key={i}>
                 <div className="theme-picker__header">{variableMap[key]}</div>
                 <Popover
                   key={i}
@@ -170,7 +163,7 @@ function ThemeChanger({ setPrimaryColor, primaryColor, setThemeMode }) {
                   readOnly
                   placement="bottom"
                 >
-                  <SketchPicker
+                  <ChromePicker
                     color={value}
                     onChange={color => {
                       setPrimaryColor({
@@ -196,7 +189,6 @@ export default function ThemePicker() {
       '--theme-secondary-color': '#ffffff',
       '--theme-secondary-bg': '#000000',
       '--theme-primary-hover': '#3068b7',
-      '--theme-navbar-box-shadow': '#c9c9c9ab',
     }
   )
 
@@ -218,6 +210,7 @@ export default function ThemePicker() {
   return (
     <Popover
       // show
+      strategy="fixed"
       debug={'EWHATT'}
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
