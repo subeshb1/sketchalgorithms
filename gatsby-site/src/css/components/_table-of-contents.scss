@@ -1,0 +1,13 @@
+.table-of-contents {
+  background: white;
+  z-index: 1000;
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  a {
+    color: grey
+  }
+  a.active {
+    color: black
+  }
+}
