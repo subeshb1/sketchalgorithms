@@ -8,13 +8,15 @@ import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
 import BlogPostTemplate from '../components/Layouts/BlogLayout'
+import Toc from '../components/Toc'
 
 class BlogPost extends React.Component {
-  render() {
+  render() {  
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    const disqusShortname = 'sketchalgorithm'
+    const disqusShortname = 'sketchalgorithm';
+    console.log(post);
     const disqusConfig = {
       url: 'https://www.subeshbhandari.com' + post.fields.slug,
       identifier: post.fields.slug,
@@ -24,6 +26,12 @@ class BlogPost extends React.Component {
       <BlogPostTemplate>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
+        <div
+        className="table-of-contents"
+        dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
+        >
+
+        </div>
         <p
           style={{
             ...scale(-1 / 5),
@@ -72,6 +80,8 @@ class BlogPost extends React.Component {
           shortname={disqusShortname}
           config={disqusConfig}
         />
+        <Toc/>
+
       </BlogPostTemplate>
     )
   }
@@ -90,7 +100,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
-      tableOfContents
+      tableOfContents(absolute: false, pathToSlugField: "", maxDepth: 7)
       excerpt(pruneLength: 160)
       frontmatter {
         title
