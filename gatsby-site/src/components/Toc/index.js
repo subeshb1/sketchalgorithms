@@ -2,33 +2,109 @@ import React, { useEffect } from 'react'
 
 export default function Toc() {
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id')
-        if (entry.isIntersecting && entry.intersectionRatio === 1) {
-          document
-            .querySelector(`.table-of-contents li a[href="#${id}"]`)
-            .classList.add('active')
-        } else {
-          document
-            .querySelector(`.table-of-contents li a[href="#${id}"]`)
-            .classList.remove('active')
-        }
-      })
-    })
+    const motionQuery = window.matchMedia('(prefers-reduced-motion)')
 
-    // Track all sections that have an `id` applied
-    document
-      .querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]')
-      .forEach(section => {
-        observer.observe(section)
-      })
-    return () =>
-      document
-        .querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]')
-        .forEach(section => {
-          observer.unobserve(section)
+    const TableOfContents = {
+      container: document.querySelector('.table-of-contents'),
+      links: null,
+      headings: null,
+      intersectionOptions: {
+        rootMargin: '0px',
+        threshold: 1,
+      },
+      previousSection: null,
+      observer: null,
+
+      init() {
+        this.handleObserver = this.handleObserver.bind(this)
+
+        this.setUpObserver()
+        this.findLinksAndHeadings()
+        this.observeSections()
+
+        this.links.forEach(link => {
+          link.addEventListener('click', this.handleLinkClick.bind(this))
         })
+      },
+
+      handleLinkClick(evt) {
+        evt.preventDefault()
+        let id = evt.target.getAttribute('href').replace('#', '')
+
+        let section = this.headings.find(heading => {
+          return heading.getAttribute('id') === id
+        })
+
+        section.setAttribute('tabindex', -1)
+        section.focus()
+
+        window.scroll({
+          behavior: motionQuery.matches ? 'instant' : 'smooth',
+          top: section.offsetTop - 15,
+          block: 'start',
+        })
+
+        if (this.container.classList.contains('active')) {
+          this.container.classList.remove('active')
+        }
+      },
+
+      handleObserver(entries, observer) {
+        entries.forEach(entry => {
+          let href = `#${entry.target.getAttribute('id')}`,
+            link = this.links.find(l => l.getAttribute('href') === href)
+
+          if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+            link.classList.add('is-visible')
+            this.previousSection = entry.target.getAttribute('id')
+          } else {
+            link.classList.remove('is-visible')
+          }
+
+          this.highlightFirstActive()
+        })
+      },
+
+      highlightFirstActive() {
+        let firstVisibleLink = this.container.querySelector('.is-visible')
+
+        this.links.forEach(link => {
+          link.classList.remove('active')
+        })
+
+        if (firstVisibleLink) {
+          firstVisibleLink.classList.add('active')
+        }
+
+        if (!firstVisibleLink && this.previousSection) {
+          this.container
+            .querySelector(`a[href="#${this.previousSection}"]`)
+            .classList.add('active')
+        }
+      },
+
+      observeSections() {
+        this.headings.forEach(heading => {
+          this.observer.observe(heading)
+        })
+      },
+
+      setUpObserver() {
+        this.observer = new IntersectionObserver(
+          this.handleObserver,
+          this.intersectionOptions
+        )
+      },
+
+      findLinksAndHeadings() {
+        this.links = [...this.container.querySelectorAll('a')]
+        this.headings = this.links.map(link => {
+          let id = link.getAttribute('href')
+          return document.querySelector(id)
+        })
+      },
+    }
+    TableOfContents.init()
   }, [])
   return <div></div>
 }
