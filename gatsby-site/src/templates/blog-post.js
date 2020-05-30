@@ -26,11 +26,7 @@ class BlogPost extends React.Component {
       <BlogPostTemplate>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <h1>{post.frontmatter.title}</h1>
-        <div
-          className="table-of-contents"
-          dangerouslySetInnerHTML={{ __html: post.tableOfContents }}
-        >
-        </div>
+        <Toc tableOfContents={post.tableOfContents} />
         <p
           style={{
             ...scale(-1 / 5),
@@ -79,7 +75,6 @@ class BlogPost extends React.Component {
           shortname={disqusShortname}
           config={disqusConfig}
         />
-        <Toc />
       </BlogPostTemplate>
     )
   }

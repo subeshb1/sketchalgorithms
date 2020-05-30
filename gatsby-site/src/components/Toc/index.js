@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-export default function Toc() {
+export default function Toc({ tableOfContents }) {
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion)')
 
@@ -16,9 +16,11 @@ export default function Toc() {
       observer: null,
 
       init() {
+        if (!this.container) return
+        this.findLinksAndHeadings()
+        if (!this.links.length) return
         this.handleObserver = this.handleObserver.bind(this)
         this.setUpObserver()
-        this.findLinksAndHeadings()
         this.observeSections()
 
         this.links.forEach(link => {
@@ -54,10 +56,9 @@ export default function Toc() {
           let href = `#${id}`,
             link = this.links.find(l => l.getAttribute('href') === href)
           if (entry.isIntersecting && entry.intersectionRatio === 1) {
-            link.classList.add('is-visible');
+            link.classList.add('is-visible')
             this.previousSection = id
           } else {
-            
             link.classList.remove('is-visible')
           }
 
@@ -105,5 +106,10 @@ export default function Toc() {
     }
     TableOfContents.init()
   }, [])
-  return <div></div>
+  return (
+    <div className="table-of-contents">
+      <h2>TABLE OF CONTENTS</h2>
+      <div dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
+    </div>
+  )
 }
