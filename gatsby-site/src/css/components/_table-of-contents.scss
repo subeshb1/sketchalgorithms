@@ -1,6 +1,6 @@
 .table-of-contents {
-  background: var(--theme-primary-bg);
-  color: var(--theme-secondary-color);
+  background: var(--theme-background);
+  color: var(--theme-color);
   z-index: 800;
   position: fixed;
   right: 5px;
@@ -23,13 +23,14 @@
       padding: 4px 0.8rem;
       display: block;
       color: black;
-      color: var(--theme-secondary-color);
+      color: var(--theme-color);
     }
 
     a.active,
     a.active {
       background: white;
-      background: var(--theme-primary-hover);
+      background: var(--theme-hover);
+      border-radius: 4px;
     }
   }
 }
