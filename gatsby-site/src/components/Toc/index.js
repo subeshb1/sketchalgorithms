@@ -46,18 +46,18 @@ export default function Toc() {
         if (this.container.classList.contains('active')) {
           this.container.classList.remove('active')
         }
-        
       },
 
       handleObserver(entries, observer) {
         entries.forEach(entry => {
-          let href = `#${entry.target.getAttribute('id')}`,
+          const id = entry.target.getAttribute('id')
+          let href = `#${id}`,
             link = this.links.find(l => l.getAttribute('href') === href)
-
-          if (entry.isIntersecting && entry.intersectionRatio >= 1) {
-            link.classList.add('is-visible')
-            this.previousSection = entry.target.getAttribute('id')
+          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+            link.classList.add('is-visible');
+            this.previousSection = id
           } else {
+            
             link.classList.remove('is-visible')
           }
 
@@ -66,8 +66,9 @@ export default function Toc() {
       },
 
       highlightFirstActive() {
+        console.log(this.previousSection)
         let firstVisibleLink = this.container.querySelector('.is-visible')
-
+        console.log(firstVisibleLink)
         this.links.forEach(link => {
           link.classList.remove('active')
         })
