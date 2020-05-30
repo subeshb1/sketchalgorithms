@@ -2,9 +2,17 @@
 @import 'components/navbar';
 @import 'components/tooltip';
 @import 'components/theme-picker';
+@import 'components/table-of-contents';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 $background: white;
 $color: black;
+
+@mixin theme($background, $color) {
+  background: $background;
+  color: $color;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,9 +35,12 @@ $color: black;
   --theme-navbar-box-shadow: #131313ab;
   $color: white;
   $background: #292c35;
+  --theme-background: #{$background};
+  --theme-color: #{$color};
+  --theme-hover: #424653;
   @include theme($background, $color);
   :not(pre) > code {
-    background: #144e71;
+    background: #424653;
   }
   .grvsc-container .grvsc-line-highlighted {
     background-color: rgb(19, 43, 64);
@@ -37,9 +48,36 @@ $color: black;
   }
 }
 
-.theme-light {
-  --theme-navbar-box-shadow: #c9c9c9ab;
+.theme-dark-blue {
+  $color: white;
+  $background: #083575;
+  --theme-background: #{$background};
+  --theme-color: #{$color};
+  --theme-hover: #0b479c;
   @include theme($background, $color);
+  --theme-navbar-box-shadow: #071d3e;
+}
+
+.theme-dark-red {
+  $color: white;
+  $background: #7a1522;
+  --theme-background: #{$background};
+  --theme-color: #{$color};
+  --theme-hover: #a01a2c;
+  @include theme($background, $color);
+  --theme-navbar-box-shadow: #56111a;
+}
+
+.theme-solarized {
+  @include theme($background, $color);
+}
+
+.theme-light {
+  @include theme($background, $color);
+  --theme-navbar-box-shadow: #c9c9c9ab;
+  --theme-background: #{$background};
+  --theme-color: #{$color};
+  --theme-hover: #e0e0e096;
   :not(pre) > code {
     background: #fff1b9;
   }
@@ -53,24 +91,6 @@ $color: black;
     color: white;
     --popper-arrow-color: black;
   }
-}
-
-.theme-dark-blue {
-  $color: white;
-  $background: #083575;
-  @include theme($background, $color);
-  --theme-navbar-box-shadow: #071d3e;
-}
-
-.theme-dark-red {
-  $color: white;
-  $background: #7a1522;
-  @include theme($background, $color);
-  --theme-navbar-box-shadow: #56111a;
-}
-
-.theme-solarized {
-  @include theme($background, $color);
 }
 
 code,

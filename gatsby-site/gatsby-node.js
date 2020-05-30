@@ -18,8 +18,16 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+              tableOfContents(absolute: false, pathToSlugField: "", maxDepth: 3)
               frontmatter {
                 title
+                series
+              }
+              timeToRead
+              wordCount {
+                paragraphs
+                words
+                sentences
               }
             }
           }
@@ -55,8 +63,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = `blog${createFilePath({ node, getNode }).replace(/\/$/,"")}`
-    
+    const value = `blog${createFilePath({ node, getNode }).replace(/\/$/, '')}`
+
     createNodeField({
       name: `slug`,
       node,
