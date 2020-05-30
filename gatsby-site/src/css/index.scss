@@ -4,8 +4,15 @@
 @import 'components/theme-picker';
 @import 'components/table-of-contents';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 $background: white;
 $color: black;
+
+@mixin theme($background, $color) {
+  background: $background;
+  color: $color;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -72,6 +79,7 @@ $color: black;
 
 .theme-solarized {
   @include theme($background, $color);
+  
 }
 
 code,

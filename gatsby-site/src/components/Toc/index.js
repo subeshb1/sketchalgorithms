@@ -17,7 +17,6 @@ export default function Toc() {
 
       init() {
         this.handleObserver = this.handleObserver.bind(this)
-
         this.setUpObserver()
         this.findLinksAndHeadings()
         this.observeSections()
@@ -39,14 +38,15 @@ export default function Toc() {
         section.focus()
 
         window.scroll({
-          behavior: motionQuery.matches ? 'instant' : 'smooth',
-          top: section.offsetTop - 15,
+          behavior: 'instant',
+          top: section.offsetTop - 60,
           block: 'start',
         })
 
         if (this.container.classList.contains('active')) {
           this.container.classList.remove('active')
         }
+        
       },
 
       handleObserver(entries, observer) {

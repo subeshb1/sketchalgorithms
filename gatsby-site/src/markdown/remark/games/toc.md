@@ -4,7 +4,7 @@ date: '2019-05-06T23:46:37.121Z'
 series: Snake Game
 ---
 
-## Heading 2
+## Heading 2 Heading 2 Heading 2Heading 2 Heading 2Heading 2
 
 We’re going to use a canvas of height and width 250px and give it an id ‘draw-board’. We will use this id to select the canvas in JavaScript. We will also add a div element to display score and a button element to start the game.
 We’re going to use a canvas of height and width 250px and give it an id ‘draw-board’. We will use this id to select the canvas in JavaScript. We will also add a div element to display score and a button element to start the game.

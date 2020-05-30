@@ -1,13 +1,35 @@
 .table-of-contents {
-  background: white;
-  z-index: 1000;
+  background: var(--theme-primary-bg);
+  color: var(--theme-secondary-color);
+  z-index: 800;
   position: fixed;
-  right: 20px;
+  right: 5px;
+  max-width: 300px;
+  padding: 20px 20px 20px 0;
   top: 60px;
-  a {
-    color: grey
-  }
-  a.active {
-    color: black
+  ul {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    li {
+      margin: 0;
+      display: block;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      padding: 4px 0.8rem;
+      display: block;
+      color: black;
+      color: var(--theme-secondary-color);
+    }
+
+    a.active,
+    a.active {
+      background: white;
+      background: var(--theme-primary-hover);
+    }
   }
 }
