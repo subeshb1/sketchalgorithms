@@ -66,9 +66,7 @@ export default function Toc() {
       },
 
       highlightFirstActive() {
-        console.log(this.previousSection)
         let firstVisibleLink = this.container.querySelector('.is-visible')
-        console.log(firstVisibleLink)
         this.links.forEach(link => {
           link.classList.remove('active')
         })
