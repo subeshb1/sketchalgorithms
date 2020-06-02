@@ -19,7 +19,7 @@ import {
   PinterestShareButton
 } from "react-share";
 
-const root = "https://www.sketchalgorithms.com";
+const root = "https://www.SubeshBhandari.com";
 const socialComponents = {
   FacebookIcon,
   LinkedinIcon,
@@ -43,9 +43,9 @@ const social = [
       return {
         title:
           document.querySelector('[property="og:title"]').content ||
-          "Learn From Sketch Algorithms",
+          "Learn From Subesh Bhandari",
         via: "sketchalgorithm",
-        hashtags: "sketchalgorithms programming algorithms coding game code 100DaysOfCode React javascript html css".split(
+        hashtags: "SubeshBhandari programming algorithms coding game code 100DaysOfCode React javascript html css".split(
           " "
         )
       };
@@ -57,8 +57,8 @@ const social = [
       return {
         quote:
           document.querySelector('[property="og:title"]').content ||
-          "Learn From Sketch Algorithms",
-        hashtag: "#sketchalgorithms"
+          "Learn From Subesh Bhandari",
+        hashtag: "#SubeshBhandari"
       };
     }
   },
@@ -66,7 +66,7 @@ const social = [
     name: "Linkedin",
     getProps() {
       return {
-        title: "Learn From Sketch Algorithms"
+        title: "Learn From Subesh Bhandari"
       };
     }
   },
@@ -82,7 +82,7 @@ const social = [
       return {
         title:
           document.querySelector('[property="og:title"]').content ||
-          "Learn From Sketch Algorithms"
+          "Learn From Subesh Bhandari"
       };
     }
   },
@@ -93,8 +93,8 @@ const social = [
         posttype: "link",
         title:
           document.querySelector('[property="og:title"]').content ||
-          "Learn From Sketch Algorithms",
-        tags: "sketchalgorithms programming algorithms coding game code 100DaysOfCode React javascript html css".split(
+          "Learn From Subesh Bhandari",
+        tags: "SubeshBhandari programming algorithms coding game code 100DaysOfCode React javascript html css".split(
           " "
         )
       };
@@ -107,7 +107,7 @@ const social = [
         media: document.querySelector('[property="og:image"]').content,
         description:
           document.querySelector('[property="og:description"]').content ||
-          "Learn from Sketch Algorithms, algorithms made easy with visualization."
+          "Learn from Subesh Bhandari, algorithms made easy with visualization."
       };
     }
   }

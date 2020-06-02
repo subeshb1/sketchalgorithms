@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  Sketch Algorithms
+  Subesh Bhandari
 </h1>
 
 

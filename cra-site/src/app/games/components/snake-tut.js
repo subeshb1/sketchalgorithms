@@ -4,7 +4,7 @@ import { Snippet, Head } from "../../components";
 const data = {
   description:
     "Learn how to make a Simple Snake Games using several programming languages. Follow the step by step process to build your own Snake Game.",
-  title: "Snake Game | Tutorial | Sketch Algorithms",
+  title: "Snake Game | Tutorial | Subesh Bhandari",
   url: "/games/snake-game",
   image: "snake-game.png"
 };

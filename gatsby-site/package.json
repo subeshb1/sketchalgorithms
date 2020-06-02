@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
-  "private": true,
+  "name": "subesh-bhandari-gatsby",
+  "private": false,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Subesh Bhandari <subeshb1@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/subeshb1/subeshbhandari.com/issues"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
@@ -75,7 +75,7 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "subeshbhandari.com",
   "keywords": [
     "gatsby"
   ],
@@ -83,7 +83,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/subeshb1/subeshbhandari.com"
   },
   "scripts": {
     "dev": "gatsby develop",

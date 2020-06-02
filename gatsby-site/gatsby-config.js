@@ -182,8 +182,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sketch Algorithms`,
-        short_name: `SketchAlgorithms`,
+        name: `Subesh Bhandari`,
+        short_name: `SubeshBhandari`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
