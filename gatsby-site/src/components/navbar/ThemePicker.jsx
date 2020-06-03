@@ -174,21 +174,17 @@ function ThemeChanger({
         </div>
         <div className="theme-picker__input-group">
           <div className="theme-picker__header">Code Snippet Theme</div>
-          <select 
+          <select
             value={themeMode.split(' ')[1]}
             onChange={({ target }) =>
-              console.log(target) ||
               setThemeMode(`${themeMode.split(' ')[0]} ${target.value}`)
             }
           >
-            {Object.entries(codeTheme).map(
-              ([key, value], i) =>
-                console.log(key, value) || (
-                  <option key={i} value={key}>
-                    {value}
-                  </option>
-                )
-            )}
+            {Object.entries(codeTheme).map(([key, value], i) => (
+              <option key={i} value={key}>
+                {value}
+              </option>
+            ))}
           </select>
         </div>
         <button onClick={() => setShow(!show)}>

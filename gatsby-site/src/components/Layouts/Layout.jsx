@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../css/index.scss'
-import { NavBar } from '..'
+import  NavBar  from '../navbar/index'
 
 const fetchTheme = () => {
   if (window.localStorage) {
