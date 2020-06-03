@@ -59,6 +59,7 @@
     "react-laag": "^1.7.3",
     "react-live": "^2.1.2",
     "react-popper": "^2.2.3",
+    "react-sticky": "^6.0.3",
     "react-typography": "^0.16.13",
     "react-use": "^15.1.0",
     "typeface-ibm-plex-mono": "^0.0.61",

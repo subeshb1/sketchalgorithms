@@ -1,20 +1,39 @@
 
 .blog-main-container {
   display: flex;
+
   .blog-left-container {
     flex: 1;
-    flex-grow: 0;
+    flex-grow: 1;
     min-height: 100vh;
-  }  
-  .blog-right-container {
-    
-  }  
+    max-width: 20%;
+    border-right: 2px solid #7b3039;
+  }
+
   .blog-mid-container {
-    flex: 12;
-    max-width: 900px;
+    flex: 6;
+    flex-grow: 6;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
-    padding: 16px
-  
-  }  
+    // padding: 0px 56px;
+  }
+  .blog-right-container {
+    flex: 1;
+    flex-grow: 1;
+    position: sticky;
+    min-height: 100vh;
+    max-width: 20%;
+    position: relative;
+    // border-left:2px solid #7b3039
+    .test-container {
+      margin-top: 50vh;
+      .test {
+        width: 200px;
+        height: 200px;
+        background-color: rebeccapurple;
+        margin: 10px;
+      }
+    }
+  }
 }

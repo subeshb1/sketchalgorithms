@@ -5,7 +5,11 @@
 @import 'components/table-of-contents';
 @import 'layout/blog_layout';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $background: white;
 $color: black;
 
@@ -39,6 +43,7 @@ $color: black;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #424653;
+  --theme-dim-color: #dadada;
   @include theme($background, $color);
   :not(pre) > code {
     background: #424653;
@@ -51,6 +56,8 @@ $color: black;
 
 .theme-dark-blue {
   $color: white;
+  --theme-dim-color: #dadada;
+
   $background: #083575;
   --theme-background: #{$background};
   --theme-color: #{$color};
@@ -64,6 +71,8 @@ $color: black;
   $background: #7a1522;
   --theme-background: #{$background};
   --theme-color: #{$color};
+  --theme-dim-color: #dadada;
+
   --theme-hover: #a01a2c;
   @include theme($background, $color);
   --theme-navbar-box-shadow: #56111a;
@@ -79,6 +88,7 @@ $color: black;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #e0e0e096;
+  --theme-dim-color: #7b7878;
   :not(pre) > code {
     background: #fff1b9;
   }

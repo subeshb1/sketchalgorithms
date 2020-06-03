@@ -25,12 +25,11 @@ class BlogPost extends React.Component {
       <Layout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <div className="blog-main-container">
-          <div className="blog-left-container">
+          {/* <div className="blog-left-container">
             
-          </div>
+          </div> */}
           <div className="blog-mid-container">
             <h1>{post.frontmatter.title}</h1>
-            <Toc tableOfContents={post.tableOfContents} />
             <p
               style={{
                 ...scale(-1 / 5),
@@ -79,7 +78,9 @@ class BlogPost extends React.Component {
               config={disqusConfig}
             />
           </div>
-          
+          <div className="blog-right-container">
+          <Toc tableOfContents={post.tableOfContents} />
+          </div>
         </div>
       </Layout>
     )

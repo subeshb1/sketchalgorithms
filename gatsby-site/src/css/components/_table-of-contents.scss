@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .table-of-contents {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--theme-background);
+  color: var(--theme-color);
+  z-index: 800;
+  position: fixed;
+  right: 40px;
+  max-width: 300px;
+  padding: 20px 20px 20px 0;
+  top: 90px;
+
   h2 {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -8,15 +18,6 @@
     margin-bottom: 15px;
     word-spacing: 4px;
   }
-  font-family: 'Open Sans', sans-serif;
-  background: var(--theme-background);
-  color: var(--theme-color);
-  z-index: 800;
-  position: fixed;
-  right: 5px;
-  max-width: 300px;
-  padding: 20px 20px 20px 0;
-  top: 60px;
   ul {
     font-size: 0.8rem;
     margin-top: 0;
@@ -32,14 +33,15 @@
       padding: 4px 0.8rem;
       display: block;
       color: black;
-      color: var(--theme-color);
-      transition: 0.3s background;
+      color: var(--theme-dim-color);
     }
-
+    
     a.active,
     a.active {
+      color: var(--theme-color);
       background: white;
       background: var(--theme-hover);
+      font-weight: bolder;
       border-radius: 4px;
     }
   }
