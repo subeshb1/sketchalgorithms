@@ -6,7 +6,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layouts/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
-import Disqus, { DiscussionEmbed } from 'disqus-react'
+import Disqus from 'disqus-react'
 import Toc from '../components/Toc'
 
 class BlogPost extends React.Component {
