@@ -8,14 +8,15 @@ import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Disqus from 'disqus-react'
 import Toc from '../components/Toc'
+import SideBar from '../components/SideBar'
 
 class BlogPost extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+
     const { previous, next } = this.props.pageContext
     const disqusShortname = 'subeshbhandari'
-    console.log(post) 
     const disqusConfig = {
       url: 'https://www.subeshbhandari.com' + post.fields.slug,
       identifier: post.fields.slug,
@@ -25,9 +26,12 @@ class BlogPost extends React.Component {
       <Layout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
         <div className="blog-main-container">
-          {/* <div className="blog-left-container">
-            
-          </div> */}
+          <SideBar
+            seriesElements={this.props.data.allMarkdownRemark.edges.map(
+              x => x.node.frontmatter
+            )}
+          />
+
           <div className="blog-mid-container">
             <h1>{post.frontmatter.title}</h1>
             <p
@@ -79,7 +83,7 @@ class BlogPost extends React.Component {
             />
           </div>
           <div className="blog-right-container">
-          <Toc tableOfContents={post.tableOfContents} />
+            <Toc tableOfContents={post.tableOfContents} />
           </div>
         </div>
       </Layout>
@@ -90,7 +94,7 @@ class BlogPost extends React.Component {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query($slug: String!, $series: String) {
     site {
       siteMetadata {
         title
@@ -108,6 +112,17 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { series: { eq: $series } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            type
+          }
+        }
       }
     }
   }

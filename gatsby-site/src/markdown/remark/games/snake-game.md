@@ -1,7 +1,6 @@
 ---
 title:  Build a snake game using HTML canvas and javascript
 date: '2019-05-06T23:46:37.121Z'
-series: Snake Game
 ---
 
 
