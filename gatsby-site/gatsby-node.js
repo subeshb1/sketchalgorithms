@@ -22,6 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 series
+                type
               }
               timeToRead
               wordCount {
@@ -64,7 +65,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = `blog${createFilePath({ node, getNode }).replace(/\/$/, '')}`
+    let value
+    if (node.frontmatter.type === 'doc') {
+      value = `${createFilePath({ node, getNode }).replace(/\/$/, '')}`
+    } else {
+      value = `blog${createFilePath({ node, getNode }).replace(/\/$/, '')}`
+    }
 
     createNodeField({
       name: `slug`,
