@@ -79,8 +79,12 @@ module.exports = {
                   '.code-quiet-light': 'Quiet Light',
                   '.code-solarized-dark': 'Solarized Dark',
                   '.code-solarized-light': 'Solarized Light',
+                  '.code-synth-wave-84': `SynthWave '84`,
                 },
               },
+              extensions: [
+                'synthwave-vscode',
+              ],
               inlineCode: {
                 marker: '•',
                 theme: {
