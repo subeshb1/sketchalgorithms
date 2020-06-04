@@ -62,6 +62,7 @@
     "react-sticky": "^6.0.3",
     "react-typography": "^0.16.13",
     "react-use": "^15.1.0",
+    "synthwave-vscode": "github:robb0wen/synthwave-vscode",
     "typeface-ibm-plex-mono": "^0.0.61",
     "typeface-inconsolata": "^0.0.72",
     "typeface-libre-baskerville": "^0.0.72",

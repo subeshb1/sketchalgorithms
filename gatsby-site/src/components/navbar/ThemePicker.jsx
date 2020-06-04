@@ -21,6 +21,7 @@ const codeTheme = {
   'code-quiet-light': 'Quiet Light',
   'code-solarized-dark': 'Solarized Dark',
   'code-solarized-light': 'Solarized Light',
+  'code-synth-wave-84': `SynthWave '84`,
 }
 const excludeVariables = ['--theme-picker-box-shadow']
 
