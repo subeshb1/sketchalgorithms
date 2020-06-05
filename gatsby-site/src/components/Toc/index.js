@@ -9,7 +9,7 @@ export default function Toc({ tableOfContents }) {
       links: null,
       headings: null,
       intersectionOptions: {
-        rootMargin: '0px',
+        rootMargin: '56px',
         threshold: 1,
       },
       previousSection: null,
