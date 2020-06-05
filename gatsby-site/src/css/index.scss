@@ -23,6 +23,11 @@ $color: black;
   box-sizing: border-box;
 }
 
+.tl-edges {
+  max-width: 100%;
+  overflow-x: unset;
+}
+ 
 :root {
   --theme-primary-bg: #1d5baf;
   --theme-primary-color: #000000;

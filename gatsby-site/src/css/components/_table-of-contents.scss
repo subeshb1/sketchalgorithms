@@ -4,11 +4,12 @@
   background: var(--theme-background);
   color: var(--theme-color);
   z-index: 800;
-  position: fixed;
+  position: sticky;
   right: 40px;
   max-width: 300px;
   padding: 20px 20px 20px 0;
-  top: 90px;
+  top: 56px;
+  margin-top: 40px;
 
   h2 {
     font-family: 'Lato', sans-serif;
