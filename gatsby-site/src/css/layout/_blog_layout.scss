@@ -1,13 +1,16 @@
-
 .blog-main-container {
   display: flex;
 
-  .blog-left-container {
-    flex: 1;
-    flex-grow: 1;
+  .blog-sidebar {
     min-height: 100vh;
-    max-width: 20%;
     border-right: 2px solid #7b3039;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    width: 250px;
+    min-width: 250px;
+    
   }
 
   .blog-mid-container {
