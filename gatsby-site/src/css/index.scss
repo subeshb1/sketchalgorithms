@@ -98,13 +98,9 @@ $color: black;
   --theme-hover: #e0e0e096;
   --theme-dim-color: #7b7878;
   :not(pre) > code {
-    background: #fff1b9;
+    background: #e8e8e8;
   }
 
-  .grvsc-container .grvsc-line-highlighted {
-    background-color: #ffe2e2;
-    box-shadow: inset 4px 0 0 0 rgba(241, 16, 16, 0.5);
-  }
   .popper-tool-tip {
     background: black;
     color: white;

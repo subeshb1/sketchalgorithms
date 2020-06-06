@@ -30,7 +30,7 @@ pre.grvsc-container {
   background: #f8f8f8;
   padding: 0;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
   margin-bottom: 2rem;
   &::before {
     color: #232129;
@@ -88,10 +88,15 @@ pre.grvsc-container {
 }
 
 :not(pre) > code {
-  padding: 0.2em;
+  padding: 0.3em;
   padding-top: 1px;
   padding-bottom: 1px;
-  margin: 0 0.3em;
   border-radius: 0.3em;
   white-space: normal;
+}
+
+
+.grvsc-container .grvsc-line-highlighted {
+  background-color: #ffe2e2;
+  box-shadow: inset 4px 0 0 0 rgba(241, 16, 16, 0.5);
 }
