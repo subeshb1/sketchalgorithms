@@ -11,10 +11,8 @@ githubButtons: true
 
 Light weight automated JSON API testing framework.
 
-<a class="github-button" href="https://github.com/subeshb1" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-show-count="true" aria-label="Follow @subeshb1 on GitHub">Follow @subeshb1</a>  <a class="github-button" href="https://github.com/subeshb1/api-test" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star subeshb1/api-test on GitHub">Star</a>
-![CI](https://github.com/subeshb1/api-test/workflows/CI/badge.svg)
-
-
+<a class="github-button" href="https://github.com/subeshb1" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-show-count="true" aria-label="Follow @subeshb1 on GitHub">Follow @subeshb1</a> <a class="github-button" href="https://github.com/subeshb1/api-test" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star subeshb1/api-test on GitHub">Star</a>
+<img class="badge" src="https://github.com/subeshb1/api-test/workflows/CI/badge.svg"> <img class="badge" src="https://img.shields.io/github/v/release/subeshb1/api-test">
 
 ## Organize your test cases in a JSON file
 
