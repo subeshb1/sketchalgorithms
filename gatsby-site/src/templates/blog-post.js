@@ -32,7 +32,7 @@ class BlogPost extends React.Component {
             )}
           />
 
-          <div className="blog-mid-container">
+          <main className="blog-mid-container">
             <h1>{post.frontmatter.title}</h1>
             <p
               style={{
@@ -81,10 +81,10 @@ class BlogPost extends React.Component {
               shortname={disqusShortname}
               config={disqusConfig}
             />
-          </div>
-          <div className="blog-right-container">
+          </main>
+          <aside className="blog-right-container">
             <Toc tableOfContents={post.tableOfContents} />
-          </div>
+          </aside>
         </div>
       </Layout>
     )

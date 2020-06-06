@@ -3,7 +3,7 @@ import { title } from 'change-case'
 
 export default function SideBar({ seriesElements }) {
   return seriesElements && seriesElements.length ? (
-    <div className="blog-sidebar">
+    <aside className="blog-sidebar">
       {seriesElements.map(element => {
         return (
           <div className="blog-sidebar__item" key={element.title}>
@@ -11,6 +11,6 @@ export default function SideBar({ seriesElements }) {
           </div>
         )
       })}
-    </div>
+    </aside>
   ) : null
 }
