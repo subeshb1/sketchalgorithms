@@ -1,9 +1,10 @@
 ---
 title: Calling your first API
-series: api-test
 type: doc
+date: '2020-06-03T15:46:37.121Z'
+series: api-test
 category: Getting Started
-position: 2
+position: 101
 ---
 
 Define a `test.json` file that holds information about the api you are trying to call.

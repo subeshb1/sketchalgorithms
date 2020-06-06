@@ -26,7 +26,6 @@ function BlogPost(props) {
   }
   const [, copyToClipboard] = useCopyToClipboard()
 
-  console.log(post.frontmatter.hideLeftBar)
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
       if (!codeContainer.querySelector('button')) {
@@ -37,12 +36,12 @@ function BlogPost(props) {
         codeContainer.prepend(button)
       }
     })
-    const script = document.createElement("script");
+    const script = document.createElement('script')
 
-    script.src = "https://buttons.github.io/buttons.js";
-    script.async = true;
+    script.src = 'https://buttons.github.io/buttons.js'
+    script.async = true
 
-    document.body.appendChild(script);
+    document.body.appendChild(script)
   }, [])
   return (
     <Layout>
@@ -64,7 +63,19 @@ function BlogPost(props) {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date}
+            <span className="blog-date">
+              {post.frontmatter.date}
+            </span>
+            <If
+              condition={
+                post.frontmatter.hideEstimatedTime == null ||
+                !post.frontmatter.hideEstimatedTime
+              }
+            >
+              <span className="estimated-reading-time">
+                {post.timeToRead} minute{post.timeToRead == 1 ? '' : 's'} read
+              </span>
+            </If>
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -143,14 +154,19 @@ export const pageQuery = graphql`
         title
         hideDisqus
         githubButtons
+        hideEstimatedTime
         hideLeftBar
         date(formatString: "MMMM DD, YYYY")
       }
+      timeToRead
       fields {
         slug
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { series: { eq: $series } } }) {
+    allMarkdownRemark(
+      sort: { fields: frontmatter___position, order: ASC }
+      filter: { frontmatter: { series: { eq: $series } } }
+    ) {
       edges {
         node {
           fields {
@@ -160,6 +176,8 @@ export const pageQuery = graphql`
             title
             date
             type
+            series
+            position
           }
         }
       }

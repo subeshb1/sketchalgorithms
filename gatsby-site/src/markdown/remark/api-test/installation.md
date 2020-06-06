@@ -4,7 +4,7 @@ series: api-test
 date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Getting Started
-position: 1
+position: 100
 ---
 
 Api-test is a bash program that automates JSON API testing using curl command to make API requests and jq for JSON processing.

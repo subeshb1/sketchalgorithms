@@ -7,6 +7,7 @@ position: 0
 hideLeftBar: true
 hideDisqus: true
 githubButtons: true
+hideEstimatedTime: true
 ---
 
 Light weight automated JSON API testing framework.
