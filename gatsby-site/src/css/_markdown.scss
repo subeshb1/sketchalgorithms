@@ -48,6 +48,9 @@
     margin-right: -1.125em;
     padding-right: 0;
     margin-right: -1rem;
+    p {
+      font-size: 0.8em;
+    }
   }
 
   blockquote blockquote {
@@ -67,8 +70,8 @@
   strong {
     font-size: 1.02rem;
   }
-  img.badge{
-    margin:0
+  img.badge {
+    margin: 0;
   }
 
   @media (max-width: 900px) {
@@ -86,7 +89,6 @@
     opacity: 0.7;
   }
   .blog-date {
-    
     margin-right: 10px;
   }
 }

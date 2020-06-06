@@ -92,9 +92,7 @@ pre.grvsc-container {
 }
 
 :not(pre) > code {
-  padding: 0.3em;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding: 1px 0.5em;
   border-radius: 0.3em;
   white-space: normal;
 }
