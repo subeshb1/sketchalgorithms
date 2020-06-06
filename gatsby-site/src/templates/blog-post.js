@@ -41,7 +41,7 @@ function BlogPost(props) {
       <div className="blog-main-container">
         <SideBar
           seriesElements={props.data.allMarkdownRemark.edges.map(
-            x => x.node.frontmatter
+            x => ({...x.node.frontmatter, ...x.node.fields})
           )}
         />
 
@@ -128,6 +128,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(filter: { frontmatter: { series: { eq: $series } } }) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             title
             date
