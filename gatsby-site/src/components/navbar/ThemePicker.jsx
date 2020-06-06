@@ -257,6 +257,7 @@ export default function ThemePicker() {
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
           elementAs="button"
+          aria-label="Open Theme picker"
           closeOnClick
           ref={ref}
           {...props}

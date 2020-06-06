@@ -27,7 +27,8 @@ function BlogPost(props) {
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
       if (!codeContainer.querySelector('button')) {
-        var button = document.createElement('button')
+        let button = document.createElement('button')
+        button.setAttribute('aria-label', 'Copy to clipboard')
         button.onclick = () => {
           copyToClipboard(codeContainer.querySelector('.grvsc-code').innerText)
         }

@@ -9,7 +9,7 @@ import ThemePicker from './ThemePicker'
 export default function NavBar() {
   return (
     <nav className="lg-navbar">
-      <img className={'lg-navbar-img'} src={Logo} />
+      <img className={'lg-navbar-img'} src={Logo} alt="Website logo"/>
       <Link to="/" className="lg-navbar__item lg-navbar__header">
         Subesh Bhandari
       </Link>
