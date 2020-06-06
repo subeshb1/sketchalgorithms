@@ -1,43 +1,14 @@
 ---
-title: Getting Started
-date: '2020-06-03T15:46:37.121Z'
+title: api-test
 series: api-test
-category:
 type: doc
+category:
+position: 0
 ---
 
-**api-test** is a bash program that makes testing
+Light weight automated JSON API testing framework.
 
-## Installation
-
-### Dependency
-
-**api-test** uses `curl` command to make API requests and `jq` for json command processing.
-
-- Install `jq`
-- Install `curl`
-
-### Install api-test
-
-```sh
-curl -LJO https://raw.githubusercontent.com/subeshb1/api-test/master/api-test.sh
-chmod +x api-test.sh
-sudo mv api-test.sh /usr/local/bin/api-test
-```
-
-This will pull the bash script, make it executable and move it to `/usr/local/bin` to make it executable from anywhere.
-
-Run the following command to see if the program is installed.
-
-```sh
-$ api-test --version
-
-api-test version 0.3.0
-```
-
-## Calling your first api
-
-Define a `test.json` file that holds information about the api you are trying to call.
+## Organize your test cases in a JSON file
 
 ```json
 {
@@ -47,11 +18,69 @@ Define a `test.json` file that holds information about the api you are trying to
       "query": {
         "id": 1
       },
-      "method": "POST"
+      "method": "GET"
+    }
+    ...
+  },
+  "url": "my-api.com"
+}
+```
+
+## Call APIs
+
+```sh
+api-test run my_first_test_case # Run single test case
+api-test run all                # Run all test cases simultaneously
+```
+
+![API Response](../../../assets/api-test-run.png)
+
+## Add automated integration tests
+
+Run the same tests in `development`, `staging` and `production` environment automatically.
+
+In JSON file:
+
+```json{10-21}
+{
+  "testCases": {
+    "my_first_test_case": {
+      "path": "/books",
+      "query": {
+        "id": 1
+      },
+      "method": "GET"
+    },
+    "expect": {
+      "body": {
+        "eq": {
+          "id": "1",
+          "author": "Robin Wieruch",
+          "title": "The Road to React"
+        },
+        "contains": {
+          "id": "1"
+        },
+        "hasKey": ["id", "author", "title"]
+      }
     }
   },
   "url": "my-api.com"
 }
 ```
 
-Call
+Run automated test:
+
+```sh
+api-test test my_first_test_case
+```
+
+Result:
+
+![API automated testing](../../../assets/api-test-spec.gif)
+
+## Compatible with CI Workflow
+
+Integrate automated tests in CI workflow.
+
+![Error exit code on failure](../../../assets/api-test-ci.png)

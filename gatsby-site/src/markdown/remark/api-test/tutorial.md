@@ -6,5 +6,3 @@ type: doc
 ---
 
 `api-test` is a bash program that makes testing
-
-## Tutorial
