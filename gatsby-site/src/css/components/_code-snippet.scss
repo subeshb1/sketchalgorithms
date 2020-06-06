@@ -18,6 +18,10 @@ pre {
       color: black;
     }
   }
+  .grvsc-container .grvsc-line-highlighted {
+    background-color: #f9cf592e;
+    box-shadow: inset 4px 0 0 0 #9e7a14;
+  }
 }
 
 pre.grvsc-container {
@@ -62,14 +66,14 @@ pre.grvsc-container {
     top: 4px;
     right: 4px;
     background: transparent;
-    color:white;
+    color: white;
     border: none;
     cursor: pointer;
     &::before {
-      content: "Copy";
+      content: 'Copy';
     }
     &:focus::before {
-      content: "Copied!";
+      content: 'Copied!';
     }
   }
 
@@ -95,8 +99,7 @@ pre.grvsc-container {
   white-space: normal;
 }
 
-
 .grvsc-container .grvsc-line-highlighted {
-  background-color: #ffe2e2;
-  box-shadow: inset 4px 0 0 0 rgba(241, 16, 16, 0.5);
+  background-color: rgb(19, 43, 64);
+  box-shadow: inset 4px 0 0 0 rgba(245, 243, 255, 0.5);
 }

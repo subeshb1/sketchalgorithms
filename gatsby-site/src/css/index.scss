@@ -52,13 +52,7 @@ $color: black;
   --theme-dim-color: #dadada;
   background: var(--theme-background);
   color: var(--theme-color);
-  :not(pre) > code {
-    background: #424653;
-  }
-  .grvsc-container .grvsc-line-highlighted {
-    background-color: rgb(19, 43, 64);
-    box-shadow: inset 4px 0 0 0 rgba(245, 243, 255, 0.5);
-  }
+
 }
 
 .theme-dark-blue {
