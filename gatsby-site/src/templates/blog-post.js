@@ -45,7 +45,7 @@ function BlogPost(props) {
           )}
         />
 
-        <main className="blog-mid-container">
+        <main className="blog-mid-container blog-post-content">
           <h1>{post.frontmatter.title}</h1>
           <p
             style={{
@@ -57,7 +57,6 @@ function BlogPost(props) {
             {post.frontmatter.date}
           </p>
           <div
-            className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <hr

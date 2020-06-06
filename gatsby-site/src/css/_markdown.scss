@@ -1,27 +1,31 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  position: relative;
-  letter-spacing: 0.01em;
-}
-
 .blog-post-content {
   .anchor > svg {
     opacity: 0;
   }
 
-  h1:hover > .anchor > svg,
-  h2:hover > .anchor > svg,
-  h3:hover > .anchor > svg,
-  h4:hover > .anchor > svg,
-  h5:hover > .anchor > svg,
-  h6:hover > .anchor > svg,
-  .anchor:hover > svg,
-  .anchor:focus > svg {
-    opacity: 1;
+  h1 {
+    text-transform: capitalize;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    letter-spacing: 0.01em;
+  }
+
+  h1:hover,
+  h2:hover,
+  h3:hover,
+  h4:hover,
+  h5:hover,
+  h6:hover {
+    .anchor > svg {
+      opacity: 1;
+    }
   }
 
   p,
