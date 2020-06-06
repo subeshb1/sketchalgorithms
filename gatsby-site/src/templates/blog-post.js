@@ -63,9 +63,7 @@ function BlogPost(props) {
               marginBottom: rhythm(1),
             }}
           >
-            <span className="blog-date">
-              {post.frontmatter.date}
-            </span>
+            <span className="blog-date">{post.frontmatter.date}</span>
             <If
               condition={
                 post.frontmatter.hideEstimatedTime == null ||
@@ -177,6 +175,7 @@ export const pageQuery = graphql`
             date
             type
             series
+            category
             position
           }
         }

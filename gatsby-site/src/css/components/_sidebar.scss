@@ -6,14 +6,24 @@
   max-height: 100vh;
   overflow: auto;
   position: sticky;
+  font-family: 'Open Sans', sans-serif;
   flex-direction: column;
   padding: 20px 0;
-  .blog-sidebar__item {
-    color: var(--theme-dim-color);
-    padding: 4px 20px;
-    font-family: 'Open Sans', sans-serif;
+
+  .blog-sidebar__header {
+    margin-top: 20px;
     font-size: 0.9rem;
+    padding: 4px 10px;
+    text-transform: capitalize;
+    user-select: none;
+    color: var(--theme-dim-color);
+  }
+
+  .blog-sidebar__item {
+    color: var(--theme-color);
     margin-top: 10px;
+    font-size: 0.8rem;
+    padding: 4px 20px;
     border-radius: 4px 0px 0 4px;
     &:hover {
       background: var(--theme-hover);
@@ -21,7 +31,6 @@
   }
   .blog-sidebar__item--active {
     color: var(--theme-color);
-    font-weight: bolder;
     background: var(--theme-hover);
     box-shadow: inset -4px 0 var(--theme-primary-hover);
   }
