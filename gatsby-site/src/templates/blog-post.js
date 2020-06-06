@@ -24,7 +24,6 @@ function BlogPost(props) {
     title: siteTitle,
   }
   const [, copyToClipboard] = useCopyToClipboard()
-
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
       if (!codeContainer.querySelector('button')) {

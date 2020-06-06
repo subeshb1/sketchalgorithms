@@ -69,7 +69,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (node.frontmatter.type === 'doc') {
       value = `${createFilePath({ node, getNode }).replace(/\/$/, '')}`
     } else {
-      value = `blog${createFilePath({ node, getNode }).replace(/\/$/, '')}`
+      value = `/blog${createFilePath({ node, getNode }).replace(/\/$/, '')}`
     }
 
     createNodeField({
