@@ -10,6 +10,8 @@ import Disqus from 'disqus-react'
 import Toc from '../components/Toc'
 import SideBar from '../components/SideBar'
 import { useCopyToClipboard } from 'react-use'
+import { If } from '../components/utils'
+import { Helmet } from 'react-helmet'
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
@@ -24,6 +26,7 @@ function BlogPost(props) {
   }
   const [, copyToClipboard] = useCopyToClipboard()
 
+  console.log(post.frontmatter.hideLeftBar)
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
       if (!codeContainer.querySelector('button')) {
@@ -40,9 +43,10 @@ function BlogPost(props) {
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div className="blog-main-container">
         <SideBar
-          seriesElements={props.data.allMarkdownRemark.edges.map(
-            x => ({...x.node.frontmatter, ...x.node.fields})
-          )}
+          seriesElements={props.data.allMarkdownRemark.edges.map(x => ({
+            ...x.node.frontmatter,
+            ...x.node.fields,
+          }))}
         />
 
         <main className="blog-mid-container blog-post-content">
@@ -56,9 +60,7 @@ function BlogPost(props) {
           >
             {post.frontmatter.date}
           </p>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -89,14 +91,42 @@ function BlogPost(props) {
               )}
             </li>
           </ul>
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
+          <If
+            condition={
+              post.frontmatter.hideDisqus == null ||
+              !post.frontmatter.hideDisqus
+            }
+          >
+            <Disqus.DiscussionEmbed
+              shortname={disqusShortname}
+              config={disqusConfig}
+            />
+          </If>
         </main>
-        <aside className="blog-right-container">
-          <Toc tableOfContents={post.tableOfContents} />
-        </aside>
+        <If
+          condition={
+            post.frontmatter.hideLeftBar == null ||
+            !post.frontmatter.hideLeftBar
+          }
+        >
+          <aside className="blog-right-container">
+            <Toc tableOfContents={post.tableOfContents} />
+          </aside>
+        </If>
+        <If
+          condition={
+            post.frontmatter.githubButtons == null ||
+            post.frontmatter.githubButtons
+          }
+        >
+          <Helmet>
+            <script
+              async
+              defer
+              src="https://buttons.github.io/buttons.js"
+            ></script>
+          </Helmet>
+        </If>
       </div>
     </Layout>
   )
@@ -119,6 +149,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       frontmatter {
         title
+        hideDisqus
+        githubButtons
+        hideLeftBar
         date(formatString: "MMMM DD, YYYY")
       }
       fields {

@@ -4,9 +4,17 @@ series: api-test
 type: doc
 category:
 position: 0
+hideLeftBar: true
+hideDisqus: true
+githubButtons: true
 ---
 
 Light weight automated JSON API testing framework.
+
+<a class="github-button" href="https://github.com/subeshb1" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-show-count="true" aria-label="Follow @subeshb1 on GitHub">Follow @subeshb1</a>  <a class="github-button" href="https://github.com/subeshb1/api-test" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star subeshb1/api-test on GitHub">Star</a>
+![CI](https://github.com/subeshb1/api-test/workflows/CI/badge.svg)
+
+
 
 ## Organize your test cases in a JSON file
 
