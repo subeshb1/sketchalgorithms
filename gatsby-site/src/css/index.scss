@@ -2,6 +2,7 @@
 @import 'components/navbar';
 @import 'components/tooltip';
 @import 'components/theme-picker';
+@import 'components/code-snippet';
 @import 'components/table-of-contents';
 @import 'layout/blog_layout';
 @import 'components/sidebar';
@@ -110,45 +111,6 @@ $color: black;
   }
 }
 
-code,
-pre {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
-}
-
-.grvsc-container.light-default-light {
-  background: #f9f9f9;
-}
-.grvsc-container {
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  border-radius: 0.3em;
-  position: relative;
-  overflow: auto;
-  padding: 1em;
-  padding-top: 2rem;
-  background: #f8f8f8;
-  margin-bottom: 1.5rem;
-  padding: 0;
-  max-height: 80vh;
-}
-
-@media (max-width: 900px) {
-  .grvsc-container {
-    margin-left: -1.125em;
-    margin-right: -1.125em;
-    box-shadow: unset;
-  }
-}
-
-:not(pre) > code {
-  padding: 0.2em;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  margin: 0 0.3em;
-  border-radius: 0.3em;
-  white-space: normal;
-}
-
 #project-main-container {
   min-height: 100vh;
 }
@@ -160,41 +122,5 @@ pre {
     background: #cecece;
     --popper-arrow-color: #cecece;
     color: #000000;
-  }
-}
-
-pre.grvsc-container {
-  padding-top: 1.5rem;
-  &::before {
-    color: #232129;
-    font-size: 0.75rem;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-      'Courier New', monospace;
-    letter-spacing: 0.075em;
-    line-height: 1;
-    position: absolute;
-    left: 1.5rem;
-    text-align: right;
-    top: 0px;
-    border-radius: 0px 0px 4px 4px;
-    padding: 0.25rem 0.5rem;
-    content: attr(data-language);
-    position: absolute;
-    background: white;
-    color: black;
-  }
-}
-
-.code-light-plus,
-.code-light-visual,
-.code-quiet-light,
-.code-light-visual-studio,
-.code-solarized-light {
-  pre.grvsc-container {
-    background: #f9f9f9;
-    &::before {
-      background: black;
-      color: white;
-    }
   }
 }

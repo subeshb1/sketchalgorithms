@@ -1,0 +1,96 @@
+code,
+pre {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}
+
+.code-light-plus,
+.code-light-visual,
+.code-quiet-light,
+.code-light-visual-studio,
+.code-solarized-light {
+  pre.grvsc-container {
+    background: #f9f9f9;
+    &::before {
+      background: black;
+      color: white;
+    }
+    button {
+      color: black;
+    }
+  }
+}
+
+pre.grvsc-container {
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: auto;
+  padding: 1em;
+  background: #f8f8f8;
+  padding: 0;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  &::before {
+    color: #232129;
+    font-size: 0.75rem;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+      'Courier New', monospace;
+    letter-spacing: 0.075em;
+    line-height: 1;
+    position: absolute;
+    left: 1.5rem;
+    text-align: right;
+    top: 0px;
+    border-radius: 0px 0px 4px 4px;
+    padding: 0.25rem 0.5rem;
+    content: attr(data-language);
+    position: absolute;
+    background: white;
+    color: black;
+  }
+  &:hover {
+    button {
+      opacity: 1;
+    }
+  }
+  button {
+    opacity: 0;
+    position: absolute;
+    font-family: 'Open Sans';
+    top: 4px;
+    right: 4px;
+    background: transparent;
+    color:white;
+    border: none;
+    cursor: pointer;
+    &::before {
+      content: "Copy";
+    }
+    &:focus::before {
+      content: "Copied!";
+    }
+  }
+
+  .grvsc-code {
+    max-height: 80vh;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 900px) {
+  .grvsc-container {
+    margin-left: -1.125em;
+    margin-right: -1.125em;
+    box-shadow: unset;
+  }
+}
+
+:not(pre) > code {
+  padding: 0.2em;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin: 0 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
