@@ -36,8 +36,8 @@
       color: var(--theme-dim-color);
     }
 
-    a.active,
     a.active {
+      box-shadow: inset 4px 0 var(--theme-primary-hover);
       color: var(--theme-color);
       background: white;
       background: var(--theme-hover);
