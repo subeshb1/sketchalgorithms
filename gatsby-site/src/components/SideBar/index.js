@@ -1,5 +1,5 @@
 import React from 'react'
-import { title } from 'change-case'
+import { Link } from 'gatsby'
 
 export default function SideBar({ seriesElements }) {
   return seriesElements && seriesElements.length ? (
@@ -7,7 +7,7 @@ export default function SideBar({ seriesElements }) {
       {seriesElements.map(element => {
         return (
           <div className="blog-sidebar__item" key={element.title}>
-            {element.title}
+            <Link to={element.slug}>{element.title}</Link>
           </div>
         )
       })}
