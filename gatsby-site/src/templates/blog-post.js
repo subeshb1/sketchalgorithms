@@ -11,7 +11,6 @@ import Toc from '../components/Toc'
 import SideBar from '../components/SideBar'
 import { useCopyToClipboard } from 'react-use'
 import { If } from '../components/utils'
-import { Helmet } from 'react-helmet'
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
@@ -40,8 +39,9 @@ function BlogPost(props) {
 
     script.src = 'https://buttons.github.io/buttons.js'
     script.async = true
-
-    document.body.appendChild(script)
+    if (document.body) {
+      document.body.appendChild(script)
+    }
   }, [])
   return (
     <Layout>
@@ -63,7 +63,9 @@ function BlogPost(props) {
               marginBottom: rhythm(1),
             }}
           >
-            <span className="blog-date">{post.frontmatter.date}</span>
+            {post.frontmatter.date && (
+              <span className="blog-date">{post.frontmatter.date}</span>
+            )}
             <If
               condition={
                 post.frontmatter.hideEstimatedTime == null ||

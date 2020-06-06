@@ -17,15 +17,24 @@ const categorizeSeries = series =>
 
 export default function SideBar({ seriesElements }) {
   if (!(seriesElements && seriesElements.length)) return null
-
-  const categorizedSeries = categorizeSeries(seriesElements)
-  console.log(categorizedSeries)
+  const first = seriesElements[0]
+  const categorizedSeries = categorizeSeries(seriesElements.slice(1))
   return (
     <aside className="blog-sidebar">
-      {categorizedSeries.map(elements => {
+      <Link
+        className="blog-sidebar__series-title blog-sidebar__item"
+        key={first.title}
+        activeClassName="blog-sidebar__item--active"
+        to={first.slug}
+      >
+        {first.title}
+      </Link>
+      {categorizedSeries.map((elements, i) => {
         return (
-          <>
-            {elements.category && <div className="blog-sidebar__header">{elements.category}</div>}
+          <React.Fragment key={i}>
+            {elements.category && (
+              <div className="blog-sidebar__header">{elements.category}</div>
+            )}
             {elements.items.map(element => (
               <Link
                 className="blog-sidebar__item"
@@ -36,7 +45,7 @@ export default function SideBar({ seriesElements }) {
                 {element.title}
               </Link>
             ))}
-          </>
+          </React.Fragment>
         )
       })}
     </aside>

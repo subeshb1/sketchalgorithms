@@ -13,7 +13,7 @@
   .blog-sidebar__header {
     margin-top: 20px;
     font-size: 0.9rem;
-    padding: 4px 10px;
+    padding: 4px 15px;
     text-transform: capitalize;
     user-select: none;
     color: var(--theme-dim-color);
@@ -28,6 +28,11 @@
     &:hover {
       background: var(--theme-hover);
     }
+  }
+  .blog-sidebar__series-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
   }
   .blog-sidebar__item--active {
     color: var(--theme-color);
