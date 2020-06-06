@@ -11,6 +11,7 @@ import Toc from '../components/Toc'
 import SideBar from '../components/SideBar'
 import { useCopyToClipboard } from 'react-use'
 import { If } from '../components/utils'
+import { NextBlog } from '../components/Blog'
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
@@ -24,6 +25,10 @@ function BlogPost(props) {
     title: siteTitle,
   }
   const [, copyToClipboard] = useCopyToClipboard()
+  const seriesContent = props.data.allMarkdownRemark.edges.map(x => ({
+    ...x.node.frontmatter,
+    ...x.node.fields,
+  }))
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
       if (!codeContainer.querySelector('button')) {
@@ -47,12 +52,7 @@ function BlogPost(props) {
     <Layout>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div className="blog-main-container">
-        <SideBar
-          seriesElements={props.data.allMarkdownRemark.edges.map(x => ({
-            ...x.node.frontmatter,
-            ...x.node.fields,
-          }))}
-        />
+        <SideBar seriesElements={seriesContent} />
 
         <main className="blog-mid-container blog-post-content">
           <h1>{post.frontmatter.title}</h1>
@@ -83,31 +83,15 @@ function BlogPost(props) {
               marginBottom: rhythm(1),
             }}
           />
-          <Bio />
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
+          {/* <Bio /> */}
+          <NextBlog
+            {...{
+              previous,
+              next,
+              series: seriesContent,
+              current: post.fields.slug,
             }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
+          />
           <If
             condition={
               post.frontmatter.hideDisqus == null ||
