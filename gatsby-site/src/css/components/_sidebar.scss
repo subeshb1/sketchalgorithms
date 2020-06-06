@@ -1,5 +1,28 @@
 .blog-sidebar {
+  min-height: 100vh;
+  top: 56px;
+  border-right: 1px solid var(--theme-navbar-box-shadow);
+  display: flex;
+  max-height: 100vh;
+  overflow: auto;
+  position: sticky;
+  flex-direction: column;
+  padding: 40px 0 20px 0;
   .blog-sidebar__item {
-    padding: 10px;
+    color: var(--theme-dim-color);
+    padding: 4px 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    border-radius: 4px 0px 0 4px;
+    &:hover {
+      background: var(--theme-hover);
+    }
+  }
+  .blog-sidebar__item--active {
+    color: var(--theme-color);
+    font-weight: bolder;
+    background: var(--theme-hover);
+    box-shadow: inset -4px 0 var(--theme-primary-hover);
   }
 }

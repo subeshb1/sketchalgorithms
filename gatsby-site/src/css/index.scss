@@ -17,8 +17,6 @@ $background: white;
 $color: black;
 
 @mixin theme($background, $color) {
-  background: $background;
-  color: $color;
 }
 
 * {
@@ -52,7 +50,8 @@ $color: black;
   --theme-color: #{$color};
   --theme-hover: #424653;
   --theme-dim-color: #dadada;
-  @include theme($background, $color);
+  background: var(--theme-background);
+  color: var(--theme-color);
   :not(pre) > code {
     background: #424653;
   }
@@ -64,14 +63,14 @@ $color: black;
 
 .theme-dark-blue {
   $color: white;
-  --theme-dim-color: #dadada;
-
   $background: #083575;
+  --theme-dim-color: #dadada;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #0b479c;
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #071d3e;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-dark-red {
@@ -80,23 +79,25 @@ $color: black;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-dim-color: #dadada;
-
   --theme-hover: #a01a2c;
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #56111a;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-solarized {
-  @include theme($background, $color);
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-light {
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #c9c9c9ab;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #e0e0e096;
   --theme-dim-color: #7b7878;
+  background: var(--theme-background);
+  color: var(--theme-color);
   :not(pre) > code {
     background: #e8e8e8;
   }

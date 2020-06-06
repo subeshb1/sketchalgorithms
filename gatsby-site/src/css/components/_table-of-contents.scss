@@ -3,7 +3,7 @@
   background: var(--theme-background);
   color: var(--theme-color);
   z-index: 800;
-  position: fixed;
+  position: sticky;
   right: 40px;
   max-width: 300px;
   padding: 20px 20px 20px 0;
@@ -35,7 +35,7 @@
       color: black;
       color: var(--theme-dim-color);
     }
-    
+
     a.active,
     a.active {
       color: var(--theme-color);

@@ -37,6 +37,12 @@ function BlogPost(props) {
         codeContainer.prepend(button)
       }
     })
+    const script = document.createElement("script");
+
+    script.src = "https://buttons.github.io/buttons.js";
+    script.async = true;
+
+    document.body.appendChild(script);
   }, [])
   return (
     <Layout>
@@ -112,20 +118,6 @@ function BlogPost(props) {
           <aside className="blog-right-container">
             <Toc tableOfContents={post.tableOfContents} />
           </aside>
-        </If>
-        <If
-          condition={
-            post.frontmatter.githubButtons == null ||
-            post.frontmatter.githubButtons
-          }
-        >
-          <Helmet>
-            <script
-              async
-              defer
-              src="https://buttons.github.io/buttons.js"
-            ></script>
-          </Helmet>
         </If>
       </div>
     </Layout>

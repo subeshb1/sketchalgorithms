@@ -6,9 +6,14 @@ export default function SideBar({ seriesElements }) {
     <aside className="blog-sidebar">
       {seriesElements.map(element => {
         return (
-          <div className="blog-sidebar__item" key={element.title}>
-            <Link to={element.slug}>{element.title}</Link>
-          </div>
+          <Link
+            className="blog-sidebar__item"
+            key={element.title}
+            activeClassName="blog-sidebar__item--active"
+            to={element.slug}
+          >
+            {element.title}
+          </Link>
         )
       })}
     </aside>
