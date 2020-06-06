@@ -9,7 +9,7 @@ export default function Toc({ tableOfContents }) {
       links: null,
       headings: null,
       intersectionOptions: {
-        rootMargin: '56px',
+        rootMargin: '60px',
         threshold: 1,
       },
       previousSection: null,
@@ -61,8 +61,12 @@ export default function Toc({ tableOfContents }) {
           } else {
             link.classList.remove('is-visible')
           }
-
           this.highlightFirstActive()
+          if (this.links[1] && href === this.links[0].getAttribute('href')) {
+            this.previousSection = this.links[1]
+              .getAttribute('href')
+              .replace('#', '')
+          }
         })
       },
 

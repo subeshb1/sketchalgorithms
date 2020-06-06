@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .table-of-contents {
   font-family: 'Open Sans', sans-serif;
   background: var(--theme-background);
   color: var(--theme-color);
   z-index: 800;
-  position: sticky;
+  position: fixed;
   right: 40px;
   max-width: 300px;
   padding: 20px 20px 20px 0;

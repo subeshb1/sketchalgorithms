@@ -26,13 +26,15 @@ function BlogPost(props) {
 
   useEffect(() => {
     document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
-      var button = document.createElement('button')
-      button.onclick = () => {
-        copyToClipboard(codeContainer.querySelector('.grvsc-code').innerText)
+      if (!codeContainer.querySelector('button')) {
+        var button = document.createElement('button')
+        button.onclick = () => {
+          copyToClipboard(codeContainer.querySelector('.grvsc-code').innerText)
+        }
+        codeContainer.prepend(button)
       }
-      codeContainer.prepend(button)
     })
-  }, []);
+  }, [])
   return (
     <Layout>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
