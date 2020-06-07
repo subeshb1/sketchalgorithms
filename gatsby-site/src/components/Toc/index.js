@@ -55,19 +55,24 @@ export default function Toc({ tableOfContents }) {
           const id = entry.target.getAttribute('id')
           let href = `#${id}`,
             link = this.links.find(l => l.getAttribute('href') === href)
-          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 1) {
             link.classList.add('is-visible')
             this.previousSection = id
           } else {
             link.classList.remove('is-visible')
           }
           this.highlightFirstActive()
-          // if (this.container.classList.contains('active') && this.links[1] && href === this.links[0].getAttribute('href')) {
-          //   this.previousSection = this.links[1]
-          //     .getAttribute('href')
-          //     .replace('#', '')
-          // }
         })
+        if (
+          entries.length === 1 &&
+          this.links[1] &&
+          `#${entries[0].target.getAttribute('id')}` ===
+            this.links[0].getAttribute('href')
+        ) {
+          this.previousSection = this.links[1]
+            .getAttribute('href')
+            .replace('#', '')
+        }
       },
 
       highlightFirstActive() {
