@@ -19,7 +19,7 @@ const Popover = React.forwardRef(
       elementAs = 'div',
       render,
       strategy = 'absolute',
-      offset = 10,
+      offset = [0, 10],
       ...otherProps
     },
     forwardedRef
@@ -36,7 +36,7 @@ const Popover = React.forwardRef(
           {
             name: 'offset',
             options: {
-              offset: [0, offset],
+              offset: offset,
             },
           },
         ],
@@ -90,7 +90,6 @@ const Popover = React.forwardRef(
               ...styles.popper,
             }}
             {...attributes.popper}
-            // className="popper-tool-tip"
           >
             {children}
           </div>

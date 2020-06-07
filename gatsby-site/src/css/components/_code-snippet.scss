@@ -82,7 +82,7 @@ pre.grvsc-container {
     overflow: auto;
     width: 100%;
     .grvsc-line {
-      width: auto;
+      min-width: 100%;
     }
   }
 }
