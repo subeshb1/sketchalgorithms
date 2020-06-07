@@ -93,8 +93,22 @@ pre.grvsc-container {
 
 :not(pre) > code {
   padding: 1px 0.5em;
-  border-radius: 0.3em;
-  white-space: normal;
+  font-family: Input, 'SF Mono', Menlo, Monaco, Courier, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  -webkit-font-smoothing: subpixel-antialiased;
+  min-width: 1.2em;
+  line-height: 1.8em;
+  display: inline-block;
+  background-color: rgb(17, 17, 17);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--theme-hover);
+  border-image: initial;
+  border-radius: 4px;
+  padding: 2px 8px 0px;
+  margin: -5px 2px;
 }
 
 .grvsc-container .grvsc-line-highlighted {

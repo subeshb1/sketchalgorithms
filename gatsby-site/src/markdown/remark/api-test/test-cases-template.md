@@ -34,7 +34,7 @@ The `name` property is a string field that gives the description of what the tes
 
 The `url` property holds the base URL of an API in the `string` format. Example:
 
-```urls
+```sh
 localhost:300
 api.example.com/path
 ```
