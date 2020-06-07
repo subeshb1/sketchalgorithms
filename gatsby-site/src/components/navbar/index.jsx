@@ -6,14 +6,17 @@ import Popover from '../Popover'
 
 import { navDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
-export default function NavBar() {
+const NavBar = React.memo(props => {
   return (
     <nav className="lg-navbar">
-      <img className={'lg-navbar-img'} src={Logo} alt="Website logo"/>
+      <img className={'lg-navbar-img'} src={Logo} alt="Website logo" />
       <Link to="/" className="lg-navbar__item lg-navbar__header">
         Subesh Bhandari
       </Link>
-      <Popover strategy="fixed" elementAs={navDropDownFactory('/blogs', 'Blogs')}>
+      <Popover
+        strategy="fixed"
+        elementAs={navDropDownFactory('/blogs', 'Blogs')}
+      >
         <div className="lg-navbar__drop-down" key="1">
           <div>1</div>
           <div>1</div>
@@ -30,7 +33,10 @@ export default function NavBar() {
           <div>3</div>
         </div>
       </Popover>
-      <Popover strategy="fixed" elementAs={navDropDownFactory('/projects', 'Projects')}>
+      <Popover
+        strategy="fixed"
+        elementAs={navDropDownFactory('/projects', 'Projects')}
+      >
         <div className="lg-navbar__drop-down" key="1">
           <div>1</div>
           <div>2</div>
@@ -40,4 +46,6 @@ export default function NavBar() {
       <ThemePicker />
     </nav>
   )
-}
+})
+
+export default NavBar

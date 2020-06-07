@@ -13,6 +13,12 @@ import { useCopyToClipboard } from 'react-use'
 import { If } from '../components/utils'
 import { NextBlog } from '../components/Blog'
 
+const DisqusComments = React.memo(({ show, shortname, disqusConfig }) => {
+  return show ? (
+    <Disqus.DiscussionEmbed shortname={shortname} config={disqusConfig} />
+  ) : null
+})
+
 function BlogPost(props) {
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
@@ -30,16 +36,6 @@ function BlogPost(props) {
     ...x.node.fields,
   }))
   useEffect(() => {
-    document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
-      if (!codeContainer.querySelector('button')) {
-        let button = document.createElement('button')
-        button.setAttribute('aria-label', 'Copy to clipboard')
-        button.onclick = () => {
-          copyToClipboard(codeContainer.querySelector('.grvsc-code').innerText)
-        }
-        codeContainer.prepend(button)
-      }
-    })
     const script = document.createElement('script')
 
     script.src = 'https://buttons.github.io/buttons.js'
@@ -47,11 +43,22 @@ function BlogPost(props) {
     if (document.body) {
       document.body.appendChild(script)
     }
+    document.querySelectorAll('.grvsc-container').forEach(codeContainer => {
+      if (!codeContainer.querySelector('button')) {
+        let button = document.createElement('button')
+        button.setAttribute('aria-label', 'Copy to clipboard')
+        button.setAttribute('type', 'button')
+        button.onclick = () => {
+          copyToClipboard(codeContainer.querySelector('.grvsc-code').innerText)
+        }
+        codeContainer.prepend(button)
+      }
+    })
   }, [])
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <div className="blog-main-container">
+        <SEO title={post.frontmatter.title} description={post.excerpt} />
         <SideBar seriesElements={seriesContent} />
 
         <main className="blog-mid-container blog-post-content">
@@ -92,17 +99,14 @@ function BlogPost(props) {
               current: post.fields.slug,
             }}
           />
-          <If
-            condition={
+          <DisqusComments
+            show={
               post.frontmatter.hideDisqus == null ||
               !post.frontmatter.hideDisqus
             }
-          >
-            <Disqus.DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />
-          </If>
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
         </main>
         <If
           condition={
