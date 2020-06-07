@@ -101,6 +101,9 @@ pre.grvsc-container {
   line-height: 1.8em;
   display: inline-block;
   background-color: rgb(17, 17, 17);
+  color: white;
+  background: var(--theme-background);
+  color: var(--theme-color);
   border-width: 1px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.1);

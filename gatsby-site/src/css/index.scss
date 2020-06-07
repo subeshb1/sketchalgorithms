@@ -35,6 +35,8 @@ $color: black;
   --theme-secondary-bg: #000000;
   --theme-primary-hover: #3068b7;
   --theme-navbar-box-shadow: #484848ab;
+  --theme-color: black;
+  --theme-background: white;
 }
 
 @mixin theme($background, $color) {
@@ -52,7 +54,6 @@ $color: black;
   --theme-dim-color: #dadada;
   background: var(--theme-background);
   color: var(--theme-color);
-
 }
 
 .theme-dark-blue {
@@ -110,9 +111,17 @@ $color: black;
 .theme-dark,
 .theme-dark-blue,
 .theme-dark-red {
+  :not(pre) > code {
+    background-color: rgb(17, 17, 17);
+    color: white;
+  }
   .popper-tool-tip {
     background: #cecece;
     --popper-arrow-color: #cecece;
     color: #000000;
   }
+}
+
+a {
+  text-decoration: none;
 }

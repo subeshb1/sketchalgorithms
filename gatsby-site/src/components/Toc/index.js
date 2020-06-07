@@ -62,11 +62,11 @@ export default function Toc({ tableOfContents }) {
             link.classList.remove('is-visible')
           }
           this.highlightFirstActive()
-          if (this.container.classList.contains('active') && this.links[1] && href === this.links[0].getAttribute('href')) {
-            this.previousSection = this.links[1]
-              .getAttribute('href')
-              .replace('#', '')
-          }
+          // if (this.container.classList.contains('active') && this.links[1] && href === this.links[0].getAttribute('href')) {
+          //   this.previousSection = this.links[1]
+          //     .getAttribute('href')
+          //     .replace('#', '')
+          // }
         })
       },
 
