@@ -1,31 +1,45 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  position: relative;
+.project-main-container {
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
-
 .blog-post-content {
+  background: var(--theme-background);
+  color: var(--theme-color);
   .anchor > svg {
     opacity: 0;
   }
 
-  h1:hover > .anchor > svg,
-  h2:hover > .anchor > svg,
-  h3:hover > .anchor > svg,
-  h4:hover > .anchor > svg,
-  h5:hover > .anchor > svg,
-  h6:hover > .anchor > svg,
-  .anchor:hover > svg,
-  .anchor:focus > svg {
-    opacity: 1;
+  h1 {
+    text-transform: capitalize;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    letter-spacing: 0.01em;
+  }
+
+  h1:hover,
+  h2:hover,
+  h3:hover,
+  h4:hover,
+  h5:hover,
+  h6:hover {
+    .anchor > svg {
+      opacity: 1;
+    }
+  }
+
+  strong {
+    font-family: Lora;
+  }
   p,
   li {
-    letter-spacing: -0.004em;
+    letter-spacing: 0.01em;
     word-spacing: 0.05em;
     line-height: 1.7;
   }
@@ -40,6 +54,9 @@ h6 {
     margin-right: -1.125em;
     padding-right: 0;
     margin-right: -1rem;
+    p {
+      font-size: 0.8em;
+    }
   }
 
   blockquote blockquote {
@@ -59,6 +76,9 @@ h6 {
   strong {
     font-size: 1.02rem;
   }
+  img.badge {
+    margin: 0;
+  }
 
   @media (max-width: 900px) {
     .anchor {
@@ -70,6 +90,49 @@ h6 {
 
   ul ul {
     list-style-type: disc;
+  }
+  .estimated-reading-time {
+    opacity: 0.7;
+  }
+  .blog-date {
+    margin-right: 10px;
+  }
+
+  .next-blog-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: var(--theme-background);
+  }
+
+  .next-blog-container__item {
+    font-family: 'Open Sans';
+    padding: 10px;
+    font-size: 0.9rem;
+    a {
+      color: var(--theme-color);
+    }
+    font-weight: bold;
+    svg {
+      margin-left: -25px;
+      margin-right: 10px;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .next-blog-container__item--right {
+    svg {
+      margin-right: -25px;
+      margin-left: 10px;
+    }
+    text-align: right;
+  }
+  .next-blog-header {
+    font-size: 0.9em;
+    margin: 4px;
+    color: var(--theme-dim-color);
+    display: block;
   }
 }
 
@@ -88,7 +151,8 @@ h6 {
     text-decoration: none;
   }
   p {
-    color: #dce4e8;
+    color: white;
+    font-family: 'Lato';
   }
 
   .anchor svg path {

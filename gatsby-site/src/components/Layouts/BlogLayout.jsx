@@ -9,13 +9,23 @@ class BlogPostTemplate extends React.Component {
       <Layout>
         <div
           style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: 900,
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            background: 'var(--theme-background)',
+            color: 'var(--theme-color)',
+            minHeight: '100vh',
           }}
         >
-          {this.props.children}
+          <div
+            style={{
+              marginLeft: `auto`,
+              marginRight: `auto`,
+              maxWidth: 900,
+              background: 'var(--theme-background)',
+              color: 'var(--theme-color)',
+              padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            }}
+          >
+            {this.props.children}
+          </div>
         </div>
       </Layout>
     )

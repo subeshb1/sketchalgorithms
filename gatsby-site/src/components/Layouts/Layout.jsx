@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../../css/index.scss'
-import { NavBar } from '..'
+import  NavBar  from '../navbar/index'
 
 const fetchTheme = () => {
   if (window.localStorage) {
@@ -17,7 +17,7 @@ const Layout = props => {
   }, [])
 
   return (
-    <div className={`theme-light`} id="project-main-container">
+    <div id="project-main-container">
       <NavBar />
       <div className="nav-breaker"></div>
       {children}

@@ -65,11 +65,26 @@ module.exports = {
                 default: 'Light+ (default light)',
                 parentSelector: {
                   // Any CSS selector will work!
-                  '.theme-dark': 'Dark+ (default dark)',
-                  '.theme-dark-blue': 'Tomorrow Night Blue',
-                  '.theme-dark-red': 'Red'
+                  '.code-dark-plus': 'Dark+ (default dark)',
+                  '.code-light-plus': 'Light+ (default light)',
+                  '.code-tomorrow-night-blue': 'Tomorrow Night Blue',
+                  '.code-red': 'Red',
+                  '.code-abyss': 'Abyss',
+                  '.code-dark-visual-studio': 'Dark (Visual Studio)',
+                  '.code-light-visual-studio': 'Light (Visual Studio)',
+                  '.code-high-contrast': 'High Contrast',
+                  '.code-kimbie-dark': 'Kimbie Dark',
+                  '.code-monokai-dimmed': 'Monokai Dimmed',
+                  '.code-monokai': 'Monokai',
+                  '.code-quiet-light': 'Quiet Light',
+                  '.code-solarized-dark': 'Solarized Dark',
+                  '.code-solarized-light': 'Solarized Light',
+                  '.code-synth-wave-84': `SynthWave '84`,
                 },
               },
+              extensions: [
+                'synthwave-vscode',
+              ],
               inlineCode: {
                 marker: '•',
                 theme: {
@@ -182,8 +197,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sketch Algorithms`,
-        short_name: `SketchAlgorithms`,
+        name: `Subesh Bhandari`,
+        short_name: `SubeshBhandari`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

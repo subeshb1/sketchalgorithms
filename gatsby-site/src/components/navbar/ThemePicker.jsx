@@ -5,39 +5,45 @@ import { IoIosColorPalette } from 'react-icons/io'
 import { ChromePicker } from 'react-color'
 import { useLocalStorage } from 'react-use'
 
-const darkBlue = {
-  bg: '#083575',
-  color: 'white',
-  'box-shadow': '#00193e',
+const codeTheme = {
+  // Any CSS selector will work!
+  'code-dark-plus': 'Dark+ (default dark)',
+  'code-light-plus': 'Light+ (default light)',
+  'code-tomorrow-night-blue': 'Tomorrow Night Blue',
+  'code-red': 'Red',
+  'code-abyss': 'Abyss',
+  'code-dark-visual-studio': 'Dark (Visual Studio)',
+  'code-light-visual-studio': 'Light (Visual Studio)',
+  'code-high-contrast': 'High Contrast',
+  'code-kimbie-dark': 'Kimbie Dark',
+  'code-monokai-dimmed': 'Monokai Dimmed',
+  'code-monokai': 'Monokai',
+  'code-quiet-light': 'Quiet Light',
+  'code-solarized-dark': 'Solarized Dark',
+  'code-solarized-light': 'Solarized Light',
+  'code-synth-wave-84': `SynthWave '84`,
 }
-
-const darkRed = {
-  bg: '#7a1522',
-  color: 'white',
-  'box-shadow': '#581019',
-}
-
 const excludeVariables = ['--theme-picker-box-shadow']
 
 const themes = [
   {
     name: 'Light',
-    value: 'theme-light',
+    value: 'theme-light code-light-plus',
     color: '#ffffff',
   },
   {
     name: 'Dark',
-    value: 'theme-dark',
+    value: 'theme-dark code-dark-plus',
     color: '#2a2c35',
   },
   {
     name: 'DarkBlue',
-    value: 'theme-dark-blue',
+    value: 'theme-dark-blue code-tomorrow-night-blue',
     color: '#083575',
   },
   {
     name: 'DarkRed',
-    value: 'theme-dark-red',
+    value: 'theme-dark-red code-red',
     color: '#7a1522',
   },
 ]
@@ -131,7 +137,12 @@ const ThemeButton = ({ name, onClick, background }) => (
     {name}
   </button>
 )
-function ThemeChanger({ setPrimaryColor, primaryColor, setThemeMode }) {
+function ThemeChanger({
+  setPrimaryColor,
+  primaryColor,
+  setThemeMode,
+  themeMode,
+}) {
   const [show, setShow] = useState(false)
   return (
     <div className="theme-picker">
@@ -161,6 +172,21 @@ function ThemeChanger({ setPrimaryColor, primaryColor, setThemeMode }) {
               />
             )
           })}
+        </div>
+        <div className="theme-picker__input-group">
+          <div className="theme-picker__header">Code Snippet Theme</div>
+          <select
+            value={themeMode.split(' ')[1]}
+            onChange={({ target }) =>
+              setThemeMode(`${themeMode.split(' ')[0]} ${target.value}`)
+            }
+          >
+            {Object.entries(codeTheme).map(([key, value], i) => (
+              <option key={i} value={key}>
+                {value}
+              </option>
+            ))}
+          </select>
         </div>
         <button onClick={() => setShow(!show)}>
           {!show ? 'Show more' : 'Hide'}
@@ -210,7 +236,7 @@ export default function ThemePicker() {
 
   const [themeMode, setThemeMode, removeTheme] = useLocalStorage(
     'theme',
-    'theme-light'
+    'theme-light code-light-plus'
   )
 
   useEffect(() => {
@@ -220,7 +246,7 @@ export default function ThemePicker() {
   }, [primaryColor])
 
   useEffect(() => {
-    document.getElementById('project-main-container').className = themeMode
+    document.body.className = themeMode
   }, [themeMode])
 
   return (
@@ -231,6 +257,7 @@ export default function ThemePicker() {
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
           elementAs="button"
+          aria-label="Open Theme picker"
           closeOnClick
           ref={ref}
           {...props}
@@ -245,6 +272,7 @@ export default function ThemePicker() {
       <ThemeChanger
         primaryColor={primaryColor}
         setPrimaryColor={setPrimaryColor}
+        themeMode={themeMode}
         setThemeMode={setThemeMode}
       />
     </Popover>

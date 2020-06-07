@@ -2,19 +2,30 @@
 @import 'components/navbar';
 @import 'components/tooltip';
 @import 'components/theme-picker';
+@import 'components/code-snippet';
 @import 'components/table-of-contents';
+@import 'layout/blog_layout';
+@import 'components/sidebar';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 $background: white;
 $color: black;
 
 @mixin theme($background, $color) {
-  background: $background;
-  color: $color;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.tl-edges {
+  max-width: 100%;
+  overflow-x: unset;
 }
 
 :root {
@@ -24,6 +35,12 @@ $color: black;
   --theme-secondary-bg: #000000;
   --theme-primary-hover: #3068b7;
   --theme-navbar-box-shadow: #484848ab;
+  --theme-navbar-box-shadow: #c9c9c9ab;
+  --theme-background: white;
+  --theme-color: black;
+  --theme-hover: #e0e0e096;
+  --theme-dim-color: #6f6f6f;
+  --popper-arrow-color: black;
 }
 
 @mixin theme($background, $color) {
@@ -38,24 +55,21 @@ $color: black;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #424653;
-  @include theme($background, $color);
-  :not(pre) > code {
-    background: #424653;
-  }
-  .grvsc-container .grvsc-line-highlighted {
-    background-color: rgb(19, 43, 64);
-    box-shadow: inset 4px 0 0 0 rgba(245, 243, 255, 0.5);
-  }
+  --theme-dim-color: #dadada;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-dark-blue {
   $color: white;
   $background: #083575;
+  --theme-dim-color: #dadada;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #0b479c;
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #071d3e;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-dark-red {
@@ -63,71 +77,35 @@ $color: black;
   $background: #7a1522;
   --theme-background: #{$background};
   --theme-color: #{$color};
+  --theme-dim-color: #dadada;
   --theme-hover: #a01a2c;
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #56111a;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-solarized {
-  @include theme($background, $color);
+  background: var(--theme-background);
+  color: var(--theme-color);
 }
 
 .theme-light {
-  @include theme($background, $color);
   --theme-navbar-box-shadow: #c9c9c9ab;
   --theme-background: #{$background};
   --theme-color: #{$color};
   --theme-hover: #e0e0e096;
+  --theme-dim-color: #6f6f6f;
+  background: var(--theme-background);
+  color: var(--theme-color);
   :not(pre) > code {
-    background: #fff1b9;
+    background: #eaeaea;
   }
 
-  .grvsc-container .grvsc-line-highlighted {
-    background-color: #ffe2e2;
-    box-shadow: inset 4px 0 0 0 rgba(241, 16, 16, 0.5);
-  }
   .popper-tool-tip {
     background: black;
     color: white;
     --popper-arrow-color: black;
   }
-}
-
-code,
-pre {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
-}
-
-.grvsc-container.light-default-light {
-  background: #f9f9f9;
-}
-.grvsc-container {
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  border-radius: 0.3em;
-  overflow: auto;
-  padding: 1em;
-  background: #f8f8f8;
-  margin-bottom: 1.5rem;
-  padding: 0;
-  max-height: 80vh;
-}
-
-@media (max-width: 900px) {
-  .grvsc-container {
-    margin-left: -1.125em;
-    margin-right: -1.125em;
-    box-shadow: unset;
-  }
-}
-
-:not(pre) > code {
-  padding: 0.2em;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  margin: 0 0.3em;
-  border-radius: 0.3em;
-  white-space: normal;
 }
 
 #project-main-container {
@@ -137,9 +115,18 @@ pre {
 .theme-dark,
 .theme-dark-blue,
 .theme-dark-red {
+  :not(pre) > code {
+    background-color: rgb(17, 17, 17);
+    color: white;
+  }
   .popper-tool-tip {
     background: #cecece;
     --popper-arrow-color: #cecece;
     color: #000000;
   }
+}
+
+a {
+  text-decoration: none;
+  color: var(--theme-color)
 }

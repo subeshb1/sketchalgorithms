@@ -8,13 +8,13 @@ export default class Section extends Component {
     return (
       <div className="section">
         <article id="simple-algorithms">
-          <h2>Sketch Algorithms</h2>
+          <h2>Subesh Bhandari</h2>
           <article id="learn">
             <h3>Learn</h3>
             <p>
               <img src={algoSVG} alt="" />
               An algorithm is a well-defined procedure that allows a computer to
-              solve a problem. Sketch Algorithms provides a medium for beginners
+              solve a problem. Subesh Bhandari provides a medium for beginners
               to learn and interact with basic and advance algorithms related to
               Computer Science. These algorithms include sorting, searching,
               cryptography, dynamic programming, greedy paradigm, graph
@@ -56,7 +56,7 @@ export default class Section extends Component {
             <h3>Implement</h3>
             <p>
               <img src={implementSVG} alt="" />
-              Learning is quite easy and fun in Sketch Algorithms. Go through
+              Learning is quite easy and fun in Subesh Bhandari. Go through
               algorithms, learn their principles and fundamentals, look at their
               code, try to do it yourself and become a master. Finally, gather
               all your knowledge, and implement your own version of the

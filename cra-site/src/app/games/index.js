@@ -33,7 +33,7 @@ let menuItems = links.map(item => ({
 const data = {
   description:
     "Learn how to make a Simple Games using several programming languages. Follow the step by step process to build your own games.",
-  title: "Games | Tutorial | Sketch Algorithms",
+  title: "Games | Tutorial | Subesh Bhandari",
   url: "/games/"
 };
 

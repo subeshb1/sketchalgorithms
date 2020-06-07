@@ -46,7 +46,7 @@ export default class Footer extends Component {
           <div className="group">
             Stay In Touch
             <a
-              href="https://www.facebook.com/sketchalgorithms/"
+              href="https://www.facebook.com/SubeshBhandari/"
               className="item"
               target="_blank"
               rel="noopener noreferrer"
@@ -54,7 +54,7 @@ export default class Footer extends Component {
               Facebook
             </a>
             <a
-              href="https://www.instagram.com/sketchalgorithms/"
+              href="https://www.instagram.com/SubeshBhandari/"
               className="item"
               target="_blank"
               rel="noopener noreferrer"

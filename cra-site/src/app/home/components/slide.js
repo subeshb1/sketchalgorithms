@@ -31,7 +31,7 @@ export default class Slide extends Component {
       <Carousel height={"90vh"} interval={5000}>
         <Carousel.Slide>
           <div className="welcome">
-            <h1 style={{ fontSize: "1.3em" }}>Welcome To Sketch Algorithms </h1>
+            <h1 style={{ fontSize: "1.3em" }}>Welcome To Subesh Bhandari </h1>
             <h2 style={{ fontSize: "1em" }}>A place to...</h2>
             <div className="cards">
               <a className="card" href="#learn">
@@ -72,7 +72,7 @@ export default class Slide extends Component {
         <Carousel.Slide>
           <div className="welcome">
             <h2 style={{ fontSize: "1.3em" }}>
-              What Sketch Algorithms provide...
+              What Subesh Bhandari provide...
             </h2>
             <div className="cards">
               <a href="#interactive" className="card">

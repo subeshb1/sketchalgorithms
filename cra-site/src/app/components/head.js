@@ -2,13 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { images } from "../assets/images";
 
-const root = "https://www.sketchalgorithms.com";
+const root = "https://www.SubeshBhandari.com";
 export default class Head extends React.Component {
   render() {
     const {
       data: {
         url = "/",
-        title = "Sketch Algorithms",
+        title = "Subesh Bhandari",
         ogTitle = title,
         description = "Learn, Visualize, Implement",
         ogDescription = description,

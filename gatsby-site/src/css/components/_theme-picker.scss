@@ -20,6 +20,10 @@
     .theme-picker__input-group {
       flex-direction: column;
       display: flex;
+      select {
+        padding: 4px;
+        margin-bottom: 12px;
+      }
     }
     .theme-picker__header {
       font-weight: bold;
