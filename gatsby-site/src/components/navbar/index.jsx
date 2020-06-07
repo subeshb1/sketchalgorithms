@@ -6,7 +6,7 @@ import Popover from '../Popover'
 import { navDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
 const NavBar = React.memo(props => {
-  const { navLogo, snakeGrid } = useStaticQuery(
+  const { navLogo, snakeGrid, toc, searching, sorting, api } = useStaticQuery(
     graphql`
       query images {
         navLogo: file(absolutePath: { regex: "/logo.png/" }) {
@@ -18,6 +18,34 @@ const NavBar = React.memo(props => {
         }
 
         snakeGrid: file(absolutePath: { regex: "/snake-grid.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        searching: file(absolutePath: { regex: "/searching.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        sorting: file(absolutePath: { regex: "/sorting.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        toc: file(absolutePath: { regex: "/toc.PNG/i" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        api: file(absolutePath: { regex: "/api.png/" }) {
           childImageSharp {
             fixed(width: 50, height: 50) {
               ...GatsbyImageSharpFixed
@@ -56,21 +84,21 @@ const NavBar = React.memo(props => {
           <DropDownDisplayItem
             as={Link}
             to={'/blog/games/snake-game'}
-            image={snakeGrid.childImageSharp.fixed}
+            image={sorting.childImageSharp.fixed}
             title="Sorting Algorithms"
             info="Bubble sort, Merge sort heap sort and more"
           />
           <DropDownDisplayItem
             as={Link}
             to={'/blog/games/snake-game'}
-            image={snakeGrid.childImageSharp.fixed}
+            image={searching.childImageSharp.fixed}
             title="Searching Algorithms"
             info="A* search, BFS, DFS, Dijkstra"
           />
           <DropDownDisplayItem
             as={Link}
             to={'/blog/games/snake-game'}
-            image={snakeGrid.childImageSharp.fixed}
+            image={toc.childImageSharp.fixed}
             title="Theory of computation"
             info="DFA, NFA"
           />
@@ -84,7 +112,7 @@ const NavBar = React.memo(props => {
           <DropDownDisplayItem
             as={Link}
             to={'/api-test'}
-            image={snakeGrid.childImageSharp.fixed}
+            image={api.childImageSharp.fixed}
             title="API testing with api-test"
             info="JSON API automated testing program"
           />
