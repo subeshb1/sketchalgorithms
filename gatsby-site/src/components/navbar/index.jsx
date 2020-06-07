@@ -1,15 +1,33 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
+import { Link, useStaticQuery } from 'gatsby'
+import Image from 'gatsby-image'
 import Logo from '../../assets/logo.png'
 import Popover from '../Popover'
 
 import { navDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
 const NavBar = React.memo(props => {
+  const { avatar } = useStaticQuery(
+    graphql`
+      query navLogo {
+        avatar: file(absolutePath: { regex: "/logo.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    `
+  )
+  console.log(avatar)
   return (
     <nav className="lg-navbar">
-      <img className={'lg-navbar-img'} src={Logo} alt="Website logo" />
+      <Image
+        fixed={avatar.childImageSharp.fixed}
+        alt="Website logo"
+        className={'lg-navbar-img'}
+      />
       <Link to="/" className="lg-navbar__item lg-navbar__header">
         Subesh Bhandari
       </Link>
