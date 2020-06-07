@@ -246,7 +246,7 @@ export default function ThemePicker() {
   }, [primaryColor])
 
   useEffect(() => {
-    document.getElementById('project-main-container').className = themeMode
+    document.body.className = themeMode
   }, [themeMode])
 
   return (

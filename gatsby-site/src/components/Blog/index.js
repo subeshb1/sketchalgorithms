@@ -22,29 +22,49 @@ export function NextBlog({ previousNode, nextNode, series, current }) {
       })
   }
   return (
-    <ul
-      style={{
-        display: `flex`,
-        flexWrap: `wrap`,
-        justifyContent: `space-between`,
-        listStyle: `none`,
-        padding: 0,
-      }}
-    >
-      <li>
+    <div className="next-blog-container">
+      <div className="next-blog-container__item">
         {previous && (
           <Link to={previous.slug} rel="prev">
-            ← {previous.title}
+            <span className="next-blog-header">Previous</span>
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              class="css-1hyj6ne"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ verticalAlign: 'middle' }}
+            >
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+            </svg>
+            {previous.title}
           </Link>
         )}
-      </li>
-      <li>
+      </div>
+      <div className="next-blog-container__item next-blog-container__item--right">
         {next && (
           <Link to={next.slug} rel="next">
-            {next.title} →
+            <span className="next-blog-header">Next</span>
+            {next.title}{' '}
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              class="css-jmo9lw"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ verticalAlign: 'middle' }}
+            >
+              <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+            </svg>
           </Link>
         )}
-      </li>
-    </ul>
+      </div>
+    </div>
   )
 }

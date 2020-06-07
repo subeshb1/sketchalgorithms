@@ -17,7 +17,7 @@ const Layout = props => {
   }, [])
 
   return (
-    <div className={`theme-light`} id="project-main-container">
+    <div id="project-main-container">
       <NavBar />
       <div className="nav-breaker"></div>
       {children}

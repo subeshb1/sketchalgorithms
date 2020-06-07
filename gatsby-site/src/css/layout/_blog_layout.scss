@@ -2,6 +2,8 @@
   display: flex;
   max-width: 1920px;
   margin: 0 auto;
+  background: var(--theme-background);
+  color: var(--theme-color);
 
   .blog-sidebar {
     width: 250px;
