@@ -3,13 +3,10 @@
   display: flex;
   background: #1d5baf;
   padding: 10px 20px;
-  // height: 56px;
   transition: 0.3s background;
   align-items: center;
   box-shadow: 1px 3px 5px 0px #484848ab;
   position: fixed;
-  overflow-x: auto;
-  // overflow-y: visible;
   z-index: 900;
   width: 100vw;
   background: var(--theme-primary-bg);
