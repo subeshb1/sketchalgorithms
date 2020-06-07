@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
-import Logo from '../../assets/logo.png'
 import Popover from '../Popover'
 
 import { navDropDownFactory } from './common'
@@ -20,7 +19,6 @@ const NavBar = React.memo(props => {
       }
     `
   )
-  console.log(avatar)
   return (
     <nav className="lg-navbar">
       <Image

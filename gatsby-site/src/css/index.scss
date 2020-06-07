@@ -35,8 +35,12 @@ $color: black;
   --theme-secondary-bg: #000000;
   --theme-primary-hover: #3068b7;
   --theme-navbar-box-shadow: #484848ab;
-  --theme-color: black;
+  --theme-navbar-box-shadow: #c9c9c9ab;
   --theme-background: white;
+  --theme-color: black;
+  --theme-hover: #e0e0e096;
+  --theme-dim-color: #6f6f6f;
+  --popper-arrow-color: black;
 }
 
 @mixin theme($background, $color) {
@@ -124,4 +128,5 @@ $color: black;
 
 a {
   text-decoration: none;
+  color: var(--theme-color)
 }
