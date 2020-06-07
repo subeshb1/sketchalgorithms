@@ -81,6 +81,9 @@ pre.grvsc-container {
     max-height: 80vh;
     overflow: scroll;
     width: 100%;
+    .grvsc-line {
+      width: auto;
+    }
   }
 }
 
