@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import ToolBar from './container/tool-bar.container'
 
-import { Menu, Head } from '../components'
+import { Menu, Head,NavLink } from '../components'
 import DrawBoard from './container/draw-board.container'
 
-import { Router, Match, Link } from '@reach/router'
+import { Router } from '@reach/router'
 const headData = {
   'bubble-sort': {
     description:
@@ -62,19 +62,6 @@ const getAlgoFromPath = pathname => {
   return pathname
 }
 
-const NavLink = ({ to, className = '', ...props }) => {
-  return (
-    <Match path={to}>
-      {({ match }) => (
-        <Link
-          className={match ? className + ' active' : className}
-          to={to}
-          {...props}
-        />
-      )}
-    </Match>
-  )
-}
 
 const getName = pathname =>
   getAlgoFromPath(pathname)

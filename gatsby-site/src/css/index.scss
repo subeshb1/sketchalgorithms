@@ -16,6 +16,8 @@
 $background: white;
 $color: black;
 
+// #0e151c
+// #152128
 @mixin theme($background, $color) {
 }
 
@@ -128,5 +130,5 @@ $color: black;
 
 a {
   text-decoration: none;
-  color: var(--theme-color)
+  color: var(--theme-color);
 }

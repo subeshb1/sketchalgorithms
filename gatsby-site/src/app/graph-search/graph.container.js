@@ -1,8 +1,9 @@
 import React from 'react'
 import ToolBar from './container/tool-bar.container'
 
-import { Head, Menu } from '../components'
+import { Head, Menu, NavLink } from '../components'
 import DrawBoard from './container/draw-board.container'
+import { Router } from '@reach/router'
 
 const headData = {
   bfs: {
@@ -42,11 +43,10 @@ const headData = {
   },
 }
 
-const links = ['/bfs', '/dfs', '/a-star', '/dijkstras']
+const algorithms = ['bfs', 'dfs', 'a-star', 'dijkstras']
 
-const getAlgoFromPath = pathname => {
-  const algo = pathname.slice(1)
-  if (algo !== 'dfs' && algo !== 'a-star' && algo !== 'dijkstras') return 'bfs'
+const getAlgoFromPath = algo => {
+  if (!algorithms.includes(algo)) return 'bfs'
   return algo
 }
 
@@ -56,25 +56,33 @@ const getName = pathname =>
     .map(x => x.toUpperCase())
     .join(' ')
 
-// Menu Component
-let menuItems = links.map(item => ({
+let menuItems = algorithms.map(item => ({
   className: 'item',
+  as: NavLink,
   children: getName(item),
-  to: '/graph-search' + item,
+  to: '/app/graph-search/' + item,
 }))
 
-const Searching = props => {
-  // const { match: { path }, location: { pathname } } = props
-  // const current = pathname.replace(path, "");
-  // const algo = getAlgoFromPath(current);
+const Searching = React.memo(() => {
+  return (
+    <Router basepath="/app/graph-search">
+      {algorithms.map((algo, i) => {
+        return <SearchingAlgorithm key={i} path={`/${algo}`} algo={algo} />
+      })}
+      <SearchingAlgorithm path={`/`} algo={'bubble-sort'} />
+    </Router>
+  )
+})
+
+const SearchingAlgorithm = React.memo(({ algo }) => {
   return (
     <div className="container">
-      <Head data={headData['home']} />
+      <Head data={headData[algo] || headData.home} />
       <Menu className="menu" items={menuItems} />
+      <ToolBar algo={algo} />
       <DrawBoard />
-      <ToolBar algo={'dfs'} />
     </div>
   )
-}
+})
 
 export default Searching

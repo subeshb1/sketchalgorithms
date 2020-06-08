@@ -5,12 +5,12 @@ import './css/index.css'
 import { createComponent, createPortal } from './lib'
 import { Sorting, DrawableGraph, Graph, Home, Games, TOC } from './containers'
 
-
 const App = React.memo(() => {
   const isSSr = false
   return !isSSr ? (
     <Router>
-      <Graph path="graph-search" />
+      <Graph path="graph-search/*" />
+      <DrawableGraph path="drawable-graph/*" />
       <Sorting path="sorting/*" />
     </Router>
   ) : null
