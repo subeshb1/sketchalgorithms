@@ -7,3 +7,7 @@
   background: var(--theme-background);
   color: var(--theme-color);
 }
+
+.container svg {
+  font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

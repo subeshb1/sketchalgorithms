@@ -31,6 +31,9 @@
   transition: box-shadow 0.2s ease;
   background: white;
 }
+.tool-bar select {
+  margin-bottom: 10px;
+}
 .tool-bar input:focus,
 .tool-bar select:focus {
   z-index: 1;
@@ -39,29 +42,19 @@
 }
 
 .tool-bar button {
-  --btn-color: 200;
   position: relative;
-  padding: 10px 1.5rem;
+  border: none;
+  padding: 4px 1rem;
   color: white;
-  background: hsl(var(--btn-color), 64%, 49%);
-  border: 2px solid hsl(var(--btn-color), 80%, 50%);
   cursor: pointer;
-  outline: none;
-  border-radius: 8%;
+
+  border-radius: 4px;
   align-self: start;
   justify-self: start;
-}
+  background: var(--theme-primary-bg);
+  color: var(--theme-secondary-color);
 
-.tool-bar button.green {
-  --btn-color: 220;
-}
-.tool-bar button.red {
-  --btn-color: 350;
-}
-.tool-bar button:focus {
-  z-index: 1;
-
-  box-shadow: 0 0 0 3px hsla(var(--btn-color), 70%, 80%, 90%);
+  border: 1px solid var(--theme-secondary-color);
 }
 
 .tool-bar button:disabled,
@@ -71,14 +64,14 @@ select:disabled {
   cursor: not-allowed;
 }
 
-input:read-only {
+.tool-bar input:read-only {
   background: rgb(224, 224, 224);
 }
 
 div.btn-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 10px;
 }
 div.group {

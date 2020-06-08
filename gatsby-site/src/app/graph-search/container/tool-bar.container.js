@@ -5,6 +5,9 @@ import { tools_action, draw_action } from '../actions'
 
 class ToolBarC extends Component {
   componentDidMount() {
+    if (this.props.draw.list.graph.length) {
+      return
+    }
     this.props.generateList()
   }
   componentDidUpdate({ algo }) {
@@ -14,7 +17,6 @@ class ToolBarC extends Component {
   }
   componentWillUnmount() {
     this.props.cancel()
-    this.props.clear()
   }
   render() {
     const { props } = this
@@ -28,7 +30,7 @@ class ToolBarC extends Component {
         <h2>
           {algo
             .split('-')
-            
+
             .join(' ')}
         </h2>
         <div className="group">

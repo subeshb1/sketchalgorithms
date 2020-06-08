@@ -11,6 +11,7 @@
 
 .drawboard {
   max-height: 80vh;
+  height: 80vh;
 }
 .drawboard > svg {
   width: 100%;

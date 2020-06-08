@@ -95,17 +95,17 @@ const NavBar = React.memo(props => {
           />
           <DropDownDisplayItem
             as={Link}
-            to={'/app/graph-search'}
             image={searching.childImageSharp.fixed}
-            title="Searching Algorithms"
-            info="A* search, BFS, DFS, Dijkstra"
+            title="Path finding Algorithms"
+            info="Visualize path finding algorithms ins gird"
+            to={'/app/graph-search'}
           />
           <DropDownDisplayItem
+            to={'/app/drawable-graph'}
             as={Link}
-            to={'/blog/games/snake-game'}
             image={toc.childImageSharp.fixed}
-            title="Theory of computation"
-            info="DFA, NFA"
+            title="Searching Algorithms"
+            info="A* search, BFS, DFS, Dijkstra"
           />
         </div>
       </Popover>
