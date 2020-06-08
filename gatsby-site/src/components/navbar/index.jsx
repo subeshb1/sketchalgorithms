@@ -66,7 +66,8 @@ const NavBar = React.memo(props => {
         Subesh Bhandari
       </Link>
       <Popover
-        strategy="fixed"
+        placement="bottom-start"
+        offset={[-30,10]}
         elementAs={navDropDownFactory('/blogs', 'Blogs')}
       >
         <div className="lg-navbar__drop-down" key="1">
@@ -79,7 +80,11 @@ const NavBar = React.memo(props => {
           />
         </div>
       </Popover>
-      <Popover strategy="fixed" elementAs={navDropDownFactory('/apps', 'Apps')}>
+      <Popover
+        placement="bottom-start"
+        offset={[-30,10]}
+        elementAs={navDropDownFactory('/apps', 'Apps')}
+      >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
             as={Link}
@@ -105,7 +110,8 @@ const NavBar = React.memo(props => {
         </div>
       </Popover>
       <Popover
-        strategy="fixed"
+        placement="bottom-start"
+        offset={[-30,10]}
         elementAs={navDropDownFactory('/projects', 'Projects')}
       >
         <div className="lg-navbar__drop-down" key="1">
