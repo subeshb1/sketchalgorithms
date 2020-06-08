@@ -82,9 +82,7 @@ module.exports = {
                   '.code-synth-wave-84': `SynthWave '84`,
                 },
               },
-              extensions: [
-                'synthwave-vscode',
-              ],
+              extensions: ['synthwave-vscode'],
               inlineCode: {
                 marker: '•',
                 theme: {

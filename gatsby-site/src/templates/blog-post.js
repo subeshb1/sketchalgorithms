@@ -13,9 +13,9 @@ import { useCopyToClipboard } from 'react-use'
 import { If } from '../components/utils'
 import { NextBlog } from '../components/Blog'
 
-const DisqusComments = React.memo(({ show, shortname, disqusConfig }) => {
+const DisqusComments = React.memo(({ show, shortname, config }) => {
   return show ? (
-    <Disqus.DiscussionEmbed shortname={shortname} config={disqusConfig} />
+    <Disqus.DiscussionEmbed shortname={shortname} config={config} />
   ) : null
 })
 

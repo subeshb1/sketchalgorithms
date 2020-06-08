@@ -1,0 +1,46 @@
+/* FOOTER */
+.footer {
+  min-height: 70vh;
+  background: var(--theme-background);
+  color: white;
+  position: relative;
+}
+.footer .links {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.footer .group {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  flex-grow: 1;
+}
+
+.footer .group .item {
+  text-decoration: none;
+
+  font-size: 0.7em;
+  color: rgb(233, 233, 233);
+}
+.footer .group .item:hover {
+  text-decoration: underline;
+}
+
+.footer .copyright {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .copyright::before {
+  content: "\00A9";
+}
+
+.footer::after {
+  content:"";
+  margin: 20px;
+}

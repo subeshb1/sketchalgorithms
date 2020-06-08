@@ -38,7 +38,7 @@ const NavBar = React.memo(props => {
             }
           }
         }
-        toc: file(absolutePath: { regex: "/toc.PNG/i" }) {
+        toc: file(absolutePath: { regex: "/toc.png/i" }) {
           childImageSharp {
             fixed(width: 50, height: 50) {
               ...GatsbyImageSharpFixed
@@ -88,14 +88,14 @@ const NavBar = React.memo(props => {
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
             as={Link}
-            to={'/blog/games/snake-game'}
+            to={'/app/sorting'}
             image={sorting.childImageSharp.fixed}
             title="Sorting Algorithms"
             info="Bubble sort, Merge sort heap sort and more"
           />
           <DropDownDisplayItem
             as={Link}
-            to={'/blog/games/snake-game'}
+            to={'/app/graph-search'}
             image={searching.childImageSharp.fixed}
             title="Searching Algorithms"
             info="A* search, BFS, DFS, Dijkstra"
