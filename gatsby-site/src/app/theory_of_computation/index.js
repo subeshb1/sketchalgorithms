@@ -69,7 +69,7 @@ const getAlgoFromPath = pathname => {
 const getName = pathname =>
   getAlgoFromPath(pathname)
     .split("-")
-    .map(x => x.toUpperCase())
+    
     .join(" ");
 
 // Menu Component

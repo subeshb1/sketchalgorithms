@@ -53,7 +53,7 @@ const getAlgoFromPath = algo => {
 const getName = pathname =>
   getAlgoFromPath(pathname)
     .split('-')
-    .map(x => x.toUpperCase())
+    
     .join(' ')
 
 let menuItems = algorithms.map(item => ({

@@ -35,7 +35,7 @@ class ToolBarC extends Component {
         <h2>
           {algo
             .split("-")
-            .map(x => x.toUpperCase())
+            
             .join(" ")}
         </h2>
 

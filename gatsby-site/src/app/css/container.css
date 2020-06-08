@@ -4,4 +4,6 @@
   grid-auto-rows: min-content auto;
   grid-gap: 10px;
   padding: 10px;
+  background: var(--theme-background);
+  color: var(--theme-color);
 }

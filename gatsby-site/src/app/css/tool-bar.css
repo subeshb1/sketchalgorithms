@@ -1,22 +1,29 @@
 .tool-bar {
   display: grid;
   padding: 10px;
-  background: rgb(248, 249, 250);
   grid-column: -4/-1;
   border-radius: 10px;
   overflow-y: auto;
   max-height: 90vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
 }
 
+.tool-bar h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
 .tool-bar > label {
   display: flex;
-  align-content: center;
+  align-content: flex-end;
   flex-wrap: wrap;
 }
 .tool-bar input,
 .tool-bar select {
   position: relative;
-  padding: 8px;
+  font-size: 0.9rem;
+  padding: 4px;
   border-radius: 4px;
   outline: none;
   border: 1px solid rgb(224, 224, 224);
@@ -79,6 +86,7 @@ div.group {
 }
 div.group > label {
   width: 100%;
+  margin: 4px;
 }
 
 .checkbox {

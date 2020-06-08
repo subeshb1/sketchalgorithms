@@ -3,17 +3,17 @@
   background-color: white;
   grid-column: 1/-4;
   grid-row: 2/2;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 10px;
   position: relative;
+
 }
 
 .drawboard {
-  min-height: 80vh;
+  max-height: 80vh;
 }
 .drawboard > svg {
   width: 100%;
-  max-height: 90vh;
 }
 
 .drawboard > div {
