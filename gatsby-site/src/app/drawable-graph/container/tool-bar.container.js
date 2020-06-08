@@ -11,7 +11,7 @@ class ToolBarC extends Component {
   }
   componentWillUnmount() {
     this.props.cancel();
-    this.props.clear();
+    // this.props.clear();
   }
   render() {
     const { props } = this;
