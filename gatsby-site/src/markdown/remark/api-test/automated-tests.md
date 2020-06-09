@@ -47,11 +47,11 @@ The checking schemes defines what kind of comparison is to be made on a response
 
 To make it simple and easy `api-test` provides 5 types of basic checking schemes:
 
-- `eq` - Response should be the same as expected
-- `contains` - The expected value should be a subset of the response.
-- `hasKey` - The key should be present in the JSON response
-- `path_eq` - The value inside the nested object accessed by the JSON path must be the same.
-- `path_contains` - The value inside the nested object accessed by the JSON path must be a subset.
+- [`eq`](/api-test/equality-comparison) - Response should be the same as expected
+- [`contains`](/api-test/contains-comparison) - The expected value should be a subset of the response.
+- [`hasKey`](/api-test/has-key-comparison) - The key should be present in the JSON response
+- [`path_eq`](/api-test/path-equality-comparison) - The value inside the nested object accessed by the JSON path must be the same.
+- [`path_contains`](/api-test/path-contains-comparison) - The value inside the nested object accessed by the JSON path must be a subset.
 
 ### External Checks
 
