@@ -26,8 +26,8 @@ function BlogPost(props) {
   const { previous, next } = props.pageContext
   const disqusShortname = 'subeshbhandari'
   const disqusConfig = {
-    url: 'https://www.subeshbhandari.com' + post.fields.slug,
-    identifier: post.fields.slug,
+    url: 'https://subeshbhandari.com' + post.fields.slug,
+    identifier:  post.fields.slug,
     title: siteTitle,
   }
   const [, copyToClipboard] = useCopyToClipboard()
