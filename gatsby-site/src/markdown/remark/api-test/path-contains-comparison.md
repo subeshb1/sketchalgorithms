@@ -11,7 +11,7 @@ The `path_contains` does the same check as `contains` but allows the check to be
 
 ## Syntax
 
-```js
+```json{5-8}
 {
   ...
   "expect": {
@@ -30,7 +30,7 @@ The `path_contains` does the same check as `contains` but allows the check to be
 
 The api has following response.
 
-```js
+```json
 {
   "people": [
     {
@@ -47,7 +47,7 @@ The api has following response.
 
 To test using `path_contains` check:
 
-```js
+```json{5-11}
 {
   ...
   "expect": {
