@@ -13,23 +13,23 @@ import { useCopyToClipboard } from 'react-use'
 import { If } from '../components/utils'
 import { NextBlog } from '../components/Blog'
 
-const DisqusComments = React.memo(({ show, shortname, config }) => {
-  return show ? (
-    <Disqus.DiscussionEmbed shortname={shortname} config={config} />
-  ) : null
-})
+const DisqusComments = React.memo(
+  ({ show, shortname, url, identifier, title }) => {
+    return show ? (
+      <Disqus.DiscussionEmbed
+        shortname={shortname}
+        config={{ url, identifier, title }}
+      />
+    ) : null
+  }
+)
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
-
   const { previous, next } = props.pageContext
   const disqusShortname = 'subeshbhandari'
-  const disqusConfig = {
-    url: 'https://subeshbhandari.com' + post.fields.slug,
-    identifier: post.fields.slug,
-    title: siteTitle,
-  }
+
   const [, copyToClipboard] = useCopyToClipboard()
   const seriesContent = props.data.allMarkdownRemark.edges.map(x => ({
     ...x.node.frontmatter,
@@ -105,7 +105,11 @@ function BlogPost(props) {
               !post.frontmatter.hideDisqus
             }
             shortname={disqusShortname}
-            config={disqusConfig}
+            {...{
+              url: 'https://subeshbhandari.com' + post.fields.slug,
+              identifier: post.fields.slug,
+              title: siteTitle,
+            }}
           />
         </main>
         <If
