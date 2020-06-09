@@ -1,0 +1,85 @@
+.snippet * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: consolos, monospace;
+}
+.snippet {
+  margin: 20px 0;
+}
+
+.KEYWORD {
+  color: #07a;
+}
+
+.IDENTIFIER {
+  color: black;
+}
+
+.NUMBER {
+  color: purple;
+}
+
+.OPERATOR {
+  color: #2fbaae;
+}
+
+.DELIMETER {
+  color: rgb(95, 95, 95);
+}
+
+.STRING {
+  color: green;
+}
+
+.COMMENT {
+  color: #a4a4a4;
+  font-style: italic;
+}
+
+.UNDEF {
+  text-decoration: underline;
+  color: red;
+}
+
+.snippet {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 0 0 2px grey;
+  overflow: hidden;
+}
+.snippet .code {
+  padding: 15px;
+  overflow: auto;
+  max-height: 600px;
+
+}
+.snippet .details {
+  position: relative;
+  box-shadow: 0 0 2px grey;
+  display: flex;
+  z-index: 1;
+}
+.snippet .details .item {
+  padding: 10px;
+}
+.snippet .details .right.item {
+  margin: 0 0 0 auto;
+}
+.snippet .details .active.item {
+  padding: 10px;
+  border-bottom: 2px solid blue;
+}
+
+.snippet .details .copy.item {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.snippet .details .copy.item:hover {
+  background: #f2f2f2;
+}
+
+.snippet pre {
+  padding-left: 1em;
+}

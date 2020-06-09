@@ -12,6 +12,9 @@
   h1 {
     text-transform: capitalize;
   }
+  p > img {
+    margin: 1rem -1.125rem;
+  }
 
   h1,
   h2,
@@ -150,7 +153,8 @@
     color: white;
     text-decoration: none;
   }
-  p {
+  p,
+  li {
     color: white;
     font-family: 'Lato';
   }

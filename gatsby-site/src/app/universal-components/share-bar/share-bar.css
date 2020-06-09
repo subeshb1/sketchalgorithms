@@ -1,0 +1,33 @@
+.share-bar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.share-bar .socials {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 2px grey;
+  padding: 10px;
+  margin-left: 10px;
+  background: white;
+  border-radius: 10px;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .share-bar {
+    top: unset;
+    left: 0;
+    right: 0;
+  }
+  .share-bar .socials {
+    width: 100%;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

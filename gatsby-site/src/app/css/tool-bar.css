@@ -1,0 +1,101 @@
+.tool-bar {
+  display: grid;
+  padding: 10px;
+  grid-column: -4/-1;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 90vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+}
+
+.tool-bar h2 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+}
+.tool-bar > label {
+  display: flex;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+.tool-bar input,
+.tool-bar select {
+  position: relative;
+  font-size: 0.9rem;
+  padding: 4px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgb(224, 224, 224);
+  width: 100%;
+  transition: box-shadow 0.2s ease;
+  background: white;
+}
+.tool-bar select {
+  margin-bottom: 10px;
+}
+.tool-bar input:focus,
+.tool-bar select:focus {
+  z-index: 1;
+  border: 1px solid rgb(70, 70, 70);
+  box-shadow: 0 0 0 3px rgba(48, 48, 48, 0.562);
+}
+
+.tool-bar button {
+  position: relative;
+  border: none;
+  padding: 4px 1rem;
+  color: white;
+  cursor: pointer;
+
+  border-radius: 4px;
+  align-self: start;
+  justify-self: start;
+  background: var(--theme-primary-bg);
+  color: var(--theme-secondary-color);
+
+  border: 1px solid var(--theme-secondary-color);
+}
+
+.tool-bar button:disabled,
+input:disabled,
+select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tool-bar input:read-only {
+  background: rgb(224, 224, 224);
+}
+
+div.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+div.group {
+  display: flex;
+}
+div.group > label {
+  width: 100%;
+  margin: 4px;
+}
+
+.checkbox {
+  display: flex;
+}
+
+.checkbox > input {
+  position: relative;
+  margin: 0.4em 0.2em;
+  align-self: flex-start;
+  width: auto;
+}
+@media (max-width: 700px) {
+  .tool-bar {
+    grid-row: 3/3;
+    grid-column: 1/-1;
+    max-height: unset;
+  }
+}

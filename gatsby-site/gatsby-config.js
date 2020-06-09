@@ -82,9 +82,7 @@ module.exports = {
                   '.code-synth-wave-84': `SynthWave '84`,
                 },
               },
-              extensions: [
-                'synthwave-vscode',
-              ],
+              extensions: ['synthwave-vscode'],
               inlineCode: {
                 marker: '•',
                 theme: {
@@ -132,7 +130,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_KEY,
       },
     },
     {
