@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 
 const categorizeSeries = series =>
@@ -16,9 +16,13 @@ const categorizeSeries = series =>
   }, [])
 
 export default function SideBar({ seriesElements }) {
+  useEffect(() => {
+    document.querySelector('.blog-sidebar__item--active') &&  document.querySelector('.blog-sidebar__item--active').focus();
+  }, [])
   if (!(seriesElements && seriesElements.length)) return null
   const first = seriesElements[0]
   const categorizedSeries = categorizeSeries(seriesElements.slice(1))
+  
   return (
     <aside className="blog-sidebar">
       <Link
