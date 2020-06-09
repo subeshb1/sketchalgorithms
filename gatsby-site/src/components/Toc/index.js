@@ -63,16 +63,6 @@ export default function Toc({ tableOfContents }) {
           }
           this.highlightFirstActive()
         })
-        if (
-          entries.length === 1 &&
-          this.links[1] &&
-          `#${entries[0].target.getAttribute('id')}` ===
-            this.links[0].getAttribute('href')
-        ) {
-          this.previousSection = this.links[1]
-            .getAttribute('href')
-            .replace('#', '')
-        }
       },
 
       highlightFirstActive() {
