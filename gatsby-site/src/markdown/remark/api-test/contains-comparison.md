@@ -11,7 +11,7 @@ The `contains` check compares the expected value with all the possible subset of
 
 ## Syntax
 
-```js{5-7}
+```json{5-7}
 {
   ...
   "expect": {
@@ -29,7 +29,7 @@ The `contains` check compares the expected value with all the possible subset of
 
 The api has following response.
 
-```js
+```json
 {
   "name": "ram",
   "age": 20,
@@ -42,7 +42,7 @@ The api has following response.
 
 To test using `contains` check:
 
-```js
+```json{5-9}
 {
   ...
   "expect": {
