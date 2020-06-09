@@ -9,7 +9,7 @@ position: 304
 
 The `path_eq` does the same check as `eq` but allows the check to be made inside the JSON object path at any depth. The path accessing pattern follows the javascript object accessing patterns.
 
-#### Syntax
+## Syntax
 
 ```js
 {
@@ -24,7 +24,7 @@ The `path_eq` does the same check as `eq` but allows the check to be made inside
 
 ```
 
-Example:
+## Example
 The API has the following response.
 
 ```js
