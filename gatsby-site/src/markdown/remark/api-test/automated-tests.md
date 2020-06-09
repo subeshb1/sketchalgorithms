@@ -7,7 +7,7 @@ category: Automated Tests
 position: 300
 ---
 
-You can write automated integrated test using `api-test`. You write the tests in the same test case file under `expect` property. You can write tests for both `header` and `body`. See [Test cases properties](/api-test/test-file-definition#test-cases-attributes) to view all available properties.
+You can write an automated integration test using the `api-test`. You write the tests in the same test case file under `expect` property. You can write tests for both `header` and `body`. See [Test cases properties](/api-test/test-file-definition#test-cases-attributes) to view all available properties.
 
 ## Checking Schemes
 
@@ -45,11 +45,11 @@ You can write automated integrated test using `api-test`. You write the tests in
 
 To make it simple and easy `api-test` provides 5 types of basic checking schemes:
 
-- `eq` - Response should be exactly the same as expected
-- `contains` - The expected value should be as subset of the response.
+- `eq` - Response should be the same as expected
+- `contains` - The expected value should be a subset of the response.
 - `hasKey` - The key should be present in the JSON response
-- `path_eq` - The value inside the nested object accessed by JSON path must be exactly the same.
-- `path_contains` - The value inside the nested object accessed by JSON path must be a subset.
+- `path_eq` - The value inside the nested object accessed by the JSON path must be the same.
+- `path_contains` - The value inside the nested object accessed by the JSON path must be a subset.
 
 ### External Checks
 
