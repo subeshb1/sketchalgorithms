@@ -31,7 +31,7 @@ COMMANDS:
 Run 'api-test COMMAND --help' for more information on a command.
 ```
 
-The root command requires `-f <file-name>` option to run commands. If you name the file `test.json`, `api-test.json` or `template.json` then the option is not required. You can additionally pass `-v` flag (verbose), to see extra information if the command provides it.
+The root command requires `-f <file-name>` option to run commands. If you name the file `test.json`, `api-test.json`, or `template.json` then the option is not required. You can additionally pass `-v` flag (verbose), to see extra information if the command provides it.
 
 ## Run Command
 
@@ -55,7 +55,7 @@ api-test -f test-file.json <test_case_name>
 
 ## Describe Command
 
-The describe command is to list all test cases or describe the contents of a test cases without having to open the test case file itself. See [Describe Command](/api-test/describe-command) section for more information.
+The describe command is used to list all test cases or describe the contents of test cases without having to open the test case file itself. See [Describe Command](/api-test/describe-command) section for more information.
 
 Syntax:
 

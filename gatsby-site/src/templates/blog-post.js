@@ -27,7 +27,7 @@ function BlogPost(props) {
   const disqusShortname = 'subeshbhandari'
   const disqusConfig = {
     url: 'https://subeshbhandari.com' + post.fields.slug,
-    identifier:  post.fields.slug,
+    identifier: post.fields.slug,
     title: siteTitle,
   }
   const [, copyToClipboard] = useCopyToClipboard()
@@ -115,7 +115,9 @@ function BlogPost(props) {
           }
         >
           <aside className="blog-right-container">
-            <Toc tableOfContents={post.tableOfContents} />
+            {post.frontmatter.hideToc || (
+              <Toc tableOfContents={post.tableOfContents} />
+            )}
           </aside>
         </If>
       </div>
@@ -144,6 +146,7 @@ export const pageQuery = graphql`
         githubButtons
         hideEstimatedTime
         hideLeftBar
+        hideToc
         date(formatString: "MMMM DD, YYYY")
       }
       timeToRead
