@@ -13,7 +13,7 @@ If none of the above checks work for you, there is a way to inject a script or p
 
 ## Syntax
 
-```js
+```json{6}
 {
   ...
   "expect": {
@@ -28,7 +28,7 @@ If none of the above checks work for you, there is a way to inject a script or p
 
 test.json
 
-```js
+```json
 {
   ...
   "expect": {
@@ -42,7 +42,7 @@ test.json
 
 `test.js`
 
-```js
+```js{1,2,3,9,11}
 let testCase = process.argv[2]; // First arg will be test case key
 let body = process.argv[3]; // Second arg will be body
 let header = process.argv[4]; // Third arg will be header
