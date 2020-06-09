@@ -131,9 +131,35 @@ META:
 
 If you only want the response then pass in `-S` flag.
 
-```
+```sh
 $ api-test -f file.json run -S my_first_test_case
 Running Case: my_first_test_case
 Response:
 200 OK
+```
+
+## Using the command
+
+### Run single tests
+
+Provide the test case you want to run.
+
+```sh
+api-test -f test.json run test_case_1
+```
+
+### Run multiple tests
+
+You can provide multiple test cases as arguments.
+
+```sh
+api-test -f test.json run test_case_1 test_case_2 test_case_n
+```
+
+### Run all tests
+
+To call all API test scenarios at once, pass `all` as the argument.
+
+```sh
+api-test -f test.json run all
 ```
