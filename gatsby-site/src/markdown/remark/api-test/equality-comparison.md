@@ -42,7 +42,7 @@ The API has the following response.
 
 To test using `eq` check:
 
-```json
+```json{5-8}
 {
   ...
   "expect": {
