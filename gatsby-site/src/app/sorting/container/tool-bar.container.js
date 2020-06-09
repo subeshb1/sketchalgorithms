@@ -4,6 +4,7 @@ import { getToolsState, getDrawBoardState } from '../reducers'
 import { tools_action, draw_action } from '../actions'
 class ToolBarC extends Component {
   componentDidMount() {
+    this.props.cancel()
     if(this.props.draw.list.length) {
       return
     }
