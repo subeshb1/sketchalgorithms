@@ -43,7 +43,7 @@ Response:
 BODY:
 {
   "id": "1",
-  "author": "Robin Wieruch",
+  "author": "Subesh Bhandari",
   "title": "The Road to React"
 }
 META:
@@ -74,7 +74,7 @@ HEADER:
 BODY:
 {
   "id": "1",
-  "author": "Robin Wieruch",
+  "author": "Subesh Bhandari",
   "title": "The Road to React"
 }
 META:
