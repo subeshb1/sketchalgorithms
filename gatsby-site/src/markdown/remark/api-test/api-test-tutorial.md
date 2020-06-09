@@ -7,4 +7,4 @@ category: Getting Started
 position: 102
 ---
 
-`api-test` is a bash program that makes testing
+## WIP
