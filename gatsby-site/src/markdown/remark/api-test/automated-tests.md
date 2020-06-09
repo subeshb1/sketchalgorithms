@@ -11,6 +11,8 @@ You can write an automated integration test using the `api-test`. You write the 
 
 ## Checking Schemes
 
+The checking schemes defines what kind of comparison is to be made on a response.
+
 **Syntax:**
 
 ```json{4-21}
