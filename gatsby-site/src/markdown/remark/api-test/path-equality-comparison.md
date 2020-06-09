@@ -11,7 +11,7 @@ The `path_eq` does the same check as `eq` but allows the check to be made inside
 
 ## Syntax
 
-```js
+```json{4-7}
 {
   ...
   "expect": {
@@ -27,7 +27,7 @@ The `path_eq` does the same check as `eq` but allows the check to be made inside
 ## Example
 The API has the following response.
 
-```js
+```json
 {
   "people": [
     {
@@ -44,7 +44,7 @@ The API has the following response.
 
 To test using `path_eq` check:
 
-```js
+```json{5-11}
 {
   ...
   "expect": {
