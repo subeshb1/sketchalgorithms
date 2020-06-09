@@ -11,7 +11,7 @@ The `hasKey` will check if the provided keys in the array are present in the res
 
 ## Syntax
 
-```js
+```json{5}
 {
   ...
   "expect": {
@@ -27,7 +27,7 @@ The `hasKey` will check if the provided keys in the array are present in the res
 
 The API has the following response.
 
-```js
+```json
 {
   "people": [
     {
@@ -44,7 +44,7 @@ The API has the following response.
 
 To test using `hasKey` check:
 
-```js
+```json{5}
 {
   ...
   "expect": {
