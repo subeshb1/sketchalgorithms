@@ -62,7 +62,7 @@ In JSON file:
       "body": {
         "eq": {
           "id": "1",
-          "author": "Subesh Bhandari",
+          "author": "Robin Wieruch",
           "title": "The Road to React"
         },
         "contains": {
