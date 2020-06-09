@@ -68,15 +68,15 @@ const NavBar = React.memo(props => {
       <Popover
         placement="bottom-start"
         offset={[-30, 10]}
-        elementAs={navDropDownFactory('/blogs', 'Blogs')}
+        elementAs={navDropDownFactory('/', 'Blogs')}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
             as={Link}
-            to={'/blog/games/snake-game'}
+            to={'/blog/games/build-a-snake-game'}
             image={snakeGrid.childImageSharp.fixed}
             title="Build a Snake Game"
-            info=" Using javascript, HTML5 and canvas"
+            info="Using javascript, HTML5 and canvas"
           />
         </div>
       </Popover>
