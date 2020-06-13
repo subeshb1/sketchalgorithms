@@ -17,6 +17,7 @@
     user-select: none;
     padding: 2px 0.5em;
     border: none;
+    white-space: nowrap;
     background: none;
     outline: none;
     margin: 0 8px;
@@ -46,7 +47,10 @@
   }
 
   .lg-navbar-img {
-    width: 100%;
+    .picture {
+      width: 35px;
+    }
+    width: 35px;
     max-height: 35px;
     max-width: 35px;
     height: auto;
@@ -109,6 +113,17 @@
   }
 }
 
+@media (max-width: 700px) {
+  .lg-navbar {
+    .lg-navbar__item {
+      display: none;
+    }
+    .lg-navbar__header {
+      display: block;
+    }
+    position: static;
+  }
+}
 .nav-breaker {
   height: 56px;
 }

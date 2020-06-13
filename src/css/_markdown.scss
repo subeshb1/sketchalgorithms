@@ -5,6 +5,8 @@
 .blog-post-content {
   background: var(--theme-background);
   color: var(--theme-color);
+  overflow: auto;
+  width: 100%;
   .anchor > svg {
     opacity: 0;
   }

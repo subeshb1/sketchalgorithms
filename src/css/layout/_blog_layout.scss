@@ -44,3 +44,11 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .blog-main-container {
+    .blog-right-container {
+      display: none;
+    }
+  }
+}
