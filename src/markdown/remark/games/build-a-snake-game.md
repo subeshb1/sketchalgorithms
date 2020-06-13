@@ -1,6 +1,7 @@
 ---
 title: Build a snake game using HTML canvas and javascript
 date: '2019-05-06T23:46:37.121Z'
+description: Step by step guide to create a snake game using HTML, javascript and Canvas. Feel free to explore the code and implement your own version of snake game and share them in the comments.
 ---
 
 ## Introduction
@@ -102,7 +103,7 @@ function drawBackground() {
 
 ## Snake Logic
 
-![Snake Grid](../../../assets/snake-grid.png)  
+![Snake Grid](../../../assets/snake-grid.png)
 
 The main challenge is to understand how the snake moves. We assume the canvas as a grid of 25x25 rectangles where each rectangle is of size 10x10px, so the size of canvas is 250x250px. The next main thing to know is, a snake part is always 10px away from it's next part that may be in the x-axis or y-axis. In the figure, the red rectangle is snake's head and blue ones are other parts. What we can see here is every part is following it's preceding part. Whereas, the head is the one that decides the path and the direction to move. Thus, for each snake part we can assign a direction it's moving along with it's x,y coordinates. Now, when the head moves it will get new direction and next coordinates, depending upon the users control, which we'll discuss later. The snake can only move 10px in any one four direction i.e. the rectangle size. Now let's define a part of snake as an object and the entire snake as an array of snake parts. We'll also make a function that adds snake part dynamically, so that whenever snake eats it can grow along the correct direction. Let's assume UP as -1, DOWN as 1, LEFT as -2, RIGHT as 2. The reason why we use this kind of numbering is because we need to prevent the snake from moving opposite direction. Example: If the snake is moving RIGHT it can't move LEFT and vice-versa. The same can be said for UP and LEFT.
 
@@ -420,6 +421,8 @@ You've now learned how to make a simple snake game. Try to make your own version
               >
 in the code pen.
 </a>.
+
+> Feel free to share you implementations in the comments!
 
 Code:
 

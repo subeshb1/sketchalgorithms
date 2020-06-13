@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Subesh Bhandari`,
     author: `Subesh Bhandari`,
-    description: `Personal blog and pet projects of Subesh Bhandari`,
+    description: `Personal blog and pet projects of Subesh Bhandari. Learn javascript, React, AWS, Go and much more. Use different open source tools and online apps dedicated for visualization and increasing productivity.`,
     siteUrl: `https://subeshbhandari.com/`,
     social: {
       twitter: `subeshb1`,

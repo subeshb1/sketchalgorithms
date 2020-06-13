@@ -9,7 +9,6 @@ import BlogPostTemplate from '../components/Layouts/BlogLayout'
 class BlogHome extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
@@ -19,22 +18,33 @@ class BlogHome extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h1
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link to={node.fields.slug}>{title}</Link>
-              </h1>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        {posts.map(
+          ({
+            node: {
+              frontmatter: { title, description, date } = {},
+              fields: { slug } = {},
+            } = {},
+          }) => {
+            description = description ? description : ''
+            return (
+              <div key={title || slug}>
+                <h1
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link to={slug}>{title}</Link>
+                </h1>
+                <small>{date}</small>
+                <p>
+                  {description.length > 200
+                    ? description.slice(0, 200) + '...'
+                    : description}
+                </p>
+              </div>
+            )
+          }
+        )}
       </BlogPostTemplate>
     )
   }
@@ -51,7 +61,10 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { timeToRead: {}, frontmatter: { type: { ne: "doc" }, draft: { ne : true } } }
+      filter: {
+        timeToRead: {}
+        frontmatter: { type: { ne: "doc" }, draft: { ne: true } }
+      }
     ) {
       edges {
         node {
@@ -62,6 +75,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            description
           }
         }
       }
