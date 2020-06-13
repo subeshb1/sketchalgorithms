@@ -12,7 +12,7 @@ import bubble from './bubble.png'
 import quick from './quick.png'
 import logo from './logo.png'
 import snakeGrid from './snake-grid.png'
-import snakeGame from './snake-game.png'
+import snakeGame from '../snake-game.png'
 
 export {
   aStar,

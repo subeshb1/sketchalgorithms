@@ -6,7 +6,6 @@
   border-radius: 4px;
   padding: 10px;
   position: relative;
-
 }
 
 .drawboard {
@@ -42,6 +41,6 @@
 @media (max-width: 700px) {
   .drawboard {
     grid-column: 1/-1;
-    min-height: 50vh;
+    height: 50vh;
   }
 }
