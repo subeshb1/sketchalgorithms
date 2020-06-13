@@ -12,7 +12,7 @@ const App = React.memo(() => {
       <Graph path="graph-search/*" />
       <DrawableGraph path="drawable-graph/*" />
       <Sorting path="sorting/*" />
-      <Games path="/games" />
+      <Games path="/games/*" />
     </Router>
   ) : null
 })

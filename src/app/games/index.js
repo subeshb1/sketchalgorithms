@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './css/index.css'
-import { Menu, Head } from '../components'
+import { Menu, Head, NavLink } from '../components'
 import { Snake } from './statefulComponents'
 // import Loadable from "react-loadable";
 import SnakeTut from './components/snake-tut'
@@ -9,48 +9,55 @@ import SnakeTut from './components/snake-tut'
 //   loading: () => <div>Loading...</div>,
 //   delay: 0
 // });
+import { Router } from '@reach/router'
 
-const links = ['/snake-game']
+const games = ['snake-game']
 
 const getAlgoFromPath = pathname => {
-  return 'snake-game'
+  if (!games.includes(pathname)) return 'snake-game'
+  return pathname
 }
 
 const getName = pathname =>
   getAlgoFromPath(pathname)
     .split('-')
-    
+
     .join(' ')
 
 // Menu Component
-let menuItems = links.map(item => ({
+let menuItems = games.map(item => ({
   className: 'item',
+  as: NavLink,
   children: getName(item),
-  to: '/games' + item,
+  to: '/app/games/' + item,
 }))
 
 const data = {
   description:
-    'Learn how to make a Simple Games using several programming languages. Follow the step by step process to build your own games.',
-  title: 'Games | Tutorial | Subesh Bhandari',
-  url: '/games/',
+    'Play games online made using javascript, html and css. View the tutorial to make you own game.s',
+  title: 'Games | Subesh Bhandari',
+  url: '/app/games/',
 }
 
 export default class Games extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Head data={data} />
-        <div className="container">
-          <Menu className="menu" items={menuItems} />
-
-          <Snake path="/games/snake-game" /> 
-        </div>
-
-        <div className="section-container">
-          <SnakeTut path="/games/snake-game" />
-        </div>
-      </React.Fragment>
+      <Router basepath="/app/games/">
+        <GamesRoute path="/snake-game" />
+        {games.map((game, i) => {
+          return <GamesRoute key={i} path={`/${game}`} game={game} />
+        })}
+      </Router>
     )
   }
 }
+
+const GamesRoute = React.memo(({ game }) => {
+  return (
+    <div className="container">
+      <Head data={data} />
+      <Menu className="menu" items={menuItems} />
+      <Snake path="/snake-game" />
+    </div>
+  )
+})

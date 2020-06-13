@@ -123,7 +123,7 @@ const NavBar = React.memo(props => {
             info="A* search, BFS, DFS, Dijkstra"
           />
           <DropDownDisplayItem
-            to={'/app/games'}
+            to={'/app/games/snake-game'}
             as={Link}
             image={snakeGame.childImageSharp.fixed}
             title="Snake Game"
