@@ -17,12 +17,13 @@ const categorizeSeries = series =>
 
 export default function SideBar({ seriesElements }) {
   useEffect(() => {
-    document.querySelector('.blog-sidebar__item--active') &&  document.querySelector('.blog-sidebar__item--active').focus();
+    document.querySelector('.blog-sidebar__item--active') &&
+      document.querySelector('.blog-sidebar__item--active').focus()
   }, [])
   if (!(seriesElements && seriesElements.length)) return null
   const first = seriesElements[0]
   const categorizedSeries = categorizeSeries(seriesElements.slice(1))
-  
+
   return (
     <aside className="blog-sidebar">
       <Link
@@ -46,7 +47,7 @@ export default function SideBar({ seriesElements }) {
                 activeClassName="blog-sidebar__item--active"
                 to={element.slug}
               >
-                {element.title}
+                {element.shortTitle || element.title}
               </Link>
             ))}
           </React.Fragment>
