@@ -87,7 +87,7 @@ const DrawBoard = props => {
       </style>
       {loading && (
         <div className="logo">
-          <img src="/logo.svg" alt="" />
+          <img src="/spinner.png" alt="loader" />
         </div>
       )}
       <svg
