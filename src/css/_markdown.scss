@@ -13,7 +13,7 @@
     text-transform: capitalize;
   }
   p > img {
-    margin: 1rem -1.125rem;
+    margin: 1rem 0;
   }
 
   h1,
@@ -73,9 +73,7 @@
     font-size: 0.8rem;
     margin-top: 0.8rem;
   }
-  figure {
-    margin: 1rem -1.125rem;
-  }
+
   strong {
     font-size: 1.02rem;
   }
@@ -169,5 +167,13 @@
 
   .blog-post-content figcaption {
     color: #cecece;
+  }
+}
+
+@media (max-width: 700px) {
+  .blog-post-content {
+    figure {
+      margin: 1rem -0.8rem;
+    }
   }
 }
