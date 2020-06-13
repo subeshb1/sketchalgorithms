@@ -130,7 +130,7 @@
   .lg-navbar__drop-down {
     box-shadow: unset;
     width: 100vw;
-    max-width: 400px;
+    max-width: 500px;
     box-shadow: 1px -3px 5px 0px var(--theme-navbar-box-shadow);
     .lg-navbar__drop-down__item {
       width: 100%;
@@ -145,6 +145,7 @@
       content: 'Theme';
     }
   }
+
   .lg-navbar__item,
   .lg-navbar__item--circular {
     height: unset;
@@ -152,12 +153,17 @@
     display: flex;
     border-radius: 0;
     flex-direction: column-reverse;
-    font-size: 0.65em;
+    font-size: 0.6em;
+    opacity: 0.5;
     svg,
     .lg-navbar__svg {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      margin-bottom: -7px;
     }
+  }
+  .lg-navbar__item:active,.lg-navbar__item:focus {
+    opacity: 1;
   }
   .theme-picker {
     box-shadow: 1px -3px 5px 0px var(--theme-navbar-box-shadow);
