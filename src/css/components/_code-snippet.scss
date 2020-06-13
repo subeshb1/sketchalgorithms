@@ -122,3 +122,10 @@ pre.grvsc-container {
   background-color: rgb(19, 43, 64);
   box-shadow: inset 4px 0 0 0 rgba(245, 243, 255, 0.5);
 }
+
+@media (max-width: 700px) {
+  pre.grvsc-container {
+    margin-right: -0.8rem;
+    margin-left: -0.8rem;
+  }
+}
