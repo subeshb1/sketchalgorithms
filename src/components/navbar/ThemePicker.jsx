@@ -4,6 +4,7 @@ import Tooltip from '../ToolTip'
 import { IoIosColorPalette } from 'react-icons/io'
 import { ChromePicker } from 'react-color'
 import { useLocalStorage } from 'react-use'
+import { If } from '../utils'
 
 const codeTheme = {
   // Any CSS selector will work!
@@ -142,6 +143,7 @@ function ThemeChanger({
   primaryColor,
   setThemeMode,
   themeMode,
+  mobile = false,
 }) {
   const [show, setShow] = useState(false)
   return (
@@ -189,41 +191,45 @@ function ThemeChanger({
             ))}
           </select>
         </div>
-        <button onClick={() => setShow(!show)}>
-          {!show ? 'Show more' : 'Hide'}
-        </button>
-        {show &&
-          Object.entries(primaryColor).map(([key, value], i) => {
-            return (
-              !excludeVariables.includes(key) && (
-                <div className="theme-picker__input-group" key={i}>
-                  <div className="theme-picker__header">{variableMap[key]}</div>
-                  <Popover
-                    key={i}
-                    elementAs="input"
-                    value={value}
-                    readOnly
-                    placement="bottom"
-                  >
-                    <ChromePicker
-                      color={value}
-                      onChange={color => {
-                        setPrimaryColor({
-                          ...primaryColor,
-                          [key]: color.hex,
-                        })
-                      }}
-                    />
-                  </Popover>
-                </div>
+        <If condition={!mobile}>
+          <button onClick={() => setShow(!show)}>
+            {!show ? 'Show more' : 'Hide'}
+          </button>
+          {show &&
+            Object.entries(primaryColor).map(([key, value], i) => {
+              return (
+                !excludeVariables.includes(key) && (
+                  <div className="theme-picker__input-group" key={i}>
+                    <div className="theme-picker__header">
+                      {variableMap[key]}
+                    </div>
+                    <Popover
+                      key={i}
+                      elementAs="input"
+                      value={value}
+                      readOnly
+                      placement="bottom"
+                    >
+                      <ChromePicker
+                        color={value}
+                        onChange={color => {
+                          setPrimaryColor({
+                            ...primaryColor,
+                            [key]: color.hex,
+                          })
+                        }}
+                      />
+                    </Popover>
+                  </div>
+                )
               )
-            )
-          })}
+            })}
+        </If>
       </div>
     </div>
   )
 }
-export default function ThemePicker() {
+export default function ThemePicker({ offset = [0, 10], mobile }) {
   const [primaryColor, setPrimaryColor, remove] = useLocalStorage(
     'color-theme',
     {
@@ -252,9 +258,8 @@ export default function ThemePicker() {
 
   return (
     <Popover
-      // show
+      offset={offset}
       strategy="fixed"
-      debug={'EWHATT'}
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
           elementAs="button"
@@ -266,7 +271,7 @@ export default function ThemePicker() {
           text={'Change website theme'}
           className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
         >
-          <IoIosColorPalette size={'1.5em'} />
+          <IoIosColorPalette />
         </Tooltip>
       ))}
     >
@@ -274,6 +279,7 @@ export default function ThemePicker() {
         primaryColor={primaryColor}
         setPrimaryColor={setPrimaryColor}
         themeMode={themeMode}
+        mobile={mobile}
         setThemeMode={setThemeMode}
       />
     </Popover>
