@@ -2,10 +2,10 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Popover from '../Popover'
+import { MdApps } from 'react-icons/md'
 
-import { navDropDownFactory } from './common'
+import { mobileNavDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
-
 const MobileNav = React.memo(props => {
   const {
     navLogo,
@@ -75,8 +75,8 @@ const MobileNav = React.memo(props => {
     <nav className="st-navbar">
       <Popover
         placement="bottom-start"
-        offset={[-30, 10]}
-        elementAs={navDropDownFactory('/', 'Blogs')}
+        offset={[0, -3]}
+        elementAs={mobileNavDropDownFactory('/', 'Blogs')}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
@@ -90,8 +90,8 @@ const MobileNav = React.memo(props => {
       </Popover>
       <Popover
         placement="bottom-start"
-        offset={[-30, 10]}
-        elementAs={navDropDownFactory('/apps', 'Apps')}
+        offset={[0, -3]}
+        elementAs={mobileNavDropDownFactory('/apps', 'Apps')}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
@@ -126,8 +126,9 @@ const MobileNav = React.memo(props => {
       </Popover>
       <Popover
         placement="bottom-start"
-        offset={[-30, 10]}
-        elementAs={navDropDownFactory('/projects', 'Projects')}
+        offset={[0, -3]}
+        elementAs={mobileNavDropDownFactory('/projects', 'Projects')}
+        iconsAs={MdApps}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
@@ -139,7 +140,7 @@ const MobileNav = React.memo(props => {
           />
         </div>
       </Popover>
-      <ThemePicker />
+      <ThemePicker offset={[0, -3]} mobile />
     </nav>
   )
 })
