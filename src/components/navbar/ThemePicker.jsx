@@ -147,19 +147,6 @@ function ThemeChanger({
   return (
     <div className="theme-picker">
       <div className="theme-picker__theme">
-        <div className="theme-picker__header">Theme</div>
-        <div className="theme-picker__content">
-          {themes.map((x, i) => {
-            return (
-              <ThemeButton
-                key={i}
-                onClick={() => setThemeMode(x.value)}
-                background={x.color}
-                name={x.name}
-              />
-            )
-          })}
-        </div>
         <div className="theme-picker__header">Primary Colors</div>
         <div className="theme-picker__content">
           {primaryColors.map((x, i) => {
@@ -173,6 +160,20 @@ function ThemeChanger({
             )
           })}
         </div>
+        <div className="theme-picker__header">Theme</div>
+        <div className="theme-picker__content">
+          {themes.map((x, i) => {
+            return (
+              <ThemeButton
+                key={i}
+                onClick={() => setThemeMode(x.value)}
+                background={x.color}
+                name={x.name}
+              />
+            )
+          })}
+        </div>
+
         <div className="theme-picker__input-group">
           <div className="theme-picker__header">Code Snippet Theme</div>
           <select

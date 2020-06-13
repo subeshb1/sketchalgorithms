@@ -112,6 +112,9 @@
     height: 2rem;
   }
 }
+.nav-breaker {
+  height: 56px;
+}
 
 @media (max-width: 700px) {
   .lg-navbar {
@@ -123,7 +126,7 @@
     }
     position: static;
   }
-}
-.nav-breaker {
-  height: 56px;
+  .nav-breaker {
+    display: none;
+  }
 }
