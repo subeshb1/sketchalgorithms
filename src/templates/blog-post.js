@@ -62,7 +62,7 @@ function BlogPost(props) {
         <SideBar seriesElements={seriesContent} />
 
         <main className="blog-mid-container blog-post-content">
-          <h1>{post.frontmatter.title}</h1>
+          <h1>{post.frontmatter.blogTitle || post.frontmatter.title}</h1>
           <p
             style={{
               ...scale(-1 / 5),
@@ -150,6 +150,7 @@ export const pageQuery = graphql`
         githubButtons
         hideEstimatedTime
         hideLeftBar
+        blogTitle
         hideToc
         date(formatString: "MMMM DD, YYYY")
       }
@@ -174,6 +175,7 @@ export const pageQuery = graphql`
             series
             category
             position
+            shortTitle
           }
         }
       }
