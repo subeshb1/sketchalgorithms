@@ -1,12 +1,17 @@
 # CHANGELOG
 
+## v1.2.0
+
+- Added Mobile navbar
+- Added description for all pages
+- Added api test blog
 
 ## v1.1.0
-* Responsive body
-* Alternate blog name and short name
-* Added description to all contents
-<!-- * Mobile Nav
-* Divided pages into respective categories and routes. -->
+
+- Responsive body
+- Alternate blog name and short name
+- Added description to all contents
+- Change deploy process
 
 ## v1.0.0
 
