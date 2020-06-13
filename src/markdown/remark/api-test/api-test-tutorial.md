@@ -65,7 +65,7 @@ api-test -f test.json run get_api
 ```
 
 This will generate the following output:
-![Success Response](https://dev-to-uploads.s3.amazonaws.com/i/glp2td6h1uweu0er2geh.png)
+![Success Response](../../../assets/api-test-tut-success.png)
 
 Now, let’s try out the case where it returns `4xx` response.
 
@@ -73,7 +73,7 @@ Now, let’s try out the case where it returns `4xx` response.
 api-test -f test.json run invalid_post_api
 ```
 
-![Failure Response](https://dev-to-uploads.s3.amazonaws.com/i/y7aq59k7c7xc1cuvn61y.png)
+![Failure Response](../../../assets/api-test-tut-failure.png)
 
 You can also call multiple API routes at once,
 
@@ -158,7 +158,7 @@ api-test -f test.json test get_api
 api-test -f test.json test all
 ```
 
-![Test passing](https://dev-to-uploads.s3.amazonaws.com/i/ntzo58qgi2v3qysg5scx.png)
+![Test passing](../../../assets/api-test-tut-test-pass.png)
 
 Now let’s break the test to ensure it is working correctly. I will alter the eq check for invalid_post_api by adding extra spaces in the text.
 
@@ -166,7 +166,7 @@ Now let’s break the test to ensure it is working correctly. I will alter the e
 "eq": { "message": "Bo        ok already exists." }
 ```
 
-![Test failing](https://dev-to-uploads.s3.amazonaws.com/i/vc0c2t4mukplcwlgwnio.png)
+![Test failing](../../../assets/api-test-tut-test-fail.png)
 
 Great! Now we know that our earlier tests were running properly.
 If the available checks don’t match your need, api-test also provides a way to inject a script or program written in any language to check and compare values.
