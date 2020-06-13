@@ -61,7 +61,7 @@ export default class Footer extends Component {
               Instagram
             </a>
             <a
-              href="https://twitter.com/sketchalgorithm"
+              href="https://twitter.com/subeshb1"
               className="item"
               target="_blank"
               rel="noopener noreferrer"
