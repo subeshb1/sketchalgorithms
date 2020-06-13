@@ -4,6 +4,7 @@ series: api-test
 date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Commands
+description: View all the available commands in api-test. Use run command to call API, test command to run automated tests and describe command to view all the available test cases.
 position: 200
 ---
 

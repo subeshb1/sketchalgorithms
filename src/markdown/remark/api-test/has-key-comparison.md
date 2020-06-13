@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
 position: 303
+description: Use hasKey comparison in api-test to perform key level checks.
 ---
 
 The `hasKey` will check if the provided keys in the array are present in the response or not. The accepted value is `array of string`.

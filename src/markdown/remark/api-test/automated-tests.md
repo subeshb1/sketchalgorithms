@@ -1,5 +1,6 @@
 ---
 title: Automated Test
+description: Use api-test, a single script bash program to perform automated tests on JSON API with CI support.
 series: api-test
 date: '2020-06-03T15:46:37.121Z'
 type: doc

@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
 position: 305
+description: Use path_contains comparison in api-test to perform path level subset checks in your API response.
 ---
 
 The `path_contains` does the same check as `contains` but allows the check to be made inside JSON object path at any depth. The path accessing pattern follows javascript object accessing patterns.

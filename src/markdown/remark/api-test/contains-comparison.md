@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
 position: 302
+description: Use contains comparison in api-test to perform subset level checks in your API response.
 ---
 
 The `contains` check compares the expected value with all the possible subset of the compared object irrespective of the order of object keys and array elements. It will pass if the value matches any subset. The accepted value is either an object or an array.

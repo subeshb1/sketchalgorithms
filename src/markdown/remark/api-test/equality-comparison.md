@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
 position: 301
+description: Use equality comparison in api-test to perform strict equality level checks in your API response.
 ---
 
 The `eq` check compares every element in an object irrespective of the order of object keys and array elements. Every element in the compared object should match the object element defined in the `eq` block. The accepted value is either an object or an array.

@@ -4,6 +4,7 @@ series: api-test
 date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
+description: You can integrate external scripts or programs in api-test to check for complex scenarios.
 position: 306
 ---
 

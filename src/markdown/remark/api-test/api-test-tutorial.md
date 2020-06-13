@@ -1,9 +1,12 @@
 ---
-title: Tutorial
+title: Test JSON API from the terminal
+blogTitle: Test JSON API from the terminal
+shortTitle: Tutorial
 date: '2020-06-03T15:46:37.121Z'
 series: api-test
 category: Getting Started
 position: 102
+description: Learn how to test JSON APIs from the terminal/bash with the help of a tool called api-test. This tutorial provides basic knowledge about test cases structure i.e how you can organize test files, call individual API and write automation test on them.s
 ---
 
 See [Installing api-test](/api-test/installation) before moving to next steps.

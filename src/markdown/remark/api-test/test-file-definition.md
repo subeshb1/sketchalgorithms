@@ -5,6 +5,7 @@ date: '2020-06-07T12:46:37.121Z'
 type: doc
 category: Getting Started
 position: 103
+description: Learn how to define test cases in api-test tool.
 ---
 
 Every API call scenario in the `api-test` is defined as a test case.

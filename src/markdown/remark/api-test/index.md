@@ -8,6 +8,7 @@ hideLeftBar: true
 hideDisqus: true
 githubButtons: true
 hideEstimatedTime: true
+description: api-test is a light weight automated JSON API testing framework. Run API tests from the terminal. Decrease the time to test API from development to production by using the same cases in development to be tested in production.
 ---
 
 Light weight automated JSON API testing framework. Run API tests from the terminal.

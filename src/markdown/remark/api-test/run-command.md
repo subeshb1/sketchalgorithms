@@ -5,6 +5,8 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: commands
 position: 201
+description: Use run command to call API all at once or individually.
+
 ---
 
 The `run` command is used to call API in a test case. You can run single or multiple API calls my passing them into the command. To view help for the command run `api-test -f file.json run --help`.

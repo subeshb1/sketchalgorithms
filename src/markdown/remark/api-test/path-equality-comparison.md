@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Automated Tests
 position: 304
+description: Use path_contains comparison in api-test to perform path level strict equality checks in your API response.
 ---
 
 The `path_eq` does the same check as `eq` but allows the check to be made inside the JSON object path at any depth. The path accessing pattern follows the javascript object accessing patterns.
@@ -25,6 +26,7 @@ The `path_eq` does the same check as `eq` but allows the check to be made inside
 ```
 
 ## Example
+
 The API has the following response.
 
 ```json

@@ -6,6 +6,7 @@ type: doc
 category: commands
 position: 202
 hideToc: false
+description: Use test command to perform automated tests on your API. Integrate with CI to automate you workflow from development to production.
 ---
 
 The `test` command is used to run automated integration tests on an API test case. To run an automated test, an `expect` object must be provided with the testing scenario in the test case file. See [Test cases properties](/api-test/test-file-definition#test-cases-attributes) to view available properties and see [Automated testing with api-test](/api-test/automated-tests) for writing integration tests.

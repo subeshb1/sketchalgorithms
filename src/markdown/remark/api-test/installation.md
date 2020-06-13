@@ -5,6 +5,7 @@ date: '2020-06-03T15:46:37.121Z'
 type: doc
 category: Getting Started
 position: 100
+description: Install api-test by pulling a single bash file from the repository.
 ---
 
 Api-test is a bash program that automates JSON API testing using curl command to make API requests and jq for JSON processing.
