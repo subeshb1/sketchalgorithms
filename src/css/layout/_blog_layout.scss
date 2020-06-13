@@ -36,3 +36,11 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .blog-main-container {
+    .blog-mid-container {
+      padding: 0px 1.125rem;
+    }
+  }
+}
