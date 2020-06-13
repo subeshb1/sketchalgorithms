@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  grid-column: 1 / -1;
+  overflow: auto;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--theme-background);
+  color: var(--theme-color);
+}
+
+.menu > .item {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--theme-color);
+  cursor: pointer;
+  margin-right: 8px;
+  padding: 4px 1rem;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.menu > .item.active,
+.menu > .item:hover {
+  color: var(--theme-color);
+  background: var(--theme-hover);
+}
