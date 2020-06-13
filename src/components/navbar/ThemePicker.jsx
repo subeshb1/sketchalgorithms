@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Popover from '../Popover'
 import Tooltip from '../ToolTip'
-import { IoIosColorPalette } from 'react-icons/io'
+import { GiPaintBucket } from 'react-icons/gi'
 import { ChromePicker } from 'react-color'
 import { useLocalStorage } from 'react-use'
 import { If } from '../utils'
@@ -271,7 +271,7 @@ export default function ThemePicker({ offset = [0, 10], mobile }) {
           text={'Change website theme'}
           className="lg-navbar__item lg-navbar__item--right lg-navbar__item--circular"
         >
-          <IoIosColorPalette />
+          <GiPaintBucket />
         </Tooltip>
       ))}
     >

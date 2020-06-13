@@ -154,16 +154,13 @@
     border-radius: 0;
     flex-direction: column-reverse;
     font-size: 0.6em;
-    opacity: 0.5;
+    opacity: 1;
     svg,
     .lg-navbar__svg {
       margin: 0;
-      font-size: 1.8rem;
-      margin-bottom: -7px;
+      font-size: 1.5rem;
+      margin-bottom: -3px;
     }
-  }
-  .lg-navbar__item:active,.lg-navbar__item:focus {
-    opacity: 1;
   }
   .theme-picker {
     box-shadow: 1px -3px 5px 0px var(--theme-navbar-box-shadow);

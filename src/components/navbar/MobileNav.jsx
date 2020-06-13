@@ -2,9 +2,17 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import Popover from '../Popover'
-import { MdApps } from 'react-icons/md'
-
+import { MdApps, MdLibraryBooks } from 'react-icons/md'
+import { GrBook } from 'react-icons/gr'
 import { mobileNavDropDownFactory } from './common'
+import { FaPenFancy } from 'react-icons/fa'
+import {
+  GiStarFormation,
+  GiStack,
+  GiBookmarklet,
+  GiAbstract086,
+  GiCardboardBox,
+} from 'react-icons/gi'
 import ThemePicker from './ThemePicker'
 const MobileNav = React.memo(props => {
   const {
@@ -76,7 +84,7 @@ const MobileNav = React.memo(props => {
       <Popover
         placement="bottom-start"
         offset={[0, -3]}
-        elementAs={mobileNavDropDownFactory('/', 'Blogs')}
+        elementAs={mobileNavDropDownFactory('/', 'Blogs', GiBookmarklet)}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
@@ -91,7 +99,7 @@ const MobileNav = React.memo(props => {
       <Popover
         placement="bottom-start"
         offset={[0, -3]}
-        elementAs={mobileNavDropDownFactory('/apps', 'Apps')}
+        elementAs={mobileNavDropDownFactory('/apps', 'Apps', GiCardboardBox)}
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
@@ -127,7 +135,11 @@ const MobileNav = React.memo(props => {
       <Popover
         placement="bottom-start"
         offset={[0, -3]}
-        elementAs={mobileNavDropDownFactory('/projects', 'Projects')}
+        elementAs={mobileNavDropDownFactory(
+          '/projects',
+          'Projects',
+          GiStarFormation
+        )}
         iconsAs={MdApps}
       >
         <div className="lg-navbar__drop-down" key="1">
