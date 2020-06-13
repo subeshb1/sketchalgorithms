@@ -40,3 +40,9 @@
     box-shadow: inset -4px 0 var(--theme-primary-hover);
   }
 }
+
+@media (max-width: 700px) {
+  .blog-sidebar {
+    display: none;
+  }
+}
