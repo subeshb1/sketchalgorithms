@@ -6,7 +6,15 @@ import Popover from '../Popover'
 import { navDropDownFactory } from './common'
 import ThemePicker from './ThemePicker'
 const NavBar = React.memo(props => {
-  const { navLogo, snakeGrid, toc, searching, sorting, api } = useStaticQuery(
+  const {
+    navLogo,
+    snakeGrid,
+    toc,
+    searching,
+    sorting,
+    api,
+    snakeGame,
+  } = useStaticQuery(
     graphql`
       query images {
         navLogo: file(absolutePath: { regex: "/logo.png/" }) {
@@ -46,6 +54,13 @@ const NavBar = React.memo(props => {
           }
         }
         api: file(absolutePath: { regex: "/api-test.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        snakeGame: file(absolutePath: { regex: "/snake-game.png/" }) {
           childImageSharp {
             fixed(width: 50, height: 50) {
               ...GatsbyImageSharpFixed
@@ -106,6 +121,13 @@ const NavBar = React.memo(props => {
             image={toc.childImageSharp.fixed}
             title="Searching Algorithms"
             info="A* search, BFS, DFS, Dijkstra"
+          />
+          <DropDownDisplayItem
+            to={'/app/games'}
+            as={Link}
+            image={snakeGame.childImageSharp.fixed}
+            title="Snake Game"
+            info="Play snake game online"
           />
         </div>
       </Popover>
