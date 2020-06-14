@@ -10,9 +10,9 @@
     max-height: 90vh;
     left: 0;
     position: absolute;
-    z-index: -1;
   }
   .not-found__message {
+    z-index: 1;
     h1 {
       font-size: 2rem;
       font-family: 'Open Sans', 'sans-serif';
