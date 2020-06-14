@@ -6,7 +6,7 @@
   padding: 80px 0 40px;
   font-family: 'Open Sans', sans-serif;
   text-transform: capitalize;
-  border-top: 2px solid var(--theme-primary-hover);
+  border-top: 1px solid var(--theme-primary-hover);
   margin-top: 50px;
 }
 .footer .links {
@@ -47,11 +47,9 @@
 
 .footer .copyright {
   position: absolute;
-  width: 100%;
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   display: flex;
-  margin-left: -20px;
-  justify-content: center;
 }
 
 .footer .copyright::before {
