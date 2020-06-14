@@ -21,7 +21,7 @@ const Layout = props => {
     <div id="project-main-container">
       <NavBar />
       <div className="nav-breaker"></div>
-      <div>{children}</div>
+      <div className="dynamic-container">{children}</div>
       <Footer />
       <div className="st-nav-breaker"></div>
     </div>
