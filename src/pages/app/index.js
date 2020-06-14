@@ -12,10 +12,6 @@ function Test() {
 }
 
 const MainApp = React.memo(() => {
-  return (
-    <Layout>
-App path
-    </Layout>
-  )
+  return <Layout>App path</Layout>
 })
 export default MainApp

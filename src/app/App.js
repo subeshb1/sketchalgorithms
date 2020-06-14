@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Link, Router } from '@reach/router'
-import './App.css'
-import './css/index.css'
 import { createComponent, createPortal } from './lib'
 import { Sorting, DrawableGraph, Graph, Home, Games, TOC } from './containers'
 
