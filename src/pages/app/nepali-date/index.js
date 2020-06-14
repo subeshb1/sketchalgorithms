@@ -2,21 +2,14 @@ import React, { useEffect } from 'react'
 import { Router } from '@reach/router'
 import Layout from '../../../components/Layouts/Layout'
 
-import { Provider } from 'react-redux'
-
-import store from '../../../app/store'
-import App from '../../../app/App'
 import { Link } from 'gatsby'
-function Test() {
-  return 'Hello'
-}
+import NepaliDate from 'nepali-date-converter'
 
 const MainApp = React.memo(() => {
   return (
     <Layout>
-      <Router basepath="/app/nepali-date">
-        <App path="/*" />
-      </Router>
+      {new NepaliDate().toString()}
+      <Router basepath="/app/nepali-date"></Router>
     </Layout>
   )
 })

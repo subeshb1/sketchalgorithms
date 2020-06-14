@@ -166,7 +166,9 @@
     box-shadow: 1px -3px 5px 0px var(--theme-navbar-box-shadow);
   }
 }
-
+.st-nav-breaker {
+  height: 100px;
+}
 @media (max-width: 700px) {
   .st-navbar {
     display: flex;
