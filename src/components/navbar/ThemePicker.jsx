@@ -259,7 +259,6 @@ export default function ThemePicker({ offset = [0, 10], mobile }) {
   return (
     <Popover
       offset={offset}
-      strategy="fixed"
       elementAs={React.forwardRef((props, ref) => (
         <Tooltip
           elementAs="button"
