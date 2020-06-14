@@ -107,26 +107,25 @@ exports.sourceNodes = async ({
   getNodesByType,
 }) => {
   const { createNode } = actions
-  const data = {
-    posts: [
-      { id: 1, description: `Hello world!` },
-      { id: 2, description: `Second post!` },
-    ],
-  }
+
   // loop through data and create Gatsby nodes
-  data.posts.forEach(post =>
-    createNode({
-      ...post,
-      id: createNodeId(`${'test1'}-${post.id}`),
-      parent: null,
-      children: [],
-      internal: {
-        type: 'test1',
-        content: JSON.stringify(post),
-        contentDigest: createContentDigest(post),
-      },
+  Object.entries(appRoutes.apps).forEach(([type, item]) => {
+    Object.entries(item).forEach(([name, content]) => {
+      createNode({
+        ...content,
+        category: type,
+        name: name,
+        id: createNodeId(`${type}-${content.url}`),
+        parent: null,
+        children: [],
+        internal: {
+          type: 'app',
+          content: JSON.stringify(content),
+          contentDigest: createContentDigest(content),
+        },
+      })
     })
-  )
+  })
 
   return
 }
