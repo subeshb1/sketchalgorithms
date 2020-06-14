@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import { GrLinkedin, GrTwitter, GrGithub } from 'react-icons/gr'
+import { GrLinkedin, GrTwitter, GrGithub, GrRss } from 'react-icons/gr'
 export default class Footer extends Component {
   render() {
     return (
@@ -63,6 +63,15 @@ export default class Footer extends Component {
             >
               <GrGithub />
               Github
+            </a>
+            <a
+              href="/rss.xml"
+              className="item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GrRss />
+              Rss
             </a>
           </div>
         </div>

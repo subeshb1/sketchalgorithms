@@ -26,6 +26,9 @@
     color: var(--theme-secondary-color);
     svg {
       margin-right: 10px;
+      path {
+        stroke: white;
+      }
     }
   }
 }
