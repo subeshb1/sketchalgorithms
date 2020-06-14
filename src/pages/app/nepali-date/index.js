@@ -14,8 +14,7 @@ function Test() {
 const MainApp = React.memo(() => {
   return (
     <Layout>
-        Sucket
-      <Router basepath="/app">
+      <Router basepath="/app/nepali-date">
         <App path="/*" />
       </Router>
     </Layout>

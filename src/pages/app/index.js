@@ -14,9 +14,7 @@ function Test() {
 const MainApp = React.memo(() => {
   return (
     <Layout>
-      <Router basepath="/app">
-        <App path="/*" />
-      </Router>
+App path
     </Layout>
   )
 })
