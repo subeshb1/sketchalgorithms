@@ -69,7 +69,7 @@ const Searching = React.memo(() => {
       {algorithms.map((algo, i) => {
         return <SearchingAlgorithm key={i} path={`/${algo}`} algo={algo} />
       })}
-      <SearchingAlgorithm path={`/`} algo={'bubble-sort'} />
+      <SearchingAlgorithm path={`/*`} algo={'bubble-sort'} />
     </Router>
   )
 })
