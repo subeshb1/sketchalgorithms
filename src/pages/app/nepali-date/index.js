@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import { Router } from '@reach/router'
-import Layout from '../components/Layouts/Layout'
+import Layout from '../../../components/Layouts/Layout'
 
 import { Provider } from 'react-redux'
 
-import store from '../app/store'
-import App from '../app/App'
+import store from '../../../app/store'
+import App from '../../../app/App'
 import { Link } from 'gatsby'
 function Test() {
   return 'Hello'
@@ -14,6 +14,7 @@ function Test() {
 const MainApp = React.memo(() => {
   return (
     <Layout>
+        Sucket
       <Router basepath="/app">
         <App path="/*" />
       </Router>
