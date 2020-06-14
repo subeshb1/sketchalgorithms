@@ -76,17 +76,13 @@ let menuItems = algorithms.map(item => ({
 }))
 
 const Sorting = React.memo(() => {
-  const ssr = typeof window === 'undefined'
-
-  return !ssr ? (
+  return (
     <Router basepath="/app/sorting">
       {algorithms.map((algo, i) => {
         return <SortingAlgorithm key={i} path={`/${algo}`} algo={algo} />
       })}
       <SortingAlgorithm path={`/`} algo={'bubble-sort'} />
     </Router>
-  ) : (
-    'Loading..'
   )
 })
 

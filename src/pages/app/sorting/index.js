@@ -4,13 +4,18 @@ import Layout from '../../../components/Layouts/Layout'
 import { Sorting } from '../../../app/containers'
 import AppDisplayLayout from '../../../components/Layouts/AppDisplayLayout'
 
-const MainApp = React.memo(({ data: { sortingAlgo } }) => {
+const MainApp = React.memo(({ data:{sortingAlgo} }) => {
+  const ssr = typeof window === 'undefined'
   return (
     <Layout>
-      <Router basepath="/app/sorting">
-        <AppDisplayLayout path="/" data={sortingAlgo} category="sorting" />
-        <Sorting path="/*" />
-      </Router>
+      {!ssr ? (
+        <Router basepath="/app/sorting">
+          <AppDisplayLayout path="/" data={sortingAlgo} category="sorting" />
+          <Sorting path="/*" />
+        </Router>
+      ) : (
+        'Loading..'
+      )}
     </Layout>
   )
 })
