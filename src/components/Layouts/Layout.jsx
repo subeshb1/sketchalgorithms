@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../../css/index.scss'
 import NavBar from '../navbar/index'
+import Footer from '../footer/index'
 
 const fetchTheme = () => {
   if (window.localStorage) {
@@ -21,11 +22,9 @@ const Layout = props => {
       <NavBar />
       <div className="nav-breaker"></div>
       {children}
-      <footer>
-        © {new Date().getFullYear()} Subesh Bhandari, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+
+      <div className="st-nav-breaker"></div>
+      <Footer />
     </div>
   )
 }
