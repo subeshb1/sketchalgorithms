@@ -118,6 +118,9 @@ $color: black;
 .theme-dark,
 .theme-dark-blue,
 .theme-dark-red {
+  a {
+    color: #79aeff;
+  }
   :not(pre) > code {
     background-color: rgb(17, 17, 17);
     color: white;
