@@ -54,7 +54,6 @@ const getAlgoFromPath = algo => {
 const getName = pathname =>
   getAlgoFromPath(pathname)
     .split('-')
-    
     .join(' ')
 
 // Menu Component
@@ -65,18 +64,18 @@ let menuItems = algorithms.map(item => ({
   to: '/app/drawable-graph/' + item,
 }))
 
-const Sorting = React.memo(() => {
+const DrawableGraph = React.memo(() => {
   return (
     <Router basepath="/app/drawable-graph">
       {algorithms.map((algo, i) => {
-        return <SortingAlgorithm key={i} path={`/${algo}`} algo={algo} />
+        return <DrawableGraphAlgorithm key={i} path={`/${algo}`} algo={algo} />
       })}
-      <SortingAlgorithm path={`/`} algo={'bfs'} />
+      <DrawableGraphAlgorithm path={`/*`} algo={'bfs'} />
     </Router>
   )
 })
 
-const SortingAlgorithm = React.memo(({ algo }) => {
+const DrawableGraphAlgorithm = React.memo(({ algo }) => {
   return (
     <div className="container">
       <Head data={headData[algo] || headData.home} />
@@ -88,4 +87,4 @@ const SortingAlgorithm = React.memo(({ algo }) => {
   )
 })
 
-export default Sorting
+export default DrawableGraph
