@@ -76,7 +76,7 @@ export default class Footer extends Component {
           </div>
         </div>
         <div className="copyright">
-          Subesh Bhandari {new Date().getFullYear()}
+          CopyRight {new Date().getFullYear()} - Subesh Bhandari
         </div>
       </div>
     )
