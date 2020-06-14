@@ -1,11 +1,7 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import Layout from '../../../components/Layouts/Layout'
-import App from '../../../app/App'
 import { DrawableGraph } from '../../../app/containers'
-function Test() {
-  return <div>hello</div>
-}
 const MainApp = React.memo(() => {
   const ssr = typeof window === "undefined"
   return (

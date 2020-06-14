@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 import './css/index.css'
 import { Menu, Head, NavLink } from '../components'
 import { Snake } from './statefulComponents'
-// import Loadable from "react-loadable";
-import SnakeTut from './components/snake-tut'
-// const SnakeTut = Loadable({
-//   loader: () => import("./components/snake-tut"),
-//   loading: () => <div>Loading...</div>,
-//   delay: 0
-// });
 import { Router } from '@reach/router'
 
 const games = ['snake-game']
