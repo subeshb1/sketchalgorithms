@@ -81,7 +81,7 @@ const Sorting = React.memo(() => {
       {algorithms.map((algo, i) => {
         return <SortingAlgorithm key={i} path={`/${algo}`} algo={algo} />
       })}
-      <SortingAlgorithm path={`/`} algo={'bubble-sort'} />
+      <SortingAlgorithm path={`/*`} algo={'bubble-sort'} />
     </Router>
   )
 })
