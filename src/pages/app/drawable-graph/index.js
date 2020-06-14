@@ -8,12 +8,14 @@ function Test() {
   return <div>hello</div>
 }
 const MainApp = React.memo(() => {
+  const ssr = typeof window === undefined
   return (
     <Layout>
-      <Router basepath="/app/drawable-graph">
-        <Test path="/" />
-        <DrawableGraph path="/*" />
-      </Router>
+      {!ssr && (
+        <Router basepath="/app/drawable-graph">
+          <DrawableGraph path="/*" />
+        </Router>
+      )}
     </Layout>
   )
 })

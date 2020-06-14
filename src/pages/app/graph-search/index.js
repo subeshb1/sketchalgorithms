@@ -4,11 +4,14 @@ import Layout from '../../../components/Layouts/Layout'
 import '../../../app/css/index.css'
 import { Graph } from '../../../app/containers'
 const MainApp = React.memo(() => {
+  const ssr = typeof window === undefined
   return (
     <Layout>
-      <Router basepath="/app/graph-search">
-        <Graph path="/*" />
-      </Router>
+      {!ssr && (
+        <Router basepath="/app/graph-search">
+          <Graph path="/*" />
+        </Router>
+      )}
     </Layout>
   )
 })

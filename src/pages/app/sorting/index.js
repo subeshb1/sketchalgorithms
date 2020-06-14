@@ -13,11 +13,14 @@ import {
 import App from '../../../app/App'
 
 const MainApp = React.memo(() => {
+  const ssr = typeof window === undefined
   return (
     <Layout>
-      <Router basepath="/app/sorting">
-        <Sorting path="/*" />
-      </Router>
+      {!ssr && (
+        <Router basepath="/app/sorting">
+          <Sorting path="/*" />
+        </Router>
+      )}
     </Layout>
   )
 })
