@@ -3,6 +3,7 @@ import { Router } from '@reach/router'
 import Layout from '../../../components/Layouts/Layout'
 import { Games } from '../../../app/containers'
 import AppDisplayLayout from '../../../components/Layouts/AppDisplayLayout'
+import { graphql } from 'gatsby'
 const MainApp = React.memo(({ data: { games } }) => {
   const ssr = typeof window === 'undefined'
 
