@@ -7,15 +7,17 @@ import { graphql } from 'gatsby'
 const MainApp = React.memo(({ data: { games } }) => {
   const ssr = typeof window === 'undefined'
 
-  return !ssr ? (
+  return (
     <Layout>
-      <Router basepath="/app/games">
-        <AppDisplayLayout path="/" data={games} category="games" />
-        <Games path="/*" />
-      </Router>
+      {!ssr ? (
+        <Router basepath="/app/games">
+          <AppDisplayLayout path="/" data={games} category="games" />
+          <Games path="/*" />
+        </Router>
+      ) : (
+        'Loading...'
+      )}
     </Layout>
-  ) : (
-    'Loading...'
   )
 })
 export default MainApp
