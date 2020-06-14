@@ -1,25 +1,31 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import Layout from '../../../components/Layouts/Layout'
-import {
-  Sorting,
-  DrawableGraph,
-  Graph,
-  Home,
-  Games,
-  TOC,
-} from '../../../app/containers'
+import { Sorting } from '../../../app/containers'
+import AppDisplayLayout from '../../../components/Layouts/AppDisplayLayout'
 
-const MainApp = React.memo(() => {
-  const ssr = typeof window === "undefined"
+const MainApp = React.memo(({ data: { sortingAlgo } }) => {
   return (
     <Layout>
-      {!ssr && (
-        <Router basepath="/app/sorting">
-          <Sorting path="/*" />
-        </Router>
-      )}
+      <Router basepath="/app/sorting">
+        <AppDisplayLayout path="/" data={sortingAlgo} category="sorting" />
+        <Sorting path="/*" />
+      </Router>
     </Layout>
   )
 })
 export default MainApp
+
+export const pageQuery = graphql`
+  query {
+    sortingAlgo: allApp(filter: { category: { eq: "sorting" } }) {
+      nodes {
+        title
+        url
+        description
+        category
+        name
+      }
+    }
+  }
+`
