@@ -23,8 +23,8 @@ const Layout = props => {
       <div className="nav-breaker"></div>
       {children}
 
-      <div className="st-nav-breaker"></div>
       <Footer />
+      <div className="st-nav-breaker"></div>
     </div>
   )
 }

@@ -7,6 +7,7 @@
   font-family: 'Open Sans', sans-serif;
   text-transform: capitalize;
   border-top: 2px solid var(--theme-primary-hover);
+  margin-top: 50px;
 }
 .footer .links {
   display: flex;
@@ -21,6 +22,12 @@
   flex-direction: column;
   font-size: 1em;
   font-weight: bolder;
+  a {
+    color: var(--theme-secondary-color);
+    svg {
+      margin-right: 10px;
+    }
+  }
 }
 
 .footer .group .item {
@@ -43,11 +50,13 @@
   width: 100%;
   bottom: 0;
   display: flex;
+  margin-left: -20px;
   justify-content: center;
 }
 
 .footer .copyright::before {
   content: '\00A9';
+  margin-right: 10px;
 }
 
 .footer::after {
@@ -56,6 +65,9 @@
 }
 
 @media (max-width: 700px) {
+  .footer {
+    padding: 0 20px;
+  }
   .footer .links {
     flex-direction: column;
     justify-content: center;

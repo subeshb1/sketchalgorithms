@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ToolBar from './container/tool-bar.container'
 
-import { Menu, Head,NavLink } from '../components'
+import { Menu, Head, NavLink } from '../components'
 import DrawBoard from './container/draw-board.container'
 
 import { Router } from '@reach/router'
@@ -62,11 +62,9 @@ const getAlgoFromPath = pathname => {
   return pathname
 }
 
-
 const getName = pathname =>
   getAlgoFromPath(pathname)
     .split('-')
-    
     .join(' ')
 
 // Menu Component
