@@ -1,20 +1,34 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import Layout from '../../../components/Layouts/Layout'
-import {
-  DrawableGraph,
-  Graph,
-  Home,
-  Games,
-  TOC,
-} from '../../../app/containers'
-const MainApp = React.memo(() => {
-  return (
+import { Games } from '../../../app/containers'
+import AppDisplayLayout from '../../../components/Layouts/AppDisplayLayout'
+const MainApp = React.memo(({ data: { games } }) => {
+  const ssr = typeof window === 'undefined'
+
+  return !ssr ? (
     <Layout>
       <Router basepath="/app/games">
+        <AppDisplayLayout path="/" data={games} category="games" />
         <Games path="/*" />
       </Router>
     </Layout>
+  ) : (
+    'Loading...'
   )
 })
 export default MainApp
+
+export const pageQuery = graphql`
+  query {
+    games: allApp(filter: { category: { eq: "games" } }) {
+      nodes {
+        title
+        url
+        description
+        category
+        name
+      }
+    }
+  }
+`
