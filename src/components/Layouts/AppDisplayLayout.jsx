@@ -5,7 +5,22 @@ import { images } from '../../assets/images'
 import '../../css/components/app-container.scss'
 
 const AppDisplayLayout = React.memo(({ data, category }) => {
-  const homeData = data.nodes.find(x => x.name === 'home')
+  let homeData
+  if (category === 'all') {
+    const allCategory = new Set(data.nodes.map(x => x.category))
+    return (
+      <>
+        {[...allCategory].map(category => {
+          return (
+            <AppDisplayLayout
+              data={{ nodes: data.nodes.filter(x => x.category === category) }}
+            />
+          )
+        })}
+      </>
+    )
+  }
+  homeData = data.nodes.find(x => x.name === 'home')
   return (
     <div className="app-container">
       {homeData && (
@@ -26,7 +41,6 @@ const AppDisplayLayout = React.memo(({ data, category }) => {
 })
 
 const AppDisplay = ({ data, homeTitle }) => {
-  console.log(data)
   return (
     <Link to={data.url} className="app-container__item">
       <div className="app-container__image">
@@ -39,7 +53,6 @@ const AppDisplay = ({ data, homeTitle }) => {
         <div className="app-container__description">
           {data.description.slice(0, 100) + '...'}
         </div>
-        {/* <button>Visualize Bubble Sort</button> */}
       </div>
     </Link>
   )
