@@ -9,42 +9,42 @@ const headData = {
   'bubble-sort': {
     description:
       "Bubble Sort is one of the simplest Algorithms. Learn how bubble sort works and visualize it. It's complexity is O(n). It works by repeatedly swapping the adjacent elements if they are in wrong order.",
-    title: 'Bubble Sort | Sorting Algorithms | Subesh Bhandari',
+    title: 'Bubble Sort | Sorting Algorithms',
     image: 'bubble.png',
     url: '/app/sorting/bubble-sort',
   },
   'merge-sort': {
     description:
       "Merge Sort is a Divide and Conquer Algorithm like Quick Sort. Learn how Merge sort works and visualize it. It's complexity is O(n logn). It divides input array in two halves, calls itself for the two halves and then merges the two sorted arrays.",
-    title: 'Merge Sort | Sorting Algorithms | Subesh Bhandari',
+    title: 'Merge Sort | Sorting Algorithms',
     image: 'merge.png',
     url: '/app/sorting/merge-sort',
   },
   'quick-sort': {
     description:
       "Quick Sort is a Divide and Conquer Algorithm like Merge Sort. Learn how Quick sort works and visualize it. It's complexity is O(n logn). It picks an element as pivot and partitions the given array around the picked pivot.",
-    title: 'Quick Sort | Sorting Algorithms | Subesh Bhandari',
+    title: 'Quick Sort | Sorting Algorithms',
     image: 'quick.png',
     url: '/app/sorting/quick-sort',
   },
   'heap-sort': {
     description:
       "Heap sort sorts by building a heap tree. Learn how Heap sort works and visualize it. It's complexity is O(n logn). A heap is a partially sorted binary tree that is stored inside an array.",
-    title: 'Heap Sort | Sorting Algorithms | Subesh Bhandari',
+    title: 'Heap Sort | Sorting Algorithms',
     image: 'heap.png',
     url: '/app/sorting/heap-sort',
   },
   'selection-sort': {
     description:
       "Selection sort like its name suggests selects the smallest element at every pass, meaning in every pass an item is placed in order. Learn how Selection sort works and visualize it. It's complexity is O(n^2). Selection ",
-    title: 'Selection Sort | Sorting Algorithms | Subesh Bhandari',
+    title: 'Selection Sort | Sorting Algorithms',
     image: 'bubble.png',
     url: '/app/sorting/selection-sort',
   },
   home: {
     description:
       'Learn about different types of Sorting Algorithms following different paradigms. Calculate Complexity, visualize, get programming code and implement it yourself.',
-    title: 'Sorting Algorithms | Subesh Bhandari',
+    title: 'Sorting Algorithms',
     url: '/app/sorting/',
   },
 }

@@ -28,7 +28,7 @@ let menuItems = games.map(item => ({
 const data = {
   description:
     'Play games online made using javascript, html and css. View the tutorial to make you own game.s',
-  title: 'Games | Subesh Bhandari',
+  title: 'Games',
   url: '/app/games/',
 }
 

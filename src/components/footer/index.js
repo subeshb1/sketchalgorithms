@@ -31,7 +31,7 @@ export default class Footer extends Component {
             </Link>
           </div>
           <div className="group">
-            <Link to="/projects">Projects</Link>
+            Projects
             <Link to="/api-test/" className="item">
               api-test
             </Link>
