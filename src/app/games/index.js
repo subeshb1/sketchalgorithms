@@ -27,9 +27,9 @@ let menuItems = games.map(item => ({
 
 const data = {
   description:
-    'Play games online made using javascript, html and css. View the tutorial to make you own game.s',
-  title: 'Games',
-  url: '/app/games/',
+    'Play snake game online. Made using HTML CSS and javascript. Learn how to build your own snake game following the tutorial.',
+  title: 'Snake Game | Games',
+  url: '/app/games/snake-game',
 }
 
 export default class Games extends Component {
