@@ -1,7 +1,7 @@
 import aStar from './a-star.png'
 import aStarDraw from './a-star-draw.png'
-import bfs from './bfs.png'
 import bfsDraw from './bfs-draw.png'
+import bfs from './bfs.png'
 import dfs from './dfs.png'
 import dfsDraw from './dfs-draw.png'
 import dijkstras from './dijkstras.png'
@@ -11,6 +11,7 @@ import heap from './heap.png'
 import bubble from './bubble.png'
 import quick from './quick.png'
 import logo from './logo.png'
+import selectionSort from './selection-sort.png'
 import snakeGrid from './snake-grid.png'
 import snakeGame from '../snake-game.png'
 
@@ -47,4 +48,5 @@ export const images = {
   'logo.png': logo,
   'snake-grid.png': snakeGrid,
   'snake-game.png': snakeGame,
+  'selection-sort.png': selectionSort,
 }

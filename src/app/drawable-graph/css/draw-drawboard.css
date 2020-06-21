@@ -1,6 +1,7 @@
 .draw-drawboard {
   grid-column: 2/-4;
   grid-row: 2/2;
+  border: 2px solid black;
 }
 
 @media (max-width: 700px) {

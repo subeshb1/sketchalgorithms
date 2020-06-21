@@ -9,12 +9,16 @@
   cursor: pointer;
   outline: none;
   border-radius: 4px;
+  opacity: 0.7;
+  background: white;
 }
 .icon-bar img:hover,
 .icon-bar img:focus {
+  opacity: 1;
   box-shadow: 0 0 9px 3px #aeaeae;
 }
 .icon-bar img.active {
+  opacity: 1;
   box-shadow: 0 0 0 2px rgb(223, 222, 222), 0 0 0 3px #aeaeae;
 }
 

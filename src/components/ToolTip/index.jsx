@@ -51,6 +51,7 @@ const ToolTip = React.forwardRef(
           className={className}
           ref={referenceElement}
           onMouseOver={open}
+          onFocus={open}
           onMouseDown={() => closeOnClick && close()}
           onMouseLeave={close}
           {...otherProps}

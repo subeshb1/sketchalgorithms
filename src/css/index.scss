@@ -6,12 +6,9 @@
 @import 'components/table-of-contents';
 @import 'layout/blog_layout';
 @import 'components/sidebar';
+@import 'components/footer';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Patua+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 $background: white;
 $color: black;
@@ -117,6 +114,9 @@ $color: black;
 .theme-dark,
 .theme-dark-blue,
 .theme-dark-red {
+  a {
+    color: #79aeff;
+  }
   :not(pre) > code {
     background-color: rgb(17, 17, 17);
     color: white;
@@ -131,4 +131,19 @@ $color: black;
 a {
   text-decoration: none;
   color: var(--theme-color);
+}
+
+.section-container {
+  background-color: #fff;
+}
+
+.section-container .welcome {
+  position: relative;
+  top: 20px;
+  text-align: center;
+}
+
+.dynamic-container {
+  min-height: 80vh;
+  background: var(--theme-background);
 }

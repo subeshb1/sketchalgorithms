@@ -1,5 +1,14 @@
 # CHANGELOG
 
+
+## v1.3.0
+
+- Footer
+- Gatsby sitemap
+- App layout
+- Client side routes update
+- Dynamic app auery
+
 ## v1.2.0
 
 - Added Mobile navbar

@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { images } from "../../assets/images";
 
-const root = "https://www.SubeshBhandari.com";
+const root = "https://www.subeshbhandari.com";
 export default class Head extends React.Component { 
   render() {
     const {
@@ -10,7 +10,7 @@ export default class Head extends React.Component {
         url = "/",
         title = "Subesh Bhandari",
         ogTitle = title,
-        description = "Learn, Visualize, Implement",
+        description = "Personal blog and pet projects of Subesh Bhandari. Learn javascript, React, AWS, Go and much more. Use different open source tools and online apps dedicated for visualization and increasing productivity.",
         ogDescription = description, 
         image = "logo.png"
       }
@@ -35,7 +35,7 @@ export default class Head extends React.Component {
         <meta name="twitter:description" content={ogDescription} />
         <meta charSet="utf-8" />
         {/* SEO */}
-        <title>{title}</title>
+        <title>{title} | Subesh Bhandari</title>
         <meta name="description" content={description} />
       </Helmet>
     );
