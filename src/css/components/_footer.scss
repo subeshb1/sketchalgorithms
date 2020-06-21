@@ -27,7 +27,7 @@
     svg {
       margin-right: 10px;
       path {
-        stroke: white;
+        stroke: var(--theme-secondary-color);
       }
     }
   }
@@ -58,6 +58,10 @@
 .footer .copyright::before {
   content: '\00A9';
   margin-right: 10px;
+}
+.copyright {
+  opacity: 0.7;
+  font-size: 0.8rem;
 }
 
 .footer::after {
