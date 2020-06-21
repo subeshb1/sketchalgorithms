@@ -143,7 +143,12 @@ a {
   text-align: center;
 }
 
-.dynamic-container {
+.dynamic-container,
+.app-container {
   min-height: 80vh;
-  background: var(--theme-background)
+  background: var(--theme-background);
+}
+.app-container {
+  flex-direction: column;
+  display: flex;
 }
