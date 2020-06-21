@@ -221,5 +221,11 @@ module.exports = {
         exclude: [`/app/nepali-date*`],
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+      },
+    },
   ],
 }
