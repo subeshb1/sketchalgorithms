@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Head } from '../../app/components'
 import { images } from '../../assets/images'
+import '../../css/components/app-container.scss'
+
 const AppDisplayLayout = React.memo(({ data, category }) => {
   const homeData = data.nodes.find(x => x.name === 'home')
   return (
@@ -12,23 +14,34 @@ const AppDisplayLayout = React.memo(({ data, category }) => {
           <h1>{homeData.title}</h1>
         </>
       )}
-      <ul>
+      <div className="app-container__list">
         {data.nodes.map((x, i) => {
-          return x.name !== 'home' ? <AppDisplay data={x} key={i} /> : null
+          return x.name !== 'home' ? (
+            <AppDisplay data={x} key={i} homeTitle={homeData.title} />
+          ) : null
         })}
-      </ul>
+      </div>
     </div>
   )
 })
 
-const AppDisplay = ({ data }) => {
+const AppDisplay = ({ data, homeTitle }) => {
   console.log(data)
   return (
-    <div>
-      <img src={images[data.image] || images['logo.png']} alt={data.title} />
-      <Link to={data.url}>{data.title}</Link>
-      {data.description}
-    </div>
+    <Link to={data.url} className="app-container__item">
+      <div className="app-container__image">
+        <img src={images[data.image] || images['logo.png']} alt={data.title} />
+      </div>
+      <div className="app-container__content">
+        <h2 className="app-container__title">
+          {data.title.replace(` | ${homeTitle}`, '')}
+        </h2>
+        <div className="app-container__description">
+          {data.description.slice(0, 100) + '...'}
+        </div>
+        {/* <button>Visualize Bubble Sort</button> */}
+      </div>
+    </Link>
   )
 }
 

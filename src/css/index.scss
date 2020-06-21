@@ -143,12 +143,7 @@ a {
   text-align: center;
 }
 
-.dynamic-container,
-.app-container {
+.dynamic-container {
   min-height: 80vh;
   background: var(--theme-background);
-}
-.app-container {
-  flex-direction: column;
-  display: flex;
 }

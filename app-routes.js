@@ -33,7 +33,7 @@ module.exports = {
         description:
           "Selection sort like its name suggests selects the smallest element at every pass, meaning in every pass an item is placed in order. Learn how Selection sort works and visualize it. It's complexity is O(n^2). Selection ",
         title: 'Selection Sort | Sorting Algorithms',
-        image: 'bubble.png',
+        image: 'selection-sort.png',
         url: '/app/sorting/selection-sort',
       },
       home: {
@@ -54,7 +54,7 @@ module.exports = {
     'graph-search': {
       bfs: {
         description:
-          'Breadth First Search (BFS) algorithm traverses a graph in a breadthward motion and uses a queue to remember to get the next vertex to start a search, when a dead end occurs in any iteration. Learn and visualize BFS',
+          'Breadth First Search (BFS) algorithm traverses a graph in a breadth ward motion and uses a queue to remember to get the next vertex to start a search, when a dead end occurs in any iteration. Learn and visualize BFS',
         title: 'Breadth First Search (BFS) | Searching Algorithms',
         image: 'bfs.png',
         url: '/app/graph-search/bfs',

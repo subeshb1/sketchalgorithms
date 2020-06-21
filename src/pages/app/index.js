@@ -20,6 +20,7 @@ export const pageQuery = graphql`
         description
         category
         name
+        image
       }
     }
   }
