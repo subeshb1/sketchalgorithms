@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 const MainApp = React.memo(({ data: { allApp } }) => {
   return (
     <Layout>
-      <AppDisplayLayout path="/" data={allApp} />
+      <AppDisplayLayout path="/" data={allApp} category="all"/>
     </Layout>
   )
 })
