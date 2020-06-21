@@ -17,17 +17,17 @@ export default class Footer extends Component {
           </div>
           <div className="group">
             <Link to="/app">Apps</Link>
-            <Link to="/app/sorting" className="item">
+            <Link to="/app/sorting/" className="item">
               Sorting Algorithms
             </Link>
-            <Link to="/app/graph-search" className="item">
+            <Link to="/app/graph-search/" className="item">
               Path finding Algorithms
             </Link>
-            <Link to="/app/drawable-graph" className="item">
+            <Link to="/app/drawable-graph/" className="item">
               Searching algorithm
             </Link>
-            <Link to="/app/games/snake-game" className="item">
-              Play Snake Game
+            <Link to="/app/games/" className="item">
+              Play Games
             </Link>
           </div>
           <div className="group">
