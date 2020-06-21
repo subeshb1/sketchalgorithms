@@ -79,7 +79,6 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "@netlify/plugin-lighthouse": "^1.1.0",
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.14.2"
