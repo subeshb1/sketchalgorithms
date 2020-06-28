@@ -4,15 +4,19 @@ import { Head } from '../../app/components'
 import { images } from '../../assets/images'
 import '../../css/components/app-container.scss'
 
-const AppDisplayLayout = React.memo(({ data, category }) => {
+const AppDisplayLayout = React.memo(({ data, category, noHead = false }) => {
   let homeData
   if (category === 'all') {
-    const allCategory = new Set(data.nodes.map(x => x.category))
+    const allCategory = new Set(
+      data.nodes.map(x => x.category).filter(x => x !== 'app')
+    )
     return (
       <>
+        <Head data={data.nodes.find(x => x.category === 'app')} />
         {[...allCategory].map(category => {
           return (
             <AppDisplayLayout
+              noHead
               data={{ nodes: data.nodes.filter(x => x.category === category) }}
             />
           )
@@ -25,7 +29,7 @@ const AppDisplayLayout = React.memo(({ data, category }) => {
     <div className="app-container">
       {homeData && (
         <>
-          <Head data={homeData} />
+          {!noHead && <Head data={homeData} />}
           <h1>{homeData.title}</h1>
         </>
       )}
