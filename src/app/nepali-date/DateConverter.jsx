@@ -1,8 +1,47 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import NepaliDate from 'nepali-date-converter'
-import moment, { defaultFormat } from 'moment'
+import moment from 'moment'
 global.NepaliDate = NepaliDate
 global.moment = moment
+
+function formatEnglish(englishDate, format) {
+  try {
+    if (englishDate) {
+      return moment(englishDate).format(format)
+    }
+  } catch {
+    return ''
+  }
+  return ''
+}
+
+function formatNepali(nepaliDate, format) {
+  if (nepaliDate) {
+    return nepaliDate.format(format)
+  }
+  return ''
+}
+
+function convertToNepali(nepaliString, format) {
+  const nepaliDate = convert(nepaliString)
+  const englishDate = nepaliDate ? nepaliDate.toJsDate() : null
+  return {
+    nepaliString,
+    englishString: formatEnglish(englishDate, format),
+  }
+}
+
+function convertToEnglish(englishString, format) {
+  const englishDate = moment(englishString)
+  const nepaliDate = englishDate.isValid()
+    ? convert(englishDate.toDate())
+    : null
+  return {
+    englishString,
+    nepaliString: formatNepali(nepaliDate, format),
+  }
+}
+
 function convert(str) {
   try {
     return new NepaliDate(str)
@@ -21,50 +60,57 @@ const initialState = {
       nepaliString: '',
       englishString: '',
       format: '',
-      nepaliDate: null,
-      englishDate: null,
     },
-    {},
-    {},
   ],
   mode: MODE.NEPALI,
-  defaultFormat: 'MM/DD/YYYY',
+  defaultFormat: 'YYYY/MM/DD',
 }
 function converterReducer(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_NP':
-      const currentNp = state.dates[action.payload.index]
-      currentNp.nepaliString = action.payload.value
-      currentNp.nepaliDate = convert(currentNp.nepaliString)
-      currentNp.englishDate = currentNp.nepaliDate
-        ? currentNp.nepaliDate.toJsDate()
-        : null
-      currentNp.englishString = currentNp.englishDate
-        ? moment(currentNp.englishDate).format(state.defaultFormat)
-        : ''
+      state.dates[action.payload.index] = convertToNepali(
+        action.payload.value,
+        state.defaultFormat
+      )
       return { ...state }
     case 'CHANGE_EN':
-      const currentEn = state.dates[action.payload.index]
-      currentEn.englishString = action.payload.value
-      currentEn.englishDate = moment(currentEn.englishString)
-      currentEn.nepaliDate = currentEn.englishDate.isValid()
-        ? convert(currentEn.englishDate.toDate())
-        : null
-      currentEn.nepaliString = currentEn.nepaliDate
-        ? currentEn.nepaliDate.format(state.defaultFormat)
-        : ''
+      state.dates[action.payload.index] = convertToEnglish(
+        action.payload.value,
+        state.defaultFormat
+      )
+      return { ...state }
+    case 'ADD_INDEX':
+      state.dates.splice(action.payload.index + 1, 0, {})
+      return { ...state }
+    case 'DELETE_INDEX':
+      if (state.dates.length === 1) {
+        return state
+      }
+      state.dates.splice(action.payload.index, 1)
       return { ...state }
     default:
-      throw new Error()
+      throw state
   }
 }
 export default function DateConverter() {
   const [state, dispatch] = useReducer(converterReducer, initialState)
+  const [value, setValue] = useState('')
   const onChangeFactory = (index, mode) => ({ target: { value } }) => {
     dispatch({ type: `CHANGE_${mode}`, payload: { index, value } })
   }
+  const indexFactory = (index, type) => () => {
+    dispatch({ type, payload: { index } })
+  }
   return (
     <div>
+      <select>
+        <option value=""></option>
+      </select>
+      <input
+        type="text"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
       {state.dates.map((x, i) => {
         return (
           <DateDisplay
@@ -73,6 +119,8 @@ export default function DateConverter() {
             englishString={x.englishString || ''}
             onNepaliChange={onChangeFactory(i, MODE.NEPALI)}
             onEnglishChange={onChangeFactory(i, MODE.ENGLISH)}
+            addConverter={indexFactory(i, 'ADD_INDEX')}
+            deleteConverter={indexFactory(i, 'DELETE_INDEX')}
           />
         )
       })}
@@ -85,11 +133,15 @@ function DateDisplay({
   onEnglishChange,
   nepaliString,
   englishString,
+  addConverter,
+  deleteConverter,
 }) {
   return (
     <div>
       <input onChange={onNepaliChange} type="text" value={nepaliString} />
       <input onChange={onEnglishChange} type="text" value={englishString} />
+      <button onClick={addConverter}>Add More</button>
+      <button onClick={deleteConverter}>Delete</button>
     </div>
   )
 }
