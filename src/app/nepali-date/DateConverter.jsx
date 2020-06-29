@@ -23,7 +23,7 @@ function formatNepali(nepaliDate, format) {
 }
 
 function convertToNepali(nepaliString, format) {
-  const nepaliDate = convert(nepaliString)
+  const nepaliDate = convertNepali(nepaliString)
   const englishDate = nepaliDate ? nepaliDate.toJsDate() : null
   return {
     nepaliString,
@@ -34,7 +34,7 @@ function convertToNepali(nepaliString, format) {
 function convertToEnglish(englishString, format) {
   const englishDate = moment(englishString)
   const nepaliDate = englishDate.isValid()
-    ? convert(englishDate.toDate())
+    ? convertNepali(englishDate.toDate())
     : null
   return {
     englishString,
@@ -42,7 +42,7 @@ function convertToEnglish(englishString, format) {
   }
 }
 
-function convert(str) {
+function convertNepali(str) {
   try {
     return new NepaliDate(str)
   } catch {
