@@ -24,18 +24,21 @@ function formatNepali(nepaliDate, format) {
   return ''
 }
 
-function convertToNepali(nepaliString, format) {
+function convertToNepali(nepaliString, format, defaultFormat) {
+  const currentFormat = format || defaultFormat
   const nepaliDate = convertNepali(nepaliString)
   const englishDate = nepaliDate ? nepaliDate.toJsDate() : null
   return {
     nepaliString,
     englishString: formatEnglish(englishDate, 'YYYY/MM/DD'),
-    nepaliFormat: formatNepali(nepaliDate, format),
-    englishFormat: formatEnglish(englishDate, format),
+    nepaliFormat: formatNepali(nepaliDate, currentFormat),
+    englishFormat: formatEnglish(englishDate, currentFormat),
+    format,
   }
 }
 
-function convertToEnglish(englishString, format) {
+function convertToEnglish(englishString, format, defaultFormat) {
+  const currentFormat = format || defaultFormat
   const englishDate = moment(englishString)
   const nepaliDate = englishDate.isValid()
     ? convertNepali(englishDate.toDate())
@@ -43,8 +46,9 @@ function convertToEnglish(englishString, format) {
   return {
     englishString,
     nepaliString: formatNepali(nepaliDate, 'YYYY/MM/DD'),
-    nepaliFormat: formatNepali(nepaliDate, format),
-    englishFormat: formatEnglish(englishDate, format),
+    nepaliFormat: formatNepali(nepaliDate, currentFormat),
+    englishFormat: formatEnglish(englishDate, currentFormat),
+    format,
   }
 }
 
@@ -72,18 +76,28 @@ const initialState = {
   ],
   mode: MODE.NEPALI,
   defaultFormat: 'ddd DD, MMMM YYYY',
+  formats: [
+    'YYYY/MM/DD',
+    'YYYY-MM-DD',
+    'DD-MM-YYYY',
+    'DD/MM/YYYY',
+    'ddd DD, MMMM YYYY',
+    'To\\d\\a\\y i\\s ddd DD, MMMM YYYY',
+  ],
 }
 function converterReducer(state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_NP':
       state.dates[action.payload.index] = convertToNepali(
         action.payload.value,
+        state.dates[action.payload.index].format,
         state.defaultFormat
       )
       return { ...state }
     case 'CHANGE_EN':
       state.dates[action.payload.index] = convertToEnglish(
         action.payload.value,
+        state.dates[action.payload.index].format,
         state.defaultFormat
       )
       return { ...state }
@@ -96,6 +110,19 @@ function converterReducer(state = initialState, action) {
       }
       state.dates.splice(action.payload.index, 1)
       return { ...state }
+    case 'CHANGE_FORMAT':
+      const defaultFormat = action.payload.value
+      state.dates.forEach((date, index, array) => {
+        const englishDate = moment(date.englishString)
+        const nepaliDate = convertNepali(date.nepaliString)
+        const format = date.format || defaultFormat
+        array[index] = {
+          ...date,
+          nepaliFormat: nepaliDate ? formatNepali(nepaliDate, format) : '',
+          englishFormat: englishDate ? formatEnglish(englishDate, format) : '',
+        }
+      })
+      return { ...state, defaultFormat }
     default:
       throw state
   }
@@ -110,8 +137,17 @@ export default function DateConverter() {
   }
   return (
     <div>
-      <select>
-        <option value=""></option>
+      <select
+        value={state.defaultFormat}
+        onChange={onChangeFactory(null, 'FORMAT')}
+      >
+        {state.formats.map((x, i) => {
+          return (
+            <option value={x} key={i}>
+              {new NepaliDate().format(x)}
+            </option>
+          )
+        })}
       </select>
       {state.dates.map((x, i) => {
         return (
