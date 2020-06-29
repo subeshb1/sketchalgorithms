@@ -1,13 +1,15 @@
 import React, { useReducer, useState } from 'react'
 import NepaliDate from 'nepali-date-converter'
 import moment from 'moment'
+import DateDisplay from './DateDisplay'
 global.NepaliDate = NepaliDate
 global.moment = moment
-
 function formatEnglish(englishDate, format) {
   try {
     if (englishDate) {
-      return moment(englishDate).format(format)
+      return moment(englishDate).format(
+        format.replace(/d{2,4}/g, string => string + 'd')
+      )
     }
   } catch {
     return ''
@@ -27,7 +29,9 @@ function convertToNepali(nepaliString, format) {
   const englishDate = nepaliDate ? nepaliDate.toJsDate() : null
   return {
     nepaliString,
-    englishString: formatEnglish(englishDate, format),
+    englishString: formatEnglish(englishDate, 'YYYY/MM/DD'),
+    nepaliFormat: formatNepali(nepaliDate, format),
+    englishFormat: formatEnglish(englishDate, format),
   }
 }
 
@@ -38,7 +42,9 @@ function convertToEnglish(englishString, format) {
     : null
   return {
     englishString,
-    nepaliString: formatNepali(nepaliDate, format),
+    nepaliString: formatNepali(nepaliDate, 'YYYY/MM/DD'),
+    nepaliFormat: formatNepali(nepaliDate, format),
+    englishFormat: formatEnglish(englishDate, format),
   }
 }
 
@@ -59,11 +65,13 @@ const initialState = {
     {
       nepaliString: '',
       englishString: '',
+      nepaliFormat: '',
+      englishFormat: '',
       format: '',
     },
   ],
   mode: MODE.NEPALI,
-  defaultFormat: 'YYYY/MM/DD',
+  defaultFormat: 'ddd DD, MMMM YYYY',
 }
 function converterReducer(state = initialState, action) {
   switch (action.type) {
@@ -94,7 +102,6 @@ function converterReducer(state = initialState, action) {
 }
 export default function DateConverter() {
   const [state, dispatch] = useReducer(converterReducer, initialState)
-  const [value, setValue] = useState('')
   const onChangeFactory = (index, mode) => ({ target: { value } }) => {
     dispatch({ type: `CHANGE_${mode}`, payload: { index, value } })
   }
@@ -106,11 +113,6 @@ export default function DateConverter() {
       <select>
         <option value=""></option>
       </select>
-      <input
-        type="text"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
       {state.dates.map((x, i) => {
         return (
           <DateDisplay
@@ -122,28 +124,11 @@ export default function DateConverter() {
             onEnglishChange={onChangeFactory(i, MODE.ENGLISH)}
             addConverter={indexFactory(i, 'ADD_INDEX')}
             deleteConverter={indexFactory(i, 'DELETE_INDEX')}
+            nepaliFormat={x.nepaliFormat}
+            englishFormat={x.englishFormat}
           />
         )
       })}
-    </div>
-  )
-}
-
-function DateDisplay({
-  onNepaliChange,
-  onEnglishChange,
-  nepaliString,
-  englishString,
-  addConverter,
-  hideDelete,
-  deleteConverter,
-}) {
-  return (
-    <div>
-      <input onChange={onNepaliChange} type="text" value={nepaliString} />
-      <input onChange={onEnglishChange} type="text" value={englishString} />
-      <button onClick={addConverter}>Add More</button>
-      {!hideDelete && <button onClick={deleteConverter}>Delete</button>}
     </div>
   )
 }
