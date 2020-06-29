@@ -115,6 +115,7 @@ export default function DateConverter() {
         return (
           <DateDisplay
             key={i}
+            hideDelete={state.dates.length === 1}
             nepaliString={x.nepaliString || ''}
             englishString={x.englishString || ''}
             onNepaliChange={onChangeFactory(i, MODE.NEPALI)}
@@ -134,6 +135,7 @@ function DateDisplay({
   nepaliString,
   englishString,
   addConverter,
+  hideDelete,
   deleteConverter,
 }) {
   return (
@@ -141,7 +143,7 @@ function DateDisplay({
       <input onChange={onNepaliChange} type="text" value={nepaliString} />
       <input onChange={onEnglishChange} type="text" value={englishString} />
       <button onClick={addConverter}>Add More</button>
-      <button onClick={deleteConverter}>Delete</button>
+      {!hideDelete && <button onClick={deleteConverter}>Delete</button>}
     </div>
   )
 }
