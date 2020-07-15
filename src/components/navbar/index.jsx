@@ -131,13 +131,13 @@ const NavBar = React.memo(props => {
               title="Snake Game"
               info="Play snake game online"
             />
-            <DropDownDisplayItem
+            {/* <DropDownDisplayItem
               to={'/app/nepali-date/converter'}
               as={Link}
               image={snakeGame.childImageSharp.fixed}
               title="Nepali Date Playground"
               info="Covert Nepali date to english and vice versa"
-            />
+            /> */}
           </div>
         </Popover>
         <Popover

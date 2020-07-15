@@ -8,6 +8,11 @@ import NepaliDate from 'nepali-date-converter'
 const MainApp = React.memo(() => {
   return (
     <Layout>
+      <SEO
+        title="Nepali Date Converter"
+        keywords={[`nepali date`, `converter`, `ad to bs`, `bs to ad`, 'nepali date to english date']}
+        description={"Nepali date today. Find different information about today's date."}
+      />
       {new NepaliDate().toString()}
       <Router basepath="/app/nepali-date"></Router>
     </Layout>
