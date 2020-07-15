@@ -4,7 +4,7 @@ import Layout from '../../../components/Layouts/Layout'
 
 import { Link } from 'gatsby'
 import NepaliDate from 'nepali-date-converter'
-
+import SEO from '../../../components/seo'
 const MainApp = React.memo(() => {
   return (
     <Layout>
