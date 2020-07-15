@@ -7,7 +7,8 @@
 - Gatsby sitemap
 - App layout
 - Client side routes update
-- Dynamic app auery
+- Dynamic app query
+- 404 image
 
 ## v1.2.0
 

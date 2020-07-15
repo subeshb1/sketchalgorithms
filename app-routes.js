@@ -130,5 +130,13 @@ module.exports = {
       },
     },
     'nepali-date': [],
+    app: {
+      home: {
+        description:
+          'Explore different interactive and applications made by me. Visualize algorithms, play games and use productivity tools. This apps are all free and available for anyone and made using HTML, CSS and Javascript.',
+        title: 'Apps',
+        url: '/app',
+      },
+    },
   },
 }

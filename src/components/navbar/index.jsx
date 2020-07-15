@@ -132,7 +132,7 @@ const NavBar = React.memo(props => {
               info="Play snake game online"
             />
             {/* <DropDownDisplayItem
-              to={'/app/nepali-date'}
+              to={'/app/nepali-date/converter'}
               as={Link}
               image={snakeGame.childImageSharp.fixed}
               title="Nepali Date Playground"
