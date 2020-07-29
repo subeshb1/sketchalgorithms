@@ -138,6 +138,13 @@ const NavBar = React.memo(props => {
               title="Nepali Date Playground"
               info="Covert Nepali date to english and vice versa"
             /> */}
+            <DropDownDisplayItem
+              to={'/app/wasm/image-to-ascii'}
+              as={Link}
+              image={snakeGame.childImageSharp.fixed}
+              title="Image to Ascii"
+              info="Convert images to text characters on the browser."
+            />
           </div>
         </Popover>
         <Popover
