@@ -41,29 +41,6 @@
   box-shadow: 0 0 0 3px rgba(48, 48, 48, 0.562);
 }
 
-.tool-bar button {
-  position: relative;
-  border: none;
-  padding: 4px 1rem;
-  color: white;
-  cursor: pointer;
-
-  border-radius: 4px;
-  align-self: start;
-  justify-self: start;
-  background: var(--theme-primary-bg);
-  color: var(--theme-secondary-color);
-
-  border: 1px solid var(--theme-secondary-color);
-}
-
-.tool-bar button:disabled,
-input:disabled,
-select:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .tool-bar input:read-only {
   background: rgb(224, 224, 224);
 }
