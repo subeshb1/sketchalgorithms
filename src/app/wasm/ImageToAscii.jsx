@@ -80,8 +80,12 @@ export default function ImageToAscii() {
       let arrayBuffer = this.result,
         array = new Uint8Array(arrayBuffer)
       dispatcher('SET_IMAGE')(array)
-      change(array, { fixedWidth, colored, reversed, fixedHeight }).finally(
-        dispatcher('DISABLE_LOADING')
+      setTimeout(
+        () =>
+          change(image, { fixedWidth, colored, reversed, fixedHeight }).finally(
+            dispatcher('DISABLE_LOADING')
+          ),
+        100
       )
     }
     reader.readAsArrayBuffer(file)
