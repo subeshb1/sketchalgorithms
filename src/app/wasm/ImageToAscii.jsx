@@ -61,7 +61,7 @@ async function change(buffer, settings) {
 
 export default function ImageToAscii() {
   const [
-    { loading, image, fixedWidth, fixedHeight, colored, reversed },
+    { loading, image, fixedWidth, fixedHeight, colored, reversed, scale },
     dispatch,
   ] = useReducer(imageReducer, initialState)
   useEffect(() => {
@@ -109,6 +109,7 @@ export default function ImageToAscii() {
           fixedWidth,
           colored,
           reversed,
+          scale,
           fixedHeight,
         }}
       />
@@ -126,14 +127,15 @@ function ImageSettings({
   colored,
   reversed,
   fixedHeight,
+  scale,
 }) {
   const onChange = key => ({ target: { value, checked } }) => {
     dispatcher('CHANGE_FIELD')({
       key,
-      value: ['fixedHeight', 'fixedWidth'].includes(key)
-        ? isNaN(parseInt(value))
+      value: ['fixedHeight', 'fixedWidth', 'scale'].includes(key)
+        ? isNaN(parseFloat(value))
           ? value
-          : parseInt(value)
+          : parseFloat(value)
         : checked,
     })
   }
@@ -148,7 +150,7 @@ function ImageSettings({
         </If>
         <If condition={image}>
           <div className="ascii-background">
-            <pre id="console"></pre>
+            <pre id="console" style={{ transform: `scale(${scale})` }} />
           </div>
         </If>
       </div>
@@ -196,6 +198,18 @@ function ImageSettings({
             disabled={loading}
           />
           Inverted
+        </label>
+        <label>
+          Display Scale
+          <input
+            type="number"
+            value={scale}
+            step="0.01"
+            min="-1"
+            max="10000"
+            onChange={onChange('scale')}
+            disabled={loading}
+          />
         </label>
         <div className="btn-group">
           <button onClick={convert} disabled={loading || !image}>
