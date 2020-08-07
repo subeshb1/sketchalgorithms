@@ -1,10 +1,13 @@
 .image-to-ascii {
   position: relative;
+  min-height: 85vh;
   .drawboard {
     min-height: 85vh;
     overflow: scroll;
-    background: black;
+  }
+  .ascii-background {
     color: white;
+    background: black;
   }
   .image-drop-zone {
     width: 100%;
