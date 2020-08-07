@@ -1,7 +1,7 @@
 .image-to-ascii {
   position: relative;
-  min-height: 90vh;
   .drawboard {
+    min-height: 85vh;
     overflow: scroll;
     background: black;
     color: white;
