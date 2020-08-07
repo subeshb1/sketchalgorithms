@@ -27,7 +27,7 @@ function ImageDropZone({ onFileChange }) {
   )
 }
 const initialState = {
-  loading: false,
+  loading: true,
   image: null,
   fixedWidth: 140,
   fixedHeight: 50,
@@ -61,12 +61,14 @@ export default function ImageToAscii() {
     { loading, image, fixedWidth, fixedHeight, colored, reversed },
     dispatch,
   ] = useReducer(imageReducer, initialState)
+  console.log(loading)
   useEffect(() => {
+    dispatcher('ENABLE_LOADING')()
     WebAssembly.instantiateStreaming(fetch('/main.wasm'), go.importObject)
       .then(result => {
         go.run(result.instance)
       })
-      .then(dispatcher('DISABLE_LOADING')())
+      .then(dispatcher('DISABLE_LOADING'))
   }, [])
   const dispatcher = type => payload => dispatch({ type, payload })
   const onFileChange = file => {
@@ -101,14 +103,9 @@ function ImageSettings({ image, loading, onFileChange }) {
   return (
     <>
       <div className="drawboard">
-        <If condition={!image && !loading}>
-          <div
-            className="loader"
-            style={{ display: loading ? 'flex' : 'none' }}
-          >
-            <img src="/spinner.svg" alt="loader" className="loader-icon" />
-          </div>
-        </If>
+        <div className="loader" style={{ display: loading ? 'flex' : 'none' }}>
+          <img src="/spinner.svg" alt="loader" className="loader-icon" />
+        </div>
         <If condition={!image && !loading}>
           <ImageDropZone onFileChange={onFileChange} />
         </If>
