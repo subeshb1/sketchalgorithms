@@ -33,6 +33,7 @@ const initialState = {
   fixedHeight: 50,
   colored: false,
   reversed: false,
+  scale: 1,
 }
 const imageReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -79,7 +80,6 @@ export default function ImageToAscii() {
       let arrayBuffer = this.result,
         array = new Uint8Array(arrayBuffer)
       dispatcher('SET_IMAGE')(array)
-      dispatcher('CONVERT_TO_ASCII')()
       change(array, { fixedWidth, colored, reversed, fixedHeight }).finally(
         dispatcher('DISABLE_LOADING')
       )
@@ -88,8 +88,12 @@ export default function ImageToAscii() {
   }
   const convert = () => {
     dispatcher('ENABLE_LOADING')()
-    change(image, { fixedWidth, colored, reversed, fixedHeight }).finally(
-      dispatcher('DISABLE_LOADING')
+    setTimeout(
+      () =>
+        change(image, { fixedWidth, colored, reversed, fixedHeight }).finally(
+          dispatcher('DISABLE_LOADING')
+        ),
+      100
     )
   }
   return (
@@ -123,8 +127,15 @@ function ImageSettings({
   reversed,
   fixedHeight,
 }) {
-  const onChange = key => ({ target: { value } }) => {
-    dispatcher('CHANGE_FIELD')({ key, value })
+  const onChange = key => ({ target: { value, checked } }) => {
+    dispatcher('CHANGE_FIELD')({
+      key,
+      value: ['fixedHeight', 'fixedWidth'].includes(key)
+        ? isNaN(parseInt(value))
+          ? value
+          : parseInt(value)
+        : checked,
+    })
   }
   return (
     <>
