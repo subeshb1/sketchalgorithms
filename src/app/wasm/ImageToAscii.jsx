@@ -43,6 +43,8 @@ const imageReducer = (state = initialState, action) => {
       return { ...state, loading: false }
     case 'ENABLE_LOADING':
       return { ...state, loading: true }
+    case 'CHANGE_FIELD':
+      return { ...state, [action.payload.key]: action.payload.value }
     default:
       return state
   }
@@ -61,7 +63,6 @@ export default function ImageToAscii() {
     { loading, image, fixedWidth, fixedHeight, colored, reversed },
     dispatch,
   ] = useReducer(imageReducer, initialState)
-  console.log(loading)
   useEffect(() => {
     dispatcher('ENABLE_LOADING')()
     WebAssembly.instantiateStreaming(fetch('/main.wasm'), go.importObject)
@@ -94,12 +95,37 @@ export default function ImageToAscii() {
   return (
     <div className="image-to-ascii container">
       <div className="menu"></div>
-      <ImageSettings {...{ image, loading, onFileChange }} />
+      <ImageSettings
+        {...{
+          image,
+          loading,
+          onFileChange,
+          convert,
+          dispatcher,
+          fixedWidth,
+          colored,
+          reversed,
+          fixedHeight,
+        }}
+      />
     </div>
   )
 }
 
-function ImageSettings({ image, loading, onFileChange }) {
+function ImageSettings({
+  image,
+  loading,
+  onFileChange,
+  convert,
+  dispatcher,
+  fixedWidth,
+  colored,
+  reversed,
+  fixedHeight,
+}) {
+  const onChange = key => ({ target: { value } }) => {
+    dispatcher('CHANGE_FIELD')({ key, value })
+  }
   return (
     <>
       <div className="drawboard">
@@ -119,29 +145,59 @@ function ImageSettings({ image, loading, onFileChange }) {
       <div className="tool-bar">
         <h2>Convert Image to Ascii</h2>
         <label>
-          No of Items
-          <input type="number" step="1" min="0" max="10000" />
+          Width
+          <input
+            type="number"
+            step="1"
+            min="-1"
+            max="10000"
+            value={fixedWidth}
+            onChange={onChange('fixedWidth')}
+            disabled={loading}
+          />
         </label>
         <label>
-          Items Order
-          <select>
-            <option value="3">Random</option>
-            <option value="1">Ascending</option>
-            <option value="2">Descending</option>
-          </select>
+          Height
+          <input
+            type="number"
+            step="1"
+            min="-1"
+            max="10000"
+            value={fixedHeight}
+            onChange={onChange('fixedHeight')}
+            disabled={loading}
+          />
         </label>
-        <button> Generate</button>
-        <label>
-          Step
-          <input type="number" />
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={colored}
+            onChange={onChange('colored')}
+            disabled={loading}
+          />
+          Colored
         </label>
-        <label>
-          Interval
-          <input type="number" step="1" min="1" max="10000" />
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={reversed}
+            onChange={onChange('reversed')}
+            disabled={loading}
+          />
+          Inverted
         </label>
         <div className="btn-group">
-          <button className="green">Sort</button>
-          <button className="red">Stop</button>
+          <button onClick={convert} disabled={loading || !image}>
+            Re Generate
+          </button>
+          <button
+            onClick={() =>
+              dispatcher('CHANGE_FIELD')({ key: 'image', value: null })
+            }
+            disabled={loading || !image}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </>
