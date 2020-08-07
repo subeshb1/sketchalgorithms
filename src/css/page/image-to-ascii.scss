@@ -5,6 +5,16 @@
     min-height: 85vh;
     background: transparent;
   }
+  .tool-bar {
+    display: flex;
+    flex-direction: column;
+    > * {
+      margin-top: 20px;
+    }
+    h2 {
+      margin-top: 10px;
+    }
+  }
   .ascii-background {
     position: relative;
     overflow: scroll;
