@@ -7,7 +7,7 @@ import '../../css/page/image-to-ascii.scss'
 const go = new Go()
 function ImageDropZone({ onFileChange }) {
   const onDrop = useCallback(acceptedFiles => {
-    onFileChange(acceptedFiles[0])
+    acceptedFiles.length && onFileChange(acceptedFiles[0])
   }, [])
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/png,image/jpeg',

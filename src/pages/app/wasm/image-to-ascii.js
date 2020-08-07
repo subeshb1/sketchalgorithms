@@ -6,6 +6,7 @@ import '../../../utils/wasm-go.js'
 import AnsiUp from 'ansi_up';
 import ImageToAscii from '../../../app/wasm/ImageToAscii';
 
+
 function Basic(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
