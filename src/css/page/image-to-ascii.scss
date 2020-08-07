@@ -4,6 +4,9 @@
   .drawboard {
     min-height: 85vh;
     background: transparent;
+    pre {
+      transform-origin: 0 0;
+    }
   }
   .tool-bar {
     display: flex;
