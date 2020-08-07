@@ -1,11 +1,8 @@
 .image-to-ascii {
   position: relative;
-  min-height: 80vh;
-  display: flex;
   .image-drop-zone {
     width: 100%;
     align-self: stretch;
-    margin: 30px;
     border: 2px dashed #0087F7;
     border-radius: 5px;
     display: flex;
