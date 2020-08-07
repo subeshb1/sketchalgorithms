@@ -106,7 +106,7 @@ function ImageSettings({ image, loading, onFileChange }) {
         <div className="loader" style={{ display: loading ? 'flex' : 'none' }}>
           <img src="/spinner.svg" alt="loader" className="loader-icon" />
         </div>
-        <If condition={!image && !loading}>
+        <If condition={!image}>
           <ImageDropZone onFileChange={onFileChange} />
         </If>
         <If condition={image}>
