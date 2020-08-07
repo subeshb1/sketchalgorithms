@@ -3,7 +3,7 @@ import { useDropzone } from 'react-dropzone'
 import '../../utils/wasm-go'
 import AnsiUp from 'ansi_up'
 import { If } from '../../components/utils'
-
+import '../../css/page/image-to-ascii.scss'
 const go = new Go()
 function ImageDropZone({ onFileChange }) {
   const onDrop = useCallback(acceptedFiles => {
@@ -16,12 +16,11 @@ function ImageDropZone({ onFileChange }) {
   const { multiple, ...inputProps } = getInputProps()
 
   return (
-    <section className="container">
-      <div {...getRootProps({ className: 'dropzone' })}>
-        <input id="file" {...inputProps} />
-        <p>Drag 'n' drop some image here, or click to select files</p>
-      </div>
-    </section>
+    <div {...getRootProps({ className: 'image-drop-zone' })}>
+      <input id="file" {...inputProps} />
+      <h2>Drop file here or click to upload.</h2>
+      <p>(Once the image is selected it will converted to ASCII characters on the browser.)</p>
+    </div>
   )
 }
 const initialState = {
@@ -82,8 +81,13 @@ export default function ImageToAscii() {
     reader.readAsArrayBuffer(file)
   }
   return (
-    <div>
-      <If condition={!image}>
+    <div className="image-to-ascii">
+      <If condition={loading}>
+        <div className="loader">
+          <img src="/spinner.svg" alt="loader" className="loader-icon" />
+        </div>
+      </If>
+      <If condition={!image && !loading}>
         <ImageDropZone onFileChange={onFileChange} />
       </If>
       <If condition={image}>
