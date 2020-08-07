@@ -170,3 +170,30 @@ select:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  .loader-icon {
+    animation: spin 1s ease alternate infinite;
+    width: 10vh;
+    height: 10vh;
+    background: black;
+    border-radius: 10px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.relative {
+  position: relative;
+}
