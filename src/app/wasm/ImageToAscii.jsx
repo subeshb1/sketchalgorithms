@@ -16,7 +16,7 @@ function ImageDropZone({ onFileChange }) {
   const { multiple, ...inputProps } = getInputProps()
 
   return (
-    <div {...getRootProps({ className: 'image-drop-zone' })}>
+    <div {...getRootProps({ className: 'image-drop-zone drawboard' })}>
       <input id="file" {...inputProps} />
       <h2>Drop file here or click to upload.</h2>
       <p>
@@ -92,27 +92,25 @@ export default function ImageToAscii() {
   return (
     <div className="image-to-ascii container">
       <div className="menu"></div>
-      <If condition={loading}>
-        <div className="loader">
-          <img src="/spinner.svg" alt="loader" className="loader-icon" />
-        </div>
-      </If>
-      <If condition={!image && !loading}>
-        <ImageDropZone onFileChange={onFileChange} />
-      </If>
-      <If condition={image}>
-        <ImageSettings />
-      </If>
+      <ImageSettings {...{ image, loading, onFileChange }} />
     </div>
   )
 }
 
-function ImageSettings() {
+function ImageSettings({ image, loading, onFileChange }) {
   return (
     <>
-      <div className="drawboard">
-        <pre id="console"></pre>
+      <If condition={!image && !loading}>
+        <ImageDropZone onFileChange={onFileChange} />
+      </If>
+      <div className="loader" style={{ display: loading ? 'flex' : 'none' }}>
+        <img src="/spinner.svg" alt="loader" className="loader-icon" />
       </div>
+      <If condition={image}>
+        <div className="drawboard ascii-background">
+          <pre id="console"></pre>
+        </div>
+      </If>
 
       <div className="tool-bar">
         <h2>Convert Image to Ascii</h2>
