@@ -19,7 +19,10 @@ function ImageDropZone({ onFileChange }) {
     <div {...getRootProps({ className: 'image-drop-zone' })}>
       <input id="file" {...inputProps} />
       <h2>Drop file here or click to upload.</h2>
-      <p>(Once the image is selected it will converted to ASCII characters on the browser.)</p>
+      <p>
+        (Once the image is selected it will converted to ASCII characters on the
+        browser.)
+      </p>
     </div>
   )
 }
@@ -80,8 +83,15 @@ export default function ImageToAscii() {
     }
     reader.readAsArrayBuffer(file)
   }
+  const convert = () => {
+    dispatcher('ENABLE_LOADING')()
+    change(image, { fixedWidth, colored, reversed, fixedHeight }).finally(
+      dispatcher('DISABLE_LOADING')
+    )
+  }
   return (
-    <div className="image-to-ascii">
+    <div className="image-to-ascii container">
+      <div className="menu"></div>
       <If condition={loading}>
         <div className="loader">
           <img src="/spinner.svg" alt="loader" className="loader-icon" />
@@ -99,11 +109,64 @@ export default function ImageToAscii() {
 
 function ImageSettings() {
   return (
-    <div>
+    <>
       <pre
         id="console"
+        className="drawboard"
         style={{ background: 'black', color: 'white', overflow: 'scroll' }}
       ></pre>
-    </div>
+      <div className="tool-bar">
+        <h2>Convert Image to Ascii</h2>
+        <label>
+          No of Items
+          <input
+            type="number"
+            step="1"
+            min="0"
+            max="10000"
+          />
+        </label>
+        <label>
+          Items Order
+          <select
+          >
+            <option value="3">Random</option>
+            <option value="1">Ascending</option>
+            <option value="2">Descending</option>
+          </select>
+        </label>
+        <button >
+          {' '}
+          Generate
+        </button>
+        <label>
+          Step
+          <input type="number" />
+        </label>
+        <label>
+          Interval
+          <input
+            type="number"
+            step="1"
+            min="1"
+            max="10000"
+          />
+        </label>
+        <div className="btn-group">
+          <button
+            className="green"
+           
+          >
+            Sort
+          </button>
+          <button
+            className="red"
+            
+          >
+            Stop
+          </button>
+        </div>
+      </div>
+    </>
   )
 }
