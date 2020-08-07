@@ -19,5 +19,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: transparent;
+    p {
+      font-family: 'Open Sans', sans-serif;
+    }
   }
 }
