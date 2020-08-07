@@ -110,61 +110,36 @@ export default function ImageToAscii() {
 function ImageSettings() {
   return (
     <>
-      <pre
-        id="console"
-        className="drawboard"
-        style={{ background: 'black', color: 'white', overflow: 'scroll' }}
-      ></pre>
+      <div className="drawboard">
+        <pre id="console"></pre>
+      </div>
+
       <div className="tool-bar">
         <h2>Convert Image to Ascii</h2>
         <label>
           No of Items
-          <input
-            type="number"
-            step="1"
-            min="0"
-            max="10000"
-          />
+          <input type="number" step="1" min="0" max="10000" />
         </label>
         <label>
           Items Order
-          <select
-          >
+          <select>
             <option value="3">Random</option>
             <option value="1">Ascending</option>
             <option value="2">Descending</option>
           </select>
         </label>
-        <button >
-          {' '}
-          Generate
-        </button>
+        <button> Generate</button>
         <label>
           Step
           <input type="number" />
         </label>
         <label>
           Interval
-          <input
-            type="number"
-            step="1"
-            min="1"
-            max="10000"
-          />
+          <input type="number" step="1" min="1" max="10000" />
         </label>
         <div className="btn-group">
-          <button
-            className="green"
-           
-          >
-            Sort
-          </button>
-          <button
-            className="red"
-            
-          >
-            Stop
-          </button>
+          <button className="green">Sort</button>
+          <button className="red">Stop</button>
         </div>
       </div>
     </>
