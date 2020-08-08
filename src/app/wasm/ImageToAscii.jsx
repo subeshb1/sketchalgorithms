@@ -82,7 +82,7 @@ export default function ImageToAscii() {
       dispatcher('SET_IMAGE')(array)
       setTimeout(
         () =>
-          change(image, { fixedWidth, colored, reversed, fixedHeight }).finally(
+          change(array, { fixedWidth, colored, reversed, fixedHeight }).finally(
             dispatcher('DISABLE_LOADING')
           ),
         100
