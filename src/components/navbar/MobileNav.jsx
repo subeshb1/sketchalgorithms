@@ -50,6 +50,13 @@ const MobileNav = React.memo(props => {
       >
         <div className="lg-navbar__drop-down" key="1">
           <DropDownDisplayItem
+            to={'/app/wasm/image-to-ascii'}
+            as={Link}
+            image={imageToAscii.childImageSharp.fixed}
+            title="Image to Ascii"
+            info="Convert images to text characters on the browser."
+          />
+          <DropDownDisplayItem
             as={Link}
             to={'/app/sorting'}
             image={sorting.childImageSharp.fixed}
