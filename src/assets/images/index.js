@@ -14,6 +14,7 @@ import logo from './logo.png'
 import selectionSort from './selection-sort.png'
 import snakeGrid from './snake-grid.png'
 import snakeGame from '../snake-game.png'
+import imageToAscii from './image-to-ascii.png'
 
 export {
   aStar,
@@ -30,6 +31,7 @@ export {
   quick,
   logo,
   snakeGrid,
+  imageToAscii,
 }
 
 export const images = {
@@ -49,4 +51,5 @@ export const images = {
   'snake-grid.png': snakeGrid,
   'snake-game.png': snakeGame,
   'selection-sort.png': selectionSort,
+  'image-to-ascii.png': imageToAscii,
 }
