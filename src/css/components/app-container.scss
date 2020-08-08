@@ -54,6 +54,12 @@
         }
         .app-container__description {
           font-size: 0.8rem;
+          display: flex;
+          flex-direction: column;
+          button {
+            align-self: flex-end;
+            margin-top: 10px;
+          }
         }
       }
     }

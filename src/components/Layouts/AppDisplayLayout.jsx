@@ -56,6 +56,7 @@ const AppDisplay = ({ data, homeTitle }) => {
         </h2>
         <div className="app-container__description">
           {data.description.slice(0, 100) + '...'}
+          <button>Expand</button>
         </div>
       </div>
     </Link>

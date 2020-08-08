@@ -171,31 +171,39 @@ export default function DateConverter() {
     dispatch({ type, payload: { index } })
   }
   return (
-    <div>
-      <select
-        value={state.defaultNepaliFormat}
-        onChange={onChangeFactory(null, 'NP_FORMAT')}
-      >
-        {state.nepaliFormats.map((x, i) => {
-          return (
-            <option value={x} key={i}>
-              {new NepaliDate().format(x)}
-            </option>
-          )
-        })}
-      </select>
-      <select
-        value={state.defaultEnglishFormat}
-        onChange={onChangeFactory(null, 'EN_FORMAT')}
-      >
-        {state.englishFormats.map((x, i) => {
-          return (
-            <option value={x} key={i}>
-              {moment().format(x)}
-            </option>
-          )
-        })}
-      </select>
+    <div className="nepali-date-converter">
+      <div className="nepali-date-format">
+        <label>
+          Nepali Date Format:
+          <select
+            value={state.defaultNepaliFormat}
+            onChange={onChangeFactory(null, 'NP_FORMAT')}
+          >
+            {state.nepaliFormats.map((x, i) => {
+              return (
+                <option value={x} key={i}>
+                  {new NepaliDate().format(x)}
+                </option>
+              )
+            })}
+          </select>
+        </label>
+        <label>
+          English Date Format:
+          <select
+            value={state.defaultEnglishFormat}
+            onChange={onChangeFactory(null, 'EN_FORMAT')}
+          >
+            {state.englishFormats.map((x, i) => {
+              return (
+                <option value={x} key={i}>
+                  {moment().format(x)}
+                </option>
+              )
+            })}
+          </select>
+        </label>
+      </div>
       {state.dates.map((x, i) => {
         return (
           <DateDisplay

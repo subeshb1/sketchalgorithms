@@ -192,7 +192,7 @@ function ThemeChanger({
           </select>
         </div>
         <If condition={!mobile}>
-          <button onClick={() => setShow(!show)}>
+          <button className="button" onClick={() => setShow(!show)}>
             {!show ? 'Show more' : 'Hide'}
           </button>
           {show &&

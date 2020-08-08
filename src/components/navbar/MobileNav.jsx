@@ -22,63 +22,10 @@ const MobileNav = React.memo(props => {
     searching,
     sorting,
     api,
+    imageToAscii,
+    nepaliDate,
     snakeGame,
-  } = useStaticQuery(
-    graphql`
-      query imagesAndImages {
-        navLogo: file(absolutePath: { regex: "/logo.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-
-        snakeGrid: file(absolutePath: { regex: "/snake-grid.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        searching: file(absolutePath: { regex: "/searching.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        sorting: file(absolutePath: { regex: "/sorting.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        toc: file(absolutePath: { regex: "/toc.png/i" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        api: file(absolutePath: { regex: "/api-test.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        snakeGame: file(absolutePath: { regex: "/snake-game.png/" }) {
-          childImageSharp {
-            fixed(width: 50, height: 50) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      }
-    `
-  )
+  } = props
   return (
     <nav className="st-navbar">
       <Popover
@@ -102,6 +49,13 @@ const MobileNav = React.memo(props => {
         elementAs={mobileNavDropDownFactory('/apps', 'Apps', GiCardboardBox)}
       >
         <div className="lg-navbar__drop-down" key="1">
+          <DropDownDisplayItem
+            to={'/app/wasm/image-to-ascii'}
+            as={Link}
+            image={imageToAscii.childImageSharp.fixed}
+            title="Image to Ascii"
+            info="Convert images to text characters on the browser."
+          />
           <DropDownDisplayItem
             as={Link}
             to={'/app/sorting'}
@@ -129,6 +83,13 @@ const MobileNav = React.memo(props => {
             image={snakeGame.childImageSharp.fixed}
             title="Snake Game"
             info="Play snake game online"
+          />
+          <DropDownDisplayItem
+            to={'/app/nepali-date/converter'}
+            as={Link}
+            image={nepaliDate.childImageSharp.fixed}
+            title="Nepali Date Playground"
+            info="Covert Nepali date to english and vice versa"
           />
         </div>
       </Popover>
