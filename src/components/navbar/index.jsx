@@ -14,6 +14,7 @@ const NavBar = React.memo(props => {
     searching,
     sorting,
     api,
+    imageToAscii,
     snakeGame,
   } = useStaticQuery(
     graphql`
@@ -62,6 +63,13 @@ const NavBar = React.memo(props => {
           }
         }
         snakeGame: file(absolutePath: { regex: "/snake-game.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        imageToAscii: file(absolutePath: { regex: "/image-to-ascii.png/" }) {
           childImageSharp {
             fixed(width: 50, height: 50) {
               ...GatsbyImageSharpFixed
@@ -141,7 +149,7 @@ const NavBar = React.memo(props => {
             <DropDownDisplayItem
               to={'/app/wasm/image-to-ascii'}
               as={Link}
-              image={snakeGame.childImageSharp.fixed}
+              image={imageToAscii.childImageSharp.fixed}
               title="Image to Ascii"
               info="Convert images to text characters on the browser."
             />
