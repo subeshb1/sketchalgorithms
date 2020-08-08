@@ -15,6 +15,7 @@ const NavBar = React.memo(props => {
     sorting,
     api,
     imageToAscii,
+    nepaliDate,
     snakeGame,
   } = useStaticQuery(
     graphql`
@@ -76,6 +77,13 @@ const NavBar = React.memo(props => {
             }
           }
         }
+        nepaliDate: file(absolutePath: { regex: "/nepali-date.png/" }) {
+          childImageSharp {
+            fixed(width: 50, height: 50) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `
   )
@@ -112,6 +120,13 @@ const NavBar = React.memo(props => {
         >
           <div className="lg-navbar__drop-down" key="1">
             <DropDownDisplayItem
+              to={'/app/wasm/image-to-ascii'}
+              as={Link}
+              image={imageToAscii.childImageSharp.fixed}
+              title="Image to Ascii"
+              info="Convert images to text characters on the browser."
+            />
+            <DropDownDisplayItem
               as={Link}
               to={'/app/sorting'}
               image={sorting.childImageSharp.fixed}
@@ -139,19 +154,12 @@ const NavBar = React.memo(props => {
               title="Snake Game"
               info="Play snake game online"
             />
-            {/* <DropDownDisplayItem
+            <DropDownDisplayItem
               to={'/app/nepali-date/converter'}
               as={Link}
-              image={snakeGame.childImageSharp.fixed}
+              image={nepaliDate.childImageSharp.fixed}
               title="Nepali Date Playground"
               info="Covert Nepali date to english and vice versa"
-            /> */}
-            <DropDownDisplayItem
-              to={'/app/wasm/image-to-ascii'}
-              as={Link}
-              image={imageToAscii.childImageSharp.fixed}
-              title="Image to Ascii"
-              info="Convert images to text characters on the browser."
             />
           </div>
         </Popover>
