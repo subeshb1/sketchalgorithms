@@ -171,7 +171,7 @@ export default function DateConverter() {
     dispatch({ type, payload: { index } })
   }
   return (
-    <div className="nepali-date">
+    <>
       <select
         value={state.defaultNepaliFormat}
         onChange={onChangeFactory(null, 'NP_FORMAT')}
@@ -212,6 +212,6 @@ export default function DateConverter() {
           />
         )
       })}
-    </div>
+    </>
   )
 }
