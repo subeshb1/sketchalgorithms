@@ -180,7 +180,19 @@ const NavBar = React.memo(props => {
         </Popover>
         <ThemePicker />
       </nav>
-      <MobileNav />
+      <MobileNav
+        {...{
+          navLogo,
+          snakeGrid,
+          toc,
+          searching,
+          sorting,
+          api,
+          imageToAscii,
+          nepaliDate,
+          snakeGame,
+        }}
+      />
     </>
   )
 })
