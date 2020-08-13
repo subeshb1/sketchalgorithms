@@ -8,11 +8,42 @@ description: With the rise of WebAssembly importing a program written in Languag
 
 ## What is WebAssembly?
 
+Before moving on to writing the code, let's first understand what WebAssembly is. WebAssembly or WASM is an assembly-like language that can run in near native performance in the browser. It is not to be written manually but to be treated as a compilation target for languages such as C/C++, Golang, Rust, .Net etc. This means first we write a program in a language, then convert it to WASM and then run it in the browser. This will allow the program to run in near native speed and give the ability to run program written in any language to run on the browser. You can create web applications in the language you are familiar with. The list of languages that support WASM compilation are in [awesome-wasm-langs](https://github.com/appcypher/awesome-wasm-langs) and more info on WebAssembly: https://webassembly.org/
 
 ## Running go on the browser
+
+Now, let's get our hands dirty with some basic WASM and Golang.
+
 ### Writing Go Code
+
+Let's write our first hello world program.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hi from the browser console!!")
+}
+```
+
 ### Compiling to WebAssembly
-### Running on the browser
 
+```sh
+GOOS=js GOARCH=wasm go build -o main.wasm main.go
+```
 
-## 
+### Integrating with javascript
+
+```sh
+cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+```
+
+## Accessing Web APIs
+
+## Passing Values to WebAssembly
+
+## Passing Values to WebAssembly
+
+## Conclusion
