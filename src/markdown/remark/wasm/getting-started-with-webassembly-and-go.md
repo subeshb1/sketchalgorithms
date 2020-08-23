@@ -290,7 +290,7 @@ Finally we can build the code to wasm and import it to the browser.
   </body>
 </html>
 ```
-
+![Image to Ascii](../../../assets/blog/wasm/image-2-ascii.gif)
 Here is the link to the repository: https://github.com/subeshb1/wasm-go-image-to-ascii
 
 ## Conclusion
