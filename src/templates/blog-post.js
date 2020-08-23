@@ -55,7 +55,6 @@ function BlogPost(props) {
       }
     })
   }, [])
-  console.log(post.frontmatter)
   return (
     <Layout>
       <div className="blog-main-container">
