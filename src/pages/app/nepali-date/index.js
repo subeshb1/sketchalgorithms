@@ -9,6 +9,7 @@ const MainApp = React.memo(() => {
   return (
     <Layout>
       <SEO
+        url="/app/nepali-date"
         title="Nepali Date Converter"
         keywords={[`nepali date`, `converter`, `ad to bs`, `bs to ad`, 'nepali date to english date']}
         description={"Nepali date today. Find different information about today's date."}
