@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
-function SEO({ description, lang, meta, keywords, title }) {
+const root = "https://www.subeshbhandari.com";
+function SEO({ description, lang, meta, keywords, title, url }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -54,13 +54,15 @@ function SEO({ description, lang, meta, keywords, title }) {
               .concat(
                 keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
                   : []
               )
               .concat(meta)}
-          />
+          >
+            <link rel="canonical" href={root + url} />
+          </Helmet>
         )
       }}
     />
