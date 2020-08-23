@@ -134,7 +134,7 @@ The above code produces the following output:
 
 ## Importing Image to Ascii library to the browser
 
-Now, that we know how to interact back and forth between Go and the browser, let's build a real world application.
+Now, that we know how to interact back and forth between Go and the browser, let's build a real world application. We will be creating 
 
 ## Passing Values to WebAssembly
 
