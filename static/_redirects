@@ -5,5 +5,5 @@
 /app/drawable-graph* /app/drawable-graph/index.html 200
 /drawable-graph* /app/drawable-graph/index.html 200
 /app/games* /app/games/index.html 200
-/games* /app/games/index.html 200
 /games/snake-game /blog/games/build-a-snake-game 200
+/games* /app/games/index.html 200
