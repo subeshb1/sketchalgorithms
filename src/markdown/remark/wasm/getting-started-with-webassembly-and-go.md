@@ -230,15 +230,78 @@ We expose a `convert` function that takes an image bytes and options. We use `js
 
 ### Build and Integrate into the browser
 
+Finally we can build the code to wasm and import it to the browser.
+
+```html
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/BrowserFS/2.0.0/browserfs.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/drudru/ansi_up/ansi_up.js"></script>
+    <script src="wasm_exec.js"></script>
+  </head>
+  <body>
+    <!-- ASCII Image container  -->
+    <pre
+      id="console"
+      style="background: black; color: white; overflow: scroll;"
+    ></pre>
+    <!-- Input to select file -->
+    <input type="file" name="file" id="file" />
+    <script>
+      // Integrating WebAssembly
+      const go = new Go()
+      WebAssembly.instantiateStreaming(
+        fetch('main.wasm'),
+        go.importObject
+      ).then(result => {
+        go.run(result.instance)
+      })
+      // Adding image change listener
+      document.querySelector('#file').addEventListener(
+        'change',
+        function() {
+          const reader = new FileReader()
+          reader.onload = function() {
+            // Converting the image to Unit8Array
+            const arrayBuffer = this.result,
+              array = new Uint8Array(arrayBuffer)
+            // Call wasm exported function
+            const txt = convert(
+              array,
+              JSON.stringify({
+                fixedWidth: 100,
+                colored: true,
+                fixedHeight: 40,
+              })
+            )
+            // To convert Ansi characters to html
+            const ansi_up = new AnsiUp()
+            const html = ansi_up.ansi_to_html(txt)
+            // Showing the ascii image in the browser
+            const cdiv = document.getElementById('console')
+            cdiv.innerHTML = html
+          }
+          reader.readAsArrayBuffer(this.files[0])
+        },
+        false
+      )
+    </script>
+  </body>
+</html>
+```
+
+Here is the link to the repository: https://github.com/subeshb1/wasm-go-image-to-ascii
+
 ## Conclusion
 
-We looked at the basics of Wasm and how to use it to import Go code into the browser. We also looked at how we can import existing library and create a real world application to convert image to ascii characters. Do share you thoughts and feedback in the comment section, and share you project in WebAssembly as well.
+We looked at the basics of Wasm and how to use it to import Go code into the browser. We also looked at how we can import existing library and create a real world application to convert image to ascii characters. Do share you thoughts and feedback in the comment section, and share you project in WebAssembly as well. Although Wasm is in early stage, we can see how useful it can be to remove language dependency on the browser and improve performance by running in near native speed.
 
 Basic Example covered in the blog: https://github.com/subeshb1/Webassembly/tree/master/go
 Wasm image to ascii: https://github.com/subeshb1/wasm-go-image-to-ascii
 Demo: https://subeshbhandari.com/app/wasm/image-to-ascii
 
-
 More Resources on WebAssembly:
-* Awesome Wasm: https://github.com/mbasso/awesome-wasm
-* WebAssembly from MDN: https://developer.mozilla.org/en-US/docs/WebAssembly
+
+- Awesome Wasm: https://github.com/mbasso/awesome-wasm
+- WebAssembly from MDN: https://developer.mozilla.org/en-US/docs/WebAssembly
