@@ -134,8 +134,111 @@ The above code produces the following output:
 
 ## Importing Image to Ascii library to the browser
 
-Now, that we know how to interact back and forth between Go and the browser, let's build a real world application. We will be importing an existing library, [image2Ascii](https://github.com/qeesung/image2ascii) that converts an image to ascii characters. It is a Go library and 
+Now, that we know how to interact back and forth between Go and the browser, let's build a real world application. We will be importing an existing library, [image2Ascii](https://github.com/qeesung/image2ascii) that converts an image to ascii characters. It is a Go CLI application that takes the path of an image and converts it to Ascii characters. Since we can't access file system in the browser directly, I have altered some of the code in the library to take bytes of image instead of file path. The source to the repo with changes: [wasm-go-image-to-ascii](https://github.com/subeshb1/wasm-go-image-to-ascii). We only need to worry about the exposed API from the library rather than how the algorithm works for now. It exposes the following:
 
-## Passing Values to WebAssembly
+```go
+func ImageFile2ASCIIString(imgByte []byte, option *Options) string
+type Options struct {
+	Colored         bool    `json:"colored"`
+	FixedWidth      int     `json:"fixedWidth"`
+	FixedHeight     int     `json:"fixedHeight"`
+	Reversed        bool    `json:"reversed"`
+}
+```
+
+Let's divide the whole process into the following tasks:
+
+1. Create an event listener for file input that passes the selected image to our Go function.
+2. Write the Go function to convert image to ascii and expose it to the browser.
+3. Build and Integrate into the browser.
+
+### Create an event listener for file input
+
+We will move ahead assuming a function named `convert(image, options)` will be created by Go.
+
+```js
+document.querySelector('#file').addEventListener(
+  'change',
+  function() {
+    const reader = new FileReader()
+    reader.onload = function() {
+      // Converting the image to Unit8Array
+      const arrayBuffer = this.result,
+        array = new Uint8Array(arrayBuffer)
+      // Call wasm exported function
+      const txt = convert(
+        array,
+        JSON.stringify({
+          fixedWidth: 100,
+          colored: true,
+          fixedHeight: 40,
+        })
+      )
+      // To convert Ansi characters to html
+      const ansi_up = new AnsiUp()
+      const html = ansi_up.ansi_to_html(txt)
+      // Showing the ascii image in the browser
+      const cdiv = document.getElementById('console')
+      cdiv.innerHTML = html
+    }
+    reader.readAsArrayBuffer(this.files[0])
+  },
+  false
+)
+```
+
+We have added a `change` listener to an input with id `file`. Once the image is selected by the user we will send the image by converting it to `Unit8Array` to the `convert` function.
+
+### Go function to convert image to ascii
+
+```go
+
+package main
+
+import (
+	"encoding/json"
+	_ "image/jpeg"
+	_ "image/png"
+	"syscall/js"
+
+	"github.com/subeshb1/wasm-go-image-to-ascii/convert"
+)
+
+func converter(this js.Value, inputs []js.Value) interface{} {
+  imageArr := inputs[0]
+  options := inputs[1].String()
+	inBuf := make([]uint8, imageArr.Get("byteLength").Int())
+	js.CopyBytesToGo(inBuf, imageArr)
+	convertOptions := convert.Options{}
+	err := json.Unmarshal([]byte(options), &convertOptions)
+	if err != nil {
+		convertOptions = convert.DefaultOptions
+	}
+
+	converter := convert.NewImageConverter()
+	return converter.ImageFile2ASCIIString(inBuf, &convertOptions)
+}
+
+func main() {
+	c := make(chan bool)
+	js.Global().Set("convert", js.FuncOf(converter))
+	<-c
+}
+```
+
+We expose a `convert` function that takes an image bytes and options. We use `js.CopyBytesToGo` to convert javascript `Uint8Array` to Go `[]byte`. After the image is converted the function returns string of Ascii/Ansi characters.
+
+### Build and Integrate into the browser
 
 ## Conclusion
+
+We looked at the basics of Wasm and how to use it to import Go code into the browser. We also looked at how we can import existing library and create a real world application to convert image to ascii characters. Do share you thoughts and feedback in the comment section, and share you project in WebAssembly as well.
+
+Basic Example covered in the blog: https://github.com/subeshb1/Webassembly/tree/master/go
+Wasm image to ascii: https://github.com/subeshb1/wasm-go-image-to-ascii
+Demo: https://subeshbhandari.com/app/wasm/image-to-ascii
+
+
+More Resources on WebAssembly:
+* Awesome Wasm: https://github.com/mbasso/awesome-wasm
+* WebAssembly from MDN: https://developer.mozilla.org/en-US/docs/WebAssembly
