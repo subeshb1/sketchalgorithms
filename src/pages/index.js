@@ -14,6 +14,7 @@ class BlogHome extends React.Component {
     return (
       <BlogPostTemplate>
         <SEO
+          url="/"
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
