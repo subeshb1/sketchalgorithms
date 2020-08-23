@@ -30,25 +30,65 @@ func main() {
 
 ### Compiling to WebAssembly
 
-Now, let's compile it to Wasm.
+Let's compile it to Wasm.
 
 ```sh
-GOOS=js GOARCH=wasm go build -o main.wasm main.go
+GOOS=js GOARCH=wasm go build -o main.wasm
 ```
 
 This will create a `main.wasm` WebAssembly file that we can import and run on the browser.
 
 ### Integrating with javascript
 
-After we write our GO code and compile it to WASM we can then start integrating it on the browser.
+After we write our Go code and compile it to WASM we can then start integrating it on the browser.
 
-First, let's
+We will need a Go runtime wrapper written in javascript to interact with Go through wasm. The code is shipped with Go 1.11+ and can be copied using the following command:
 
 ```sh
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
+    cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" .
 ```
 
+Now, let's integrate it to the browser.
+
+```html
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="wasm_exec.js"></script>
+    <script>
+      const go = new Go()
+      WebAssembly.instantiateStreaming(
+        fetch('main.wasm'),
+        go.importObject
+      ).then(result => {
+        go.run(result.instance)
+      })
+    </script>
+  </head>
+  <body></body>
+</html>
+```
+
+`WebAssembly.instantiateStreaming` compiles and instantiates WebAssembly code. After the code is instantiated, we will run the Go program with `go.run(result.instance)`. For more information visit the [WebAssembly.instantiateStreaming](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/instantiateStreaming) docs and [Go WebAssembly](https://github.com/golang/go/wiki/WebAssembly).
+Now if we run a server to serve the content we can view the output in browser console.
+
+> The mime type for `.wasm` file should be `application/wasm` when served from the server.
+
+We can use [`goexec`](https://github.com/shurcooL/goexec#goexec) to serve the files:
+
+```sh
+# Install go exec
+go get -u github.com/shurcooL/goexec
+
+# Start the server at 8080 port
+goexec 'http.ListenAndServe(`:8080`, http.FileServer(http.Dir(`.`)))'
+```
+
+If we open `localhost:8080` on the browser and open the console we will see the our message sent from Go:
+![Go WebAssembly Example](../../../assets/blog/wasm/wasm-example.png)
+
 ## Accessing Web APIs and exposing Go functions
+
 
 ## Passing Values to WebAssembly
 
