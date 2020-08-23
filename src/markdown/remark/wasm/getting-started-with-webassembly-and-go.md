@@ -1,5 +1,5 @@
 ---
-title: Getting started with WebAssembly and Go
+title: Getting started with WebAssembly and Go by building an Image to ASCII converter
 date: '2020-08-13T23:46:37.121Z'
 description: With the rise of WebAssembly importing a program written in Languages like C/C++, Rust, and Golang to the browser has been made possible. This blog will look at how we can run a program written in Golang on the browser by importing it to WebAssembly.
 ---
