@@ -161,6 +161,7 @@ const NavBar = React.memo(props => {
               title="Nepali Date Playground"
               info="Covert Nepali date to english and vice versa"
             />
+            <Link to={'/app/'} className="lg-navbar__drop-down__item lg-navbar__drop-down__display-item link-item">View All</Link>
           </div>
         </Popover>
         <Popover
