@@ -70,7 +70,12 @@
       rgba(9, 30, 66, 0.31) 0px 0px 1px;
     box-shadow: var(--theme-picker-box-shadow);
   }
-
+  .link-item {
+    text-align: right;
+    align-self: flex-end;
+    font-size: 0.8em;
+    color: inherit;
+  }
   .lg-navbar__drop-down__item {
     display: flex;
     cursor: pointer;
