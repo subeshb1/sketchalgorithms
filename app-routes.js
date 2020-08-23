@@ -1,5 +1,19 @@
 module.exports = {
   apps: {
+    wasm: {
+      'bubble-sort': {
+        description:
+          "Convert image to ascii on the browser. This tool allows image to be converted in to text without in file upload to the server. It uses WebAssembly to run native code on the browser to convert image to ascii characters.",
+        title: 'Image to Ascii Converter',
+        image: 'image-to-ascii.png',
+        url: '/app/wasm/image-to-ascii',
+      },
+      home: {
+        description:
+          'Explore different application made using Web Assembly.',
+        title: 'WebAssembly'
+      },
+    },
     sorting: {
       'bubble-sort': {
         description:
