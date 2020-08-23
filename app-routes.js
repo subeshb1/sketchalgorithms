@@ -11,7 +11,8 @@ module.exports = {
       home: {
         description:
           'Explore different application made using Web Assembly.',
-        title: 'WebAssembly'
+        title: 'WebAssembly',
+        url: '/app/wasm/',
       },
     },
     sorting: {
@@ -62,6 +63,7 @@ module.exports = {
         description:
           'Play games online made using javascript, html and css. View the tutorial to make you own game.',
         title: 'Games',
+        url: '/app/games/',
       },
       'snake-game': {
         description:
@@ -149,7 +151,7 @@ module.exports = {
         description:
           'Explore different interactive and applications made by me. Visualize algorithms, play games and use productivity tools. This apps are all free and available for anyone and made using HTML, CSS and Javascript.',
         title: 'Apps',
-        url: '/app',
+        url: '/app/',
       },
     },
   },
