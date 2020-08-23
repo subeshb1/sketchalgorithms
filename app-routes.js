@@ -1,5 +1,20 @@
 module.exports = {
   apps: {
+    wasm: {
+      'bubble-sort': {
+        description:
+          "Convert image to ascii on the browser. This tool allows image to be converted in to text without in file upload to the server. It uses WebAssembly to run native code on the browser to convert image to ascii characters.",
+        title: 'Image to Ascii Converter',
+        image: 'image-to-ascii.png',
+        url: '/app/wasm/image-to-ascii',
+      },
+      home: {
+        description:
+          'Explore different application made using Web Assembly.',
+        title: 'WebAssembly',
+        url: '/app/wasm/',
+      },
+    },
     sorting: {
       'bubble-sort': {
         description:
@@ -48,6 +63,7 @@ module.exports = {
         description:
           'Play games online made using javascript, html and css. View the tutorial to make you own game.',
         title: 'Games',
+        url: '/app/games/',
       },
       'snake-game': {
         description:
@@ -135,7 +151,7 @@ module.exports = {
         description:
           'Explore different interactive and applications made by me. Visualize algorithms, play games and use productivity tools. This apps are all free and available for anyone and made using HTML, CSS and Javascript.',
         title: 'Apps',
-        url: '/app',
+        url: '/app/',
       },
     },
   },

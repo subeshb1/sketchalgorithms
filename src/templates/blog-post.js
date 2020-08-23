@@ -58,7 +58,7 @@ function BlogPost(props) {
   return (
     <Layout>
       <div className="blog-main-container">
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} url={post.fields.slug} />
         <SideBar seriesElements={seriesContent} />
 
         <main className="blog-mid-container blog-post-content">
@@ -148,6 +148,7 @@ export const pageQuery = graphql`
         title
         hideDisqus
         githubButtons
+        description
         hideEstimatedTime
         hideLeftBar
         blogTitle
@@ -172,6 +173,7 @@ export const pageQuery = graphql`
             title
             date
             type
+            description
             series
             category
             position
