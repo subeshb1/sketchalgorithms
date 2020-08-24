@@ -1,14 +1,14 @@
 ---
 title: Git and Github Practical for beginners
 date: '2020-08-24T23:46:37.121Z'
-description: Take the step by step guide and practical to get started with Git and Github. Learn how to create a Git repository, push the change into Github and finally host it in Github.
+description: Take the step by step guide and practical to get started with Git and Github. Learn how to create a Git repository, push the change into Github, and finally host it in Github.
 ---
 
 This blog will guide you through step by step process to create a git repository, push it to GitHub and host a simple HTML page.
 
 ## Who is this blog for?
 
-- If you are getting started with git and github and want to get your hands dirty with real world use case.
+- If you are getting started with git and GitHub and want to get your hands dirty with a real-world use case.
 - If you are an instructor and want to use the guide to teach beginners.
 
 ## Pre-requesites
@@ -91,7 +91,7 @@ Good job! you have successfully created your first git repository. Now let's add
 
 ### Step 1: Creating a file
 
-In order to create a file we will use a command named `touch`:
+To create a file we will use a command named `touch`:
 
 ```sh
 touch index.html`
@@ -194,7 +194,7 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   index.html
+  new file:   index.html
 ```
 
 ### Step 3: Commit the change
@@ -205,7 +205,7 @@ This is the step where we version our code:
 git commit -m "My first commit"
 ```
 
-Great! You have successfully created you first commit.
+Great! You have successfully created your first commit.
 
 ## Create a Github Repository and push code
 
@@ -231,7 +231,7 @@ Under the section **..or push an existing repository from the command line** cop
 git remote add origin git@github.com:<username>/my-app.git
 ```
 
-Then push the code to github
+Then push the code to GitHub
 
 ```sh
 git push -u origin master
@@ -250,12 +250,12 @@ Now that you have successfully pushed your code we will host it in Github.
 
 <img width="1008" alt="Screen Shot 2020-08-09 at 10 19 32" src="https://user-images.githubusercontent.com/27361350/89726141-f2834600-da36-11ea-9dd4-76906f12f9b5.png">
 
-### Step 2: Under github pages section select source and select master
+### Step 2: Under GitHub pages section select source and select master
 
 <img width="1031" alt="Screen Shot 2020-08-09 at 10 19 46" src="https://user-images.githubusercontent.com/27361350/89726146-03cc5280-da37-11ea-8f05-742e8aef7cd0.png">
 <img width="407" alt="Screen Shot 2020-08-09 at 10 19 51" src="https://user-images.githubusercontent.com/27361350/89726148-08910680-da37-11ea-9cae-fb2883a52704.png">
 
-### Step 3: Open the shown url
+### Step 3: Open the shown URL
 
 <img width="786" alt="Screen Shot 2020-08-09 at 10 20 11" src="https://user-images.githubusercontent.com/27361350/89726150-0d55ba80-da37-11ea-940c-7934f338c1f5.png">
 
