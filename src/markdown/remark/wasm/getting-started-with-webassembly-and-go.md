@@ -298,9 +298,9 @@ Here is the link to the repository: https://github.com/subeshb1/wasm-go-image-to
 
 We looked at the basics of Wasm and how to use it to import Go code into the browser. We also looked at how we can import an existing library and create a real-world application to convert images to ASCII characters. Do share your thoughts and feedback in the comment section, and share your project in WebAssembly as well. Although Wasm is in an early stage, we can see how useful it can be to remove language dependency on the browser and improve performance by running at near-native speed.
 
-Basic Example covered in the blog: https://github.com/subeshb1/Webassembly/tree/master/go
-Wasm image to ASCII: https://github.com/subeshb1/wasm-go-image-to-ascii
-Demo: https://subeshbhandari.com/app/wasm/image-to-ascii
+- Basic Example covered in the blog: https://github.com/subeshb1/Webassembly/tree/master/go
+- Wasm image to ASCII: https://github.com/subeshb1/wasm-go-image-to-ascii
+- Demo: https://subeshbhandari.com/app/wasm/image-to-ascii
 
 More Resources on WebAssembly:
 
