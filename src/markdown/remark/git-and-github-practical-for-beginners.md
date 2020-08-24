@@ -1,7 +1,7 @@
 ---
 title: Git and Github Practical for beginners
 date: '2020-08-24T23:46:37.121Z'
-description: With the rise of WebAssembly importing a program written in Languages like C/C++, Rust, and Golang to the browser has been made possible. This blog will look at how we can run a program written in Golang on the browser by importing it to WebAssembly.
+description: Take the step by step guide and practical to get started with Git and Github
 ---
 
 This will guide you through step by step process to create a git repository, push it to GitHub and host a simple HTML page.
