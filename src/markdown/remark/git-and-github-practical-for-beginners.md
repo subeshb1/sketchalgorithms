@@ -1,10 +1,15 @@
 ---
 title: Git and Github Practical for beginners
 date: '2020-08-24T23:46:37.121Z'
-description: Take the step by step guide and practical to get started with Git and Github
+description: Take the step by step guide and practical to get started with Git and Github. Learn how to create a Git repository, push the change into Github and finally host it in Github.
 ---
 
-This will guide you through step by step process to create a git repository, push it to GitHub and host a simple HTML page.
+This blog will guide you through step by step process to create a git repository, push it to GitHub and host a simple HTML page.
+
+## Who is this blog for?
+
+- If you are getting started with git and github and want to get your hands dirty with real world use case.
+- If you are an instructor and want to use the guide to teach beginners.
 
 ## Pre-requesites
 
@@ -206,7 +211,7 @@ Great! You have successfully created you first commit.
 
 We will create a Github Repository to push our local repository to a server.
 
-### Step 1: Go to Github and select `New Repository`
+### Step 1: Go to Github and select New Repository
 
 <img width="1438" alt="Screen Shot 2020-08-09 at 10 17 48" src="https://user-images.githubusercontent.com/27361350/89726073-1befa200-da36-11ea-8f50-89fe7471a4d7.png">
 
@@ -231,6 +236,9 @@ Then push the code to github
 ```sh
 git push -u origin master
 ```
+
+For the first time, you will see a prompt for Github login. Log in with credentials and the code will be pushed.
+![Github Login Prompt](https://user-images.githubusercontent.com/27361350/91052775-ab55a180-e641-11ea-8418-01226a243b81.png)
 
 Check your repository in GitHub to see if the code has been pushed.
 
