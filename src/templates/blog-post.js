@@ -48,16 +48,16 @@ const SnippetCopy = () => {
   }, [])
   return null
 }
-const BlogContent = ({ html }) => {
+const BlogContent = React.memo(({ html }) => {
+  console.log("BLog render")
   return <section key="blog-layout" id="blog-section" dangerouslySetInnerHTML={{ __html: html }} />
-}
+});
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
   const siteTitle = props.data.site.siteMetadata.title
   const { previous, next } = props.pageContext
   const disqusShortname = 'subeshbhandari'
-
 
   const seriesContent = props.data.allMarkdownRemark.edges.map(x => ({
     ...x.node.frontmatter,
