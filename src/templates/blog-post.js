@@ -48,6 +48,9 @@ const SnippetCopy = () => {
   }, [])
   return null
 }
+const BlogContent = ({ html }) => {
+  return <section key="blog-layout" id="blog-section" dangerouslySetInnerHTML={{ __html: html }} />
+}
 
 function BlogPost(props) {
   const post = props.data.markdownRemark
@@ -91,7 +94,7 @@ function BlogPost(props) {
               </span>
             </If>
           </p>
-          <div key="blog-layout" id="blog-section" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <BlogContent html={post.html} />
           <hr
             style={{
               marginBottom: rhythm(1),
