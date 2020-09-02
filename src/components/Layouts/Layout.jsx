@@ -29,10 +29,6 @@ class ErrorBoundary extends React.PureComponent {
   }
 }
 
-const Render = ({ children }) => {
-  return children
-}
-
 const Layout = props => {
   const { children } = props
 
@@ -41,7 +37,6 @@ const Layout = props => {
       <NavBar />
       <div className="nav-breaker"></div>
       <ErrorBoundary>
-        <Render>{children}</Render>
         <div className="dynamic-container">{children}</div>
       </ErrorBoundary>
       <Footer />
