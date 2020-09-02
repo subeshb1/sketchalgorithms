@@ -1,9 +1,35 @@
 import React, { useEffect } from 'react'
 
-export default function Toc({ tableOfContents }) {
+
+class ErrorBoundary extends React.PureComponent {
+  constructor() {
+    super()
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return null
+    }
+
+    return this.props.children
+  }
+}
+
+
+const Listener = () => {
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion)')
-
     const TableOfContents = {
       container: document.querySelector('.table-of-contents'),
       links: null,
@@ -100,15 +126,22 @@ export default function Toc({ tableOfContents }) {
         this.headings = this.links.map(link => {
           let id = link.getAttribute('href')
           return document.querySelector(id)
-        })
+        }).filter(x => x != null)
       },
     }
     TableOfContents.init()
   }, [])
+  return null
+}
+export default function Toc({ tableOfContents }) {
+
   return (
     <div className="table-of-contents">
-      <h2>TABLE OF CONTENTS</h2>
-      <div dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
+      <ErrorBoundary>
+        <h2>TABLE OF CONTENTS</h2>
+        <div dangerouslySetInnerHTML={{ __html: tableOfContents }}></div>
+        <Listener />
+      </ErrorBoundary>
     </div>
   )
 }
