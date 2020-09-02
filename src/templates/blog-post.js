@@ -24,17 +24,8 @@ const DisqusComments = React.memo(
   }
 )
 
-function BlogPost(props) {
-  const post = props.data.markdownRemark
-  const siteTitle = props.data.site.siteMetadata.title
-  const { previous, next } = props.pageContext
-  const disqusShortname = 'subeshbhandari'
-
+const SnippetCopy = () => {
   const [, copyToClipboard] = useCopyToClipboard()
-  const seriesContent = props.data.allMarkdownRemark.edges.map(x => ({
-    ...x.node.frontmatter,
-    ...x.node.fields,
-  }))
   useEffect(() => {
     const script = document.createElement('script')
 
@@ -55,6 +46,22 @@ function BlogPost(props) {
       }
     })
   }, [])
+  return null
+}
+
+function BlogPost(props) {
+  const post = props.data.markdownRemark
+  const siteTitle = props.data.site.siteMetadata.title
+  const { previous, next } = props.pageContext
+  const disqusShortname = 'subeshbhandari'
+
+
+  const seriesContent = props.data.allMarkdownRemark.edges.map(x => ({
+    ...x.node.frontmatter,
+    ...x.node.fields,
+  }))
+
+
   return (
     <Layout>
       <div className="blog-main-container">
@@ -84,7 +91,7 @@ function BlogPost(props) {
               </span>
             </If>
           </p>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div key="blog-layout" id="blog-section" dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
               marginBottom: rhythm(1),
@@ -125,6 +132,7 @@ function BlogPost(props) {
           </aside>
         </If>
       </div>
+      <SnippetCopy />
     </Layout>
   )
 }
