@@ -100,7 +100,7 @@ export default function Toc({ tableOfContents }) {
         this.headings = this.links.map(link => {
           let id = link.getAttribute('href')
           return document.querySelector(id)
-        })
+        }).filter(x => x != null)
       },
     }
     TableOfContents.init()
