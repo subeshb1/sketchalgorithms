@@ -32,7 +32,7 @@ export default function SideBar({ seriesElements }) {
         activeClassName="blog-sidebar__item--active"
         to={first.slug}
       >
-        {first.title}
+        {first.shortTitle|| first.title}
       </Link>
       {categorizedSeries.map((elements, i) => {
         return (
