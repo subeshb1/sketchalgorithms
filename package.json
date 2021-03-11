@@ -15,7 +15,7 @@
     "@mdx-js/react": "^1.0.27",
     "@mdx-js/tag": "^0.20.3",
     "@popperjs/core": "^2.4.0",
-    "ansi_up": "^4.0.4",
+    "ansi_up": "^5.0.0",
     "antd": "^4.2.4",
     "change-case": "^3.1.0",
     "disqus-react": "^1.0.6",
