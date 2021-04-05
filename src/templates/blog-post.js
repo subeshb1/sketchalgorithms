@@ -109,7 +109,7 @@ function BlogPost(props) {
               current: post.fields.slug,
             }}
           />
-          <DisqusComments
+          {/* <DisqusComments
             show={
               post.frontmatter.hideDisqus == null ||
               !post.frontmatter.hideDisqus
@@ -120,7 +120,7 @@ function BlogPost(props) {
               identifier: post.fields.slug,
               title: siteTitle,
             }}
-          />
+          /> */}
         </main>
         <If
           condition={
